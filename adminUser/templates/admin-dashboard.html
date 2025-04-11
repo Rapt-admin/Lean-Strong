@@ -1,0 +1,87 @@
+{% load static %}
+
+	{% include "admin_header.html" %}
+	{% include "admin_sidebarmenu.html" %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row text-c">
+            <div class="col-xxl-4 col-md-4">
+              <div class="card info-card dietician-card ">
+
+                <div class="card-body ">
+                  <div class="d-flex align-items-center pt-4 pb-3 justify-content-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+
+                      <i class="ri-group-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>113</h6>
+                      <span class="text-muted pt-2 ps-1 bold">Total Customers </span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-xxl-4 col-md-4">
+              <div class="card info-card dietician-card">
+
+                <div class="card-body">
+
+                  <div class="d-flex align-items-center pt-4 pb-3 justify-content-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="ri-check-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>30</h6>
+                      <p class="text-muted bold">Active Customers</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-xxl-4 col-md-4">
+              <div class="card info-card dietician-card">
+
+                <div class="card-body">
+
+                  <div class="d-flex align-items-center pt-4 pb-3 justify-content-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="ri-time-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>5</h6>
+                      <span class="text-muted pt-2 ps-1 bold">Todays' Sessions</span>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div><!-- End Left side columns -->
+
+
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "admin_footer.html" %}

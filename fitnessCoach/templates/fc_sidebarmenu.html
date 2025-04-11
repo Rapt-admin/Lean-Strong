@@ -1,0 +1,128 @@
+{% load static %}
+
+
+ <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'fcDash' %}">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#sessions" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-calendar-event"></i><span>Sessions</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="sessions" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+          <li>
+            <a href="{% url 'fcTodaySession' %}">
+              <i class="bi bi-circle"></i><span>Today's sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'fcUpcomingSession' %}">
+              <i class="bi bi-circle"></i><span>Upcoming sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url "fcCompletedSession" %}">
+              <i class="bi bi-circle"></i><span>Completed sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'fcMissedSession' %}">
+              <i class="bi bi-circle"></i><span>Missed sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'fcCreateGroupSession' %}">
+              <i class="bi bi-circle"></i><span>Create Group Session</span>
+            </a>
+          </li>
+          <!--
+          <li>
+            <a href="book-group-session.html">
+              <i class="bi bi-circle"></i><span>Book Group Session</span>
+            </a>
+          </li>  -->
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#clients" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people-fill"></i><span>Clients</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="clients" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+          <li>
+            <a href="{% url 'fcAllClients' %}">
+              <i class="bi bi-circle"></i><span>All Clients</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'fcActiveClients' %}">
+              <i class="bi bi-circle"></i><span>Active Clients</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'fcUserOverview' %}">
+              <i class="bi bi-circle"></i><span>User Overview</span>
+            </a>
+          </li>
+
+        </ul>
+      </li>
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'fcWorkoutPlan' %}">
+          <i class=" ri-run-fill"></i>
+          <span>Workout Plan</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'fcClientsForRenewal' %}">
+          <i class="bi bi-person"></i>
+          <span>Renewal Clients</span>
+        </a>
+      </li>
+
+
+
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'fcProfile' %}">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li>
+
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+  <div class="nav-bar">
+    <a href="{% url 'fcDash' %}" class="nav-item">
+      <i class="ri-home-4-line"></i>
+      <p>Home</p>
+    </a>
+    <a href="{% url 'fcTodaySession' %}" class="nav-item">
+      <i class="bi bi-gem"></i>
+      <p>Today's Sessions</p>
+    </a>
+    <a href="{% url 'fcWorkoutPlan' %}" class="nav-item">
+      <i class="bi bi-gem"></i>
+      <p>Workout Plan</p>
+    </a>
+    <a href="{% url 'fcProfile' %}" class="nav-item">
+      <i class="ri-user-line"></i>
+      <p>Profile</p>
+    </a>
+  </div>

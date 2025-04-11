@@ -1,0 +1,241 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Audio Call with Nutritionist</h1>
+  </div><!-- End Page Title -->
+
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+
+          <div class="card">
+            <div class="card-body pt-3">
+              <!-- Bordered Tabs -->
+
+
+
+              <div class="col-md-12">
+                <div id='calendar' style="position: relative;"></div>
+
+                <div class="workout-name success" data-date="2024-08-03">
+                  <div class="appointment">
+                    <p><span>Topic: </span>Weight Loss</p>
+                    <p><span>Duration: </span>30 min</p>
+                    <a class="call-btn" data-bs-toggle="modal" data-bs-target="#viewModal">Audio Call</a>
+                  </div>
+                </div>
+
+                <div class="workout-name behind" data-date="2024-08-13">
+                  <div class="appointment">
+                    <p><span>Topic: </span>Diet Plan</p>
+                    <p><span>Duration: </span>15 min</p>
+                    <a class="call-btn" data-bs-toggle="modal" data-bs-target="#viewModal">Audio Call</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="viewModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Audio Call with Nutritionist</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+                      <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Diet Name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Diet Name :</span>
+                            </label>
+                            <input type="text" name="Diet Name" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="Adaptation Diet" disabled>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Nutritionist Name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Nutritionist Name :</span>
+                            </label>
+                            <input type="text" name="Nutritionist Name" placeholder="" required="required"
+                              autofocus="autofocus" class=" form-control" value="Akshada" disabled>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Date :</span>
+                            </label>
+                            <input type="text" name="Date" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="03/7/2024" disabled>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="time" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Time :</span>
+                            </label>
+                            <input type="text" name="time" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="4 pm" disabled>
+                          </div>
+                        </div>
+
+                      </form>
+                      <div class="row buttons mt-5">
+                        <center>
+                          <button type="submit" class="btn btn-theme">Proceed</button>
+                        </center>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+{% include "user-footer.html" %}
+<script>
+
+  $(document).ready(function () {
+    $('.play-button,.video-card').click(function () {
+      $('#videoModal').show();
+      $('#modalVideo').get(0).play();
+    });
+
+    $('#videoModal').click(function () {
+      $(this).hide();
+      $('#modalVideo').get(0).pause();
+    });
+
+    $('#view-workout-btn').on('click', function () {
+      $('[data-bs-target="#workout-plan"]').click();
+      $('.workout-videostab').show();
+      $('.workout-plantab').show();
+    });
+
+    const calendarEl = $('#calendar')[0];
+    let awaitingSecondClick = false;
+    const currentDate = new Date();
+    currentDate.setUTCHours(0, 0, 0, 0);
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth();
+    const currentDay = currentDate.getDate();
+    const defaultDate = new Date(currentYear, currentMonth, currentDay);
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: ['dayGrid', 'interaction'],
+      dateClick: () => {
+        if (!awaitingSecondClick) {
+          awaitingSecondClick = true;
+          setTimeout(() => awaitingSecondClick = false, 500);
+        }
+      },
+      headerToolbar: {
+        right: 'prevYear,prev,next,nextYear'
+      },
+      initialDate: defaultDate,
+      editable: true,
+      eventLimit: true,
+      events: []
+    });
+    calendar.render();
+
+    function positionDivs() {
+      $('.date, .workout-name').each(function () {
+        const dateDiv = $(this);
+        const dates = dateDiv.data('date').split(',');
+        let positioned = false;
+
+        dates.forEach(function (date) {
+          const calendarDateEl = $(`[data-date='${date.trim()}']`, calendarEl);
+          if (calendarDateEl.length) {
+            const calendarDateRect = calendarDateEl[0].getBoundingClientRect();
+            const calendarRect = calendarEl.getBoundingClientRect();
+            const clone = dateDiv.clone(true).appendTo(calendarEl).css({
+              position: 'absolute',
+              top: `${calendarDateRect.top - calendarRect.top}px`,
+              left: `${calendarDateRect.left - calendarRect.left}px`,
+              display: 'block'
+            });
+
+
+            positioned = true;
+          }
+        });
+
+        if (!positioned) {
+          dateDiv.css('display', 'none');
+        }
+      });
+    }
+
+    positionDivs();
+
+    $(window).on('resize', function () {
+      calendarEl.querySelectorAll('.date, .workout-name').forEach(div => div.remove());
+      positionDivs();
+    });
+
+
+
+    $("#view-workout-btn").click(function () {
+      $("#view-workout").show();
+    });
+    $(".workout-close-btn").click(function () {
+      $("#view-workout").hide();
+    });
+
+
+    $('.success').each(function () {
+      const dates = $(this).data('date').split(',');
+      dates.forEach(function (date) {
+        const calendarDateEl = $(`td[data-date='${date.trim()}']`, calendarEl);
+        if (calendarDateEl.length) {
+          calendarDateEl.addClass('hurrey-bg').css('position', 'relative');
+          setInterval(function () {
+            calendarDateEl.fadeOut(400).fadeIn(400);
+          }, 50);
+        }
+      });
+    });
+
+    $('.behind').each(function () {
+      const dates = $(this).data('date').split(',');
+      dates.forEach(function (date) {
+        const calendarDateEl = $(`td[data-date='${date.trim()}']`, calendarEl);
+        if (calendarDateEl.length) {
+          calendarDateEl.addClass('behind-bg').css('position', 'relative');
+          setInterval(function () {
+            calendarDateEl.fadeOut(400).fadeIn(400);
+          }, 50);
+        }
+      });
+    });
+  });
+</script>

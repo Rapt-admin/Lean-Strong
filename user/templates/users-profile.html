@@ -1,0 +1,445 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Profile</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-4">
+
+          <div class="card">
+            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+              <img src="{% static 'users/img/profile-img.jpg' %}" alt="Profile" class="rounded-circle">
+              <h2>Kevin Anderson</h2>
+              <h3></h3>
+              <div class="social-links mt-2 mb-3">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="snapchat"><i class="bi bi-snapchat"></i></a>
+                <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
+              </div>
+              <div class="badge bg-success user-badge">L&S Top Performer</div>
+              <div class="rating mb-3">
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star filled"></span>
+
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xl-8">
+
+          <div class="card">
+            <div class="card-body pt-3">
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" data-bs-toggle="tab"
+                    data-bs-target="#profile-overview">Overview</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change
+                    Password</button>
+                </li>
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#update-social-media">Social Media</button>
+                </li>
+              </ul>
+              <div class="tab-content pt-2">
+
+                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                  <h5 class="card-title">About</h5>
+                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque
+                    temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam
+                    autem
+                    eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
+
+                  <h5 class="card-title">Profile Details</h5>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                    <div class="col-lg-9 col-md-8">Kevin Anderson</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Company</div>
+                    <div class="col-lg-9 col-md-8">Lueilwitz, Wisoky and Leuschke</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Country</div>
+                    <div class="col-lg-9 col-md-8">USA</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Address</div>
+                    <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Phone</div>
+                    <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Email</div>
+                    <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
+                  </div>
+
+                </div>
+
+                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                  <!-- Profile Edit Form -->
+                  <form class="contact-form ">
+                    <div class="row mb-3">
+                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                      <div class="col-md-8 col-lg-9">
+                        <img src="{% static 'users/img/profile-img.jpg' %}" alt="Profile">
+                        <div class="pt-2">
+                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i
+                              class="bi bi-upload"></i></a>
+                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i
+                              class="bi bi-trash"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
+                      <div class="col-md-8 col-lg-9">
+                        <textarea name="about" class="form-control" id="about"
+                          style="height: 100px">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="company" type="text" class="form-control" id="company"
+                          value="Lueilwitz, Wisoky and Leuschke">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="job" type="text" class="form-control" id="Job" value="">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="country" type="text" class="form-control" id="Country" value="USA">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="address" type="text" class="form-control" id="Address"
+                          value="A108 Adam Street, New York, NY 535022">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
+                      </div>
+                    </div>
+
+
+                    <div class="text-center mb-5">
+                      <button type="submit" class="btn btn-theme">Save Changes</button>
+                    </div>
+                  </form><!-- End Profile Edit Form -->
+
+                </div>
+
+                <div class="tab-pane fade pt-3" id="profile-settings">
+
+                  <!-- Settings Form -->
+                  <form>
+
+                    <div class="row mb-3">
+                      <div class="col-md-8 col-lg-9">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="changesMade" checked>
+                          <label class="form-check-label" for="changesMade">
+                          Notification
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="newProducts" checked>
+                          <label class="form-check-label" for="newProducts">
+                            Email Notification
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="proOffers">
+                          <label class="form-check-label" for="proOffers">
+                            SMS
+                            </label>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="text-center mb-5">
+                      <button type="submit" class="btn btn-theme">Save Changes</button>
+                    </div>
+                  </form><!-- End settings Form -->
+
+                </div>
+
+                <div class="tab-pane fade pt-3" id="profile-change-password">
+                  <!-- Change Password Form -->
+                  <form class="contact-form ">
+
+                    <div class="row mb-3">
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="password" type="password" class="form-control" id="currentPassword">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New
+                        Password</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                      </div>
+                    </div>
+
+                    <div class="text-center mb-5">
+                      <button type="submit" class="btn btn-theme">Change Password</button>
+                    </div>
+                  </form><!-- End Change Password Form -->
+
+                </div>
+                <div class="tab-pane fade pt-3" id="update-social-media">
+                  <!-- update-social-media -->
+
+                 <button class="btn btn-theme add-social-btn" data-bs-toggle="modal" data-bs-target="#add-social-media" ><i class="ri-add-circle-line"></i> Add Social Media Account</button>
+
+
+                  <div class="modal fade" id="add-social-media" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Add Social Media Account</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body ">
+                        <form id="social-media-form">
+
+                          <div class="row mb-2">
+                            <label for="SocialMediaType" class="col-md-4 col-form-label bold">Social Media Type</label>
+                            <div class="col-md-8 ">
+                            <select name="SocialMediaType" class="form-control selectpicker" required="required" autofocus="autofocus" required>
+                                <option value="">Select</option>
+                                <option value="Twitter">Twitter</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Linkedin">Linkedin</option>
+                                <option value="Snapchat">Snapchat</option>
+                                <option value="Youtube">Youtube</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="row mb-2">
+                            <label for="Username" class="col-md-4 col-form-label bold">Username</label>
+                            <div class="col-md-8">
+                              <input name="Username" type="text" class="form-control" id="Username" required>
+                            </div>
+                          </div>
+
+                          <div class="row mb-2">
+                            <label for="URL" class="col-md-4 col-form-label bold">URL</label>
+                            <div class="col-md-8 ">
+                              <input name="URL" type="text" class="form-control" id="URL" required>
+                            </div>
+                          </div>
+
+                          <div class="text-center">
+                            <button type="submit" id="add-soacial-media" class="btn btn-theme">Submit</button>
+                          </div>
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" id="delete-alertModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Alert</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="text-center ">
+                            <p>Do you really want to proceed with deleting your social media account ?<p>
+
+                            <button type="submit" id="delete-social-btn" class="btn btn-theme">Submit</button>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                      <table id="social-table" class="table datatable">
+                        <thead>
+                          <tr>
+                            <th>Social Media Type</th>
+                            <th>Username</th>
+                            <th>URL</th>
+                            <th>Action </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Facebook</td>
+                            <td>Johndoe</td>
+                            <td>Facebook/Johndoe123</td>
+                            <td><a id="edit-social"><i class="ri-pencil-fill"></i></a>
+                              <a id="delete-social"><i class="ri-delete-bin-fill"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+
+
+
+
+
+                      </div>
+
+
+                    </div><!-- End Bordered Tabs -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "user-footer.html" %}
+  <script>
+$(document).ready(function () {
+    updateTableMessage();
+    // Dynamically Username
+    $('select[name="SocialMediaType"]').change(function () {
+        const selectedType = $(this).val();
+        $('label[for="Username"]').text(selectedType + ' Username');
+    });
+
+    // Edit entry
+    $(document).on('click', '#edit-social', function () {
+        const editingRow = $(this).closest('tr');  // Track the row being edited
+        const socialType = editingRow.find('td:nth-child(1)').text();
+        const username = editingRow.find('td:nth-child(2)').text();
+        const url = editingRow.find('td:nth-child(3)').text();
+
+        // Populate the form with the existing entry
+        $('select[name="SocialMediaType"]').val(socialType).prop('disabled', socialType === 'Facebook');
+        $('input[name="Username"]').val(username);
+        $('input[name="URL"]').val(url);
+        $('#add-social-media').modal('show');
+    });
+
+    // Show delete modal
+    $(document).on('click', '#delete-social', function () {
+        const deletingRow = $(this).closest('tr');  // Track the row to be deleted
+        $('#delete-alertModal').modal('show');
+        $('#delete-social-btn').off('click').on('click', function () {
+            deletingRow.remove(); // Remove the row from the table
+            $('#delete-alertModal').modal('hide'); // Hide the modal after deletion
+            updateTableMessage(); // Update the table message
+        });
+    });
+
+
+    function updateTableMessage() {
+        let isEmptyTable = true;
+
+        $('#social-table tbody tr').each(function () {
+            const socialType = $(this).find('td:nth-child(1)').text().trim();
+            const username = $(this).find('td:nth-child(2)').text().trim();
+            const url = $(this).find('td:nth-child(3)').text().trim();
+
+            if (socialType !== '' || username !== '' || url !== '') {
+                isEmptyTable = false;
+                return false; // Exit the loop
+            }
+        });
+
+        if (isEmptyTable) {
+            $('#social-table tbody').html('<tr><td colspan="4" class="text-center">No Records Found</td></tr>');
+        }
+    }
+    // add New social media Acc
+    $('[data-bs-target="#add-social-media"]').click(function () {
+        $('#social-media-form')[0].reset(); // Reset the form fields
+        $('select[name="SocialMediaType"]').prop('disabled', false); // Enable the dropdown
+    });
+
+});
+
+
+  </script>

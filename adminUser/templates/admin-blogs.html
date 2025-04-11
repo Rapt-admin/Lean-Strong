@@ -1,0 +1,261 @@
+{% load static %}
+
+	{% include "admin_header.html" %}
+	{% include "admin_sidebarmenu.html" %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Blogs</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-12">
+
+          <div class="card">
+            <div class="card-body tabs-header">
+
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title sp-card-title mb-0"></h5>
+                <div>
+                  <button class="btn btn-theme mt-3" id="tabs-sp-btn"><i class="ri-add-circle-line"></i> Add New
+                    Blog</button>
+                </div>
+              </div>
+
+
+
+
+
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" id="first-tab" data-bs-toggle="tab"
+                    data-bs-target="#view-measurements">Edit Blogs</button>
+                </li>
+
+                <li class="nav-item update-link" id="update-link">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#update-measurements">Add New Blog
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content pt-2">
+
+                <div class="tab-pane fade show active profile-overview" id="view-measurements">
+                  <div class="card-body">
+
+
+                    <div class="row mt-4">
+
+                      <table class="display pt-3" id="admin-blogs">
+                        <thead>
+                          <tr>
+                            <th>
+                              <b>Blog Image</b>
+                            </th>
+                            <th>Blog Date</th>
+                            <th>Blog Title</th>
+                            <th>Enter Blogs description</th>
+                            <th>Action </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>blog1.jpg</td>
+                            <td>31/12/2024</td>
+                            <td>The Power of Meal Prepping</td>
+                            <td>Learn how meal prepping can help you stay consistent with your nutrition goals and make
+                              healthy eating easier and more convenient</td>
+                            <td>
+                              <a data-bs-toggle="modal" data-bs-target="#editModal"><i data-bs-toggle="tooltip"
+                                  data-bs-placement="top" title="Edit" class="ri-pencil-fill"></i>
+                              </a>
+                              <a class="style-btn"><i class="ri-delete-bin-4-fill"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>blog2.jpg</td>
+                            <td>27/12/2024</td>
+                            <td>Healthy Diet and Fitness Routine</td>
+                            <td>Discover the top superfoods that can boost your energy levels, improve your overall
+                              health, and support your fitness goals</td>
+                            <td>
+                              <a data-bs-toggle="modal" data-bs-target="#editModal"><i data-bs-toggle="tooltip"
+                                  data-bs-placement="top" title="Edit" class="ri-pencil-fill"></i>
+                              </a>
+                              <a class="style-btn"><i class="ri-delete-bin-4-fill"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade profile-edit pt-3 container" id="update-measurements">
+                <div class="card-body mt-4">
+                  <form method="POST" novalidate="novalidate" class="contact-form mb-5">
+
+
+
+                    <div class="row mt-4">
+
+
+                      <div class="col-lg-6 col-6 px-14 ">
+                        <div class="form-group mb-lg-20">
+                          <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Upload Image for your Blog :</span>
+                          </label>
+
+                          <input type="file" class="file-upload">
+                        </div>
+
+                      </div>
+
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Blog Date :</span>
+                          </label>
+                          <input type="text" name="date" placeholder="Date" required="required" autofocus="autofocus"
+                            class=" form-control" value="">
+                        </div>
+
+                      </div>
+                      <div class="col-lg-12 col-12 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Blog Title :</span>
+                          </label>
+                          <input type="text" name="title" placeholder="Blog Title" required="required"
+                            autofocus="autofocus" class=" form-control" value="">
+                        </div>
+                      </div>
+
+                      <div class="row radio-checks">
+                        <div class="col-lg-12 col-12 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                              <span>Enter Blogs description :</span>
+                            </label>
+                            <textarea class="form-control" placeholder="Blogs description"></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                    <div class="row buttons mt-5">
+                      <center><button type="submit" class="btn btn-theme">Save Changes</button></center>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="editModal" tabindex="-1">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Edit Blog</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body ">
+
+                    <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+
+                      <div class="row mt-4">
+
+
+                        <div class="col-lg-12 col-12 px-14 ">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                              <span>Upload Image for your Blog :</span>
+                            </label>
+
+                            <input type="file" class="file-upload">
+                          </div>
+
+                        </div>
+
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                              <span>Blog Date :</span>
+                            </label>
+                            <input type="text" name="date" placeholder="Date" required="required" autofocus="autofocus"
+                              class=" form-control" value="27/06/2024">
+                          </div>
+
+                        </div>
+                        <div class="col-lg-12 col-12 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                              <span>Blog Title :</span>
+                            </label>
+                            <input type="text" name="title" placeholder="Blog Title" required="required"
+                              autofocus="autofocus" class=" form-control" value="Healthy Diet and Fitness Routine">
+                          </div>
+                        </div>
+
+                        <div class="row radio-checks">
+                          <div class="col-lg-12 col-12 px-14 mt-2">
+                            <div class="form-group mb-lg-20">
+                              <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                <span>Enter Blogs description :</span>
+                              </label>
+                              <textarea class="form-control" placeholder="Blogs description"
+                                value="">Discover the top superfoods that can boost your energy levels, improve your overall health, and support your fitness goals.</textarea>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+
+                      <div class="row buttons mt-5">
+                        <center><button type="submit" class="btn btn-theme">Save Changes</button></center>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- End Bordered Tabs -->
+
+        </div>
+      </div>
+
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+   {% include "admin_footer.html" %}
+
+   <script>
+
+
+    $(document).ready(function () {
+      $('#admin-blogs').DataTable();
+      $("#tabs-sp-btn").click(function () {
+        $("#update-link").toggle();
+        $("#update-link .nav-link").trigger("click");
+      });
+      $("#first-tab").click(function () {
+        $("#update-link").hide();
+
+      });
+    });
+
+  </script>

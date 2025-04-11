@@ -1,0 +1,287 @@
+{% include "header.html" %}
+
+	<section class="ftco-section contact-section bg-pink login-pages hero-wrap">
+
+		<div class="container">
+			<div class="form-v7-content">
+				<div class="form-left">
+
+				</div>
+
+				<form class="form-detail" action="{% url 'signin'  %}" method="post" id="myform">
+					{% csrf_token %}
+					 <h1 class="login-header mb-5">Sign In</h1>
+
+					 <div class="form-row">
+						 <input type="text" name="email" id="your_email" class="input-text" placeholder="Enter Your Email"
+							 required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					 </div>
+					 <div class="form-row">
+						 <input type="password" name="password" id="password" class="input-text"
+							 placeholder="Enter Your Password" required>
+					 </div>
+					 <div class="form-row-last">
+						 {% comment %} <a href=""  class="btn btn-primary d-block px-1 py-2 sign-in" >Sign In</a> {% endcomment %}
+						 <button type="submit" name="submit" id="submit" class="btn btn-primary w-100"  btn-lg btn-block">Sign In</button>
+						 <p class="f-pass"><a href="forgot-password.html">Forgot Password</a></p>
+						 <p>or login with</p>
+
+						 <ul class="ftco-footer-social list-unstyled float-center login-social">
+							 <li class="ftco-animate fadeInUp ftco-animated"><a href="{% url 'google-login' %}" class="google-bg"><span
+										 class="icon-google"></span></a>
+							 </li>
+							 <li class="ftco-animate fadeInUp ftco-animated"><a href="{% url 'facebook-login' %}" class="fb"><span
+										 class="icon-facebook"></span></a>
+							 </li>
+
+
+						 </ul>
+
+						 <p>Don't have an account?<span><a href="signup.html">Sign Up</a></span> </p>
+					 </div>
+				 </form>
+
+			</div>
+
+
+			<div class="modal fade" id="yourGoal" tabindex="-1" style="display: none;">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title"></h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body ">
+							<h2>What is your goal?</h2>
+							<form method="POST" novalidate="novalidate" class="contact-form row">
+
+								<div class="signin-popup-form ">
+
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="flexRadioDefault" id="loss"
+											checked>
+										<label class="form-check-label" for="loss">
+											WEIGHT LOSS
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="flexRadioDefault" id="gain">
+										<label class="form-check-label" for="gain">
+											WEIGHT GAIN
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="improve">
+										<label class="form-check-label" for="improve">
+											IMPROVE MEDICAL CONDITION
+										</label>
+									</div>
+
+								</div>
+								<div class="form-group mt-3">
+									<center>
+										<a href="#" data-bs-toggle="modal" data-bs-target="#fitnessForm">
+											<input type="submit" value="Next" class="btn btn-primary py-2 px-4">
+										</a>
+									</center>
+								</div>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="fitnessForm" tabindex="-1" style="display: none;">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title"></h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body ">
+							<div class="container">
+								<center class="pt-1 pb-1">
+									<h3>Fill out the fitness form</h3>
+								</center>
+								<div>
+
+									<div class="col-12 fillout" width="600px">
+										<form method="POST" novalidate="novalidate" class="contact-form p-3">
+											<input type="hidden" name="_token" value="">
+											<input type="hidden" name="is_calculate" value="true">
+											<input type="hidden" name="last_insert_id" id="lastInsertId">
+											<div class="row radio-checks">
+												<div class="col-lg-6 col-sm-6 col-6 px-14 mt-2">
+													<label for="gender"
+														class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+														<span>Gender</span>
+													</label>
+													<div class="form-control mb-lg-20">
+														<label for="male" class="mb-0 d-flex align-items-center">
+															<input id="male" class="mr-3" type="radio" name="gender"
+																value="male" checked="">
+															<img src="images/male-icon.png" class="img-fluid mr-2"
+																alt="">
+															Male
+														</label>
+													</div>
+												</div>
+												<div class="col-lg-6 col-sm-6 col-6 px-14 mt-2">
+													<label class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+														<span><br></span>
+													</label>
+													<div class="form-control mb-lg-20">
+														<label for="female" class="mb-0 d-flex align-items-center">
+															<input id="female" class="mr-3" type="radio" name="gender"
+																value="female">
+															<img src="images/female-icon.png" class="img-fluid mr-2"
+																alt="">
+															Female
+														</label>
+													</div>
+												</div>
+												<div class="col-lg-6 col-sm-12 col-6 px-14 mt-2">
+													<div class="form-group mb-lg-20">
+														<label for="age"
+															class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+															<span>Age</span>
+														</label>
+														<input type="number" name="age" id="age" placeholder="Years"
+															required="required" autofocus="autofocus"
+															class="form-control" max="100" min="1" value="">
+													</div>
+												</div>
+												<div class="col-lg-6 col-sm-12 col-6 px-14 mt-2">
+													<div class="form-group mb-lg-20">
+														<label for="weight"
+															class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+															<span>Weight</span>
+														</label>
+														<input type="number" name="weight" id="weight" placeholder="Kg"
+															required="required" autofocus="autofocus"
+															class="form-control" min="3" max="150" value="">
+													</div>
+												</div>
+											</div>
+
+											<div class="row radio-checks">
+
+
+												<div class="col-lg-3 col-sm-6 col-6 px-14 mt-2">
+													<div class="form-group mb-lg-20">
+														<label for="feet"
+															class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+															<span>Height</span>
+														</label>
+														<input type="number" name="feet" id="feet" placeholder="Feet"
+															required="required" autofocus="autofocus"
+															class="form-control" max="8" min="1" value="">
+													</div>
+												</div>
+												<div class="col-lg-3 col-sm-6 col-6 px-14 mt-2">
+													<div class="form-group mb-lg-20">
+														<label class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+															<span><br></span>
+														</label>
+														<input type="number" name="inch" id="inch" placeholder="Inch"
+															required="required" autofocus="autofocus"
+															class="form-control mt-0" max="11" min="0" value="">
+													</div>
+												</div>
+
+												<div class="col-lg-6 col-sm-12  col-6 px-14 mt-2">
+													<div class="form-group mb-lg-20">
+														<label for="feet"
+															class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+															<span>Goal Weight</span>
+														</label>
+														<input type="number" name="kg" id="goalwt" placeholder="kg"
+															required="required" autofocus="autofocus"
+															class="form-control" max="400" min="1" value="">
+														<div id="validationMessage" style="color: red; display: none;">
+															Please
+															enter
+															Ideal Body weight</div>
+													</div>
+												</div>
+
+												<div class="col-lg-6 col-sm-6 col-6 px-14 mt-2">
+													<label for="Medicalcondition"
+														class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+														<span>Medical condition</span>
+													</label>
+													<div class="form-control mb-lg-20">
+														<label for="yes" class="mb-0 d-flex align-items-center">
+															<input id="yes" class="mr-3" type="radio" name="Medical"
+																value="yes">
+															Yes
+														</label>
+													</div>
+												</div>
+												<div class="col-lg-6 col-sm-6 col-6 px-14 mt-2">
+													<label class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+														<span><br></span>
+													</label>
+													<div class="form-control mb-lg-20">
+														<label for="no" class="mb-0 d-flex align-items-center">
+															<input id="no" class="mr-3" type="radio" name="Medical"
+																value="no">
+															No
+														</label>
+													</div>
+												</div>
+
+												<div class="col-lg-12 col-12 px-14 mt-2" id="medical-issues"
+													style="display: none;">
+													<select id="medical-issues-dropdown" class="form-control">
+														<option value="PCOS">PCOS</option>
+														<option value="Thyroid">Thyroid</option>
+														<option value="Cholesterol">Cholesterol</option>
+														<option value="Type 2 Diabetes">Type 2 Diabetes</option>
+														<option value="Hypertension ">Hypertension </option>
+														<option value="Asthma ">Asthma </option>
+														<option value="Osteoporosis ">Osteoporosis </option>
+														<option value="Migraines">Migraines </option>
+														<option value="Arthritis ">Arthritis </option>
+														<option value="Anxiety ">Anxiety </option>
+														<option value="Acid Reflux (GERD)">Acid Reflux (GERD)</option>
+														<option value="Insomnia">Insomnia</option>
+														<option value="Allergies">Allergies</option>
+
+													</select>
+												</div>
+
+
+											</div>
+											<div class="form-group">
+												<center>
+													<a href="index.html" class="btn btn-primary py-2 px-5 mt-4">Next</a>
+												</center>
+											</div>
+										</form>
+									</div>
+
+
+
+
+
+								</div>
+							</div>
+							<!-- <div class="row buttons mt-5">
+						<center>
+
+						  <button type="submit" class="btn btn-theme">Submit</button>
+						</center>
+					  </div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+
+{% include "footer.html" %}

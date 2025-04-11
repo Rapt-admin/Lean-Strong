@@ -1,0 +1,175 @@
+{% include "header.html" %}
+
+  <section class="hero-wrap js-fullheight whr-bg">
+    <div class="container">
+      <div class="row no-gutters slider-text  align-items-center justify-content-center" style="padding-top: 130px;">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-3 bread">WHR Calculator</h1>
+        </div>
+      </div>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> >
+        <a href="">Educate</a> >
+        <span>WHR Calculator</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="ftco-section">
+
+    <div class="container row" style="margin: 0 auto;">
+
+      <div class="col-lg-6">
+        <div>
+
+          <h5>What is WHR?</h5>
+
+          <img src="images/whr.png" class="tdee-img">
+          <p>The waist-to-hip ratio is a measurement that compares the circumference of the waist to that of the hips.
+            It is often used as an indicator of overall health and body composition. A higher waist-to-hip ratio is
+            associated with increased risk of chronic diseases such as heart disease, diabetes, and stroke. This is
+            because excess fat around the waist, known as visceral fat, can be more harmful to health than fat stored in
+            other areas of the body. </p>
+
+
+
+
+        </div>
+      </div>
+
+
+
+      <div class="col-lg-6">
+        <form method="POST" id="whrForm" novalidate="novalidate" class="contact-form mb-5">
+          <div class="row justify-content-center">
+            <div class="col-md-7 heading-section ftco-animate text-center">
+              <h2 class="mb-1">WHR Calculator</h2>
+            </div>
+
+          </div>
+          <input type="hidden" name="_token" value=""> <input type="hidden" name="is_calculate" value="true">
+          <input type="hidden" name="last_insert_id" id="lastInsertId">
+
+          <div class="row radio-checks">
+
+            <div class="col-lg-6 col-6 px-14 mt-2">
+              <label for="gender" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                <span>Gender</span>
+              </label>
+              <div class="form-control mb-lg-20">
+                <label for="male" class="mb-0 d-flex align-items-center">
+                  <input id="male" class="mr-3" type="radio" name="gender" value="male" checked=""> <img
+                    src="images/male-icon.png" class="img-fluid mr-2" alt="">
+                  Male
+                </label>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-6 px-14 mt-2">
+              <label class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                <span><br></span>
+              </label>
+              <div class="form-control mb-lg-20">
+                <label for="female" class="mb-0 d-flex align-items-center">
+                  <input id="female" class="mr-3" type="radio" name="gender" value="female">
+                  <img src="images/female-icon.png" class="img-fluid mr-2" alt="">
+                  Female
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row radio-checks">
+
+            <div class="col-lg-6 col-6 px-14 mt-2">
+              <div class="form-group mb-lg-20">
+                <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                  <span>Waist measurement:(cm)</span>
+                </label>
+                <input type="number" name="weight" id="weight" placeholder="cm" required="required"
+                  autofocus="autofocus" class=" form-control" min="0" value="">
+              </div>
+
+            </div>
+
+            <div class="col-lg-6 col-6 px-14 mt-2">
+              <div class="form-group mb-lg-20">
+                <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                  <span>Hip measurement:</span>
+                </label>
+                <input type="number" name="feet" id="feet" placeholder="cm" required="required" autofocus="autofocus"
+                  class=" form-control" max="8" min="1" value="">
+              </div>
+            </div>
+            <p style="font-size: 14px; font-weight: 300; padding:0 20px;"> Measure your waist at the narrowest point and
+              your hips at
+              the widest point.</p>
+          </div>
+
+          <div class="row buttons mt-lg-2 mt-3 mb-lg-35">
+            <div class="col-lg-6 col-6 px-14 mt-2">
+              <a href="#" class="btn btn-primary d-block px-1 py-2 resetWHR">Reset</a>
+            </div>
+            <div class="col-lg-6 col-6 px-14 mt-2">
+              <a href="#" class="btn btn-primary d-block px-1 py-2 calculateWHR">Calculate</a>
+            </div>
+          </div>
+          <center>
+            <h3 id="whrResult" class="result  mt-5"></h3>
+          </center>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+     $(document).ready(function () {
+
+       $('ul.tabs li').click(function () {
+         var tab_id = $(this).attr('data-tab');
+
+         $('ul.tabs li').removeClass('current');
+         $('.tab-content').removeClass('current');
+
+         $(this).addClass('current');
+         $("#" + tab_id).addClass('current');
+       })
+
+
+
+
+
+       $(document).ready(function () {
+         $(".calculateWHR").click(function () {
+           var waist = parseFloat($("#weight").val());
+           var hip = parseFloat($("#feet").val());
+
+           if (!isNaN(waist) && !isNaN(hip) && waist > 0 && hip > 0) {
+             var whr = waist / hip;
+             $("h3#whrResult").text("Your Waist-to-Hip Ratio is: " + whr.toFixed(2));
+           } else {
+             $("h3#whrResult").text("Please enter valid waist and hip measurements.");
+           }
+         });
+
+         $(".resetWHR").click(function () {
+           $('#weight').val('');
+           $('#feet').val('');
+           $("h3#whrResult").text("");
+         });
+
+
+       });
+
+
+
+
+
+
+     })
+
+  </script>
+
+
+{% include "footer.html" %}

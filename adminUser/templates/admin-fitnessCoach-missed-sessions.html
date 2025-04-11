@@ -1,0 +1,231 @@
+{% load static %}
+
+	{% include "admin_header.html" %}
+	{% include "admin_sidebarmenu.html" %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Missed Sessions</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5 class="card-title sp-card-title"></h5>
+                </div>
+
+                <div id="reportrange" class="date-range-style">
+                  <i class="ri-calendar-2-line"></i>&nbsp;
+                  <span></span> <i class="fa fa-caret-down"></i>
+                </div>
+              </div>
+
+
+              <table class="display pt-3" id="admin-fitnessCoach-missed-sessions">
+                <thead>
+                  <tr>
+                    <th>
+                      <b>User Name</b>
+                    </th>
+                    <th>Session Subject</th>
+                    <th>Subscription Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th width="300">Reason</th>
+                    <th>Action </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="sp-link">
+                      <a href="user-overview.html">
+                        John Doe
+                      </a>
+                    </td>
+                    <td>Weight Gain</td>
+                    <td>L&S Ultimate</td>
+                    <td>21 june 2024</td>
+                    <td>5 pm</td>
+                    <td>Unexpectedly called in to work on a last-minute project that required my immediate attention.
+                    </td>
+                    <td>
+                      <a data-bs-toggle="modal" data-bs-target="#viewModal"><i data-bs-toggle="tooltip"
+                          data-bs-placement="top" title="View" class="ri-eye-fill"></i>
+                      </a>
+                      <a data-bs-toggle="modal" data-bs-target="#rescheduleModal"><i data-bs-toggle="tooltip"
+                          data-bs-placement="top" title="Reschedule" class="ri-refresh-fill"></i>
+                      </a>
+
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="modal fade" id="viewModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Missed Sessions</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+                      <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="User Name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>User Name :</span>
+                            </label>
+                            <input type="text" name="User Name" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="John123" disabled>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Session" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Session Subject :</span>
+                            </label>
+                            <input type="text" name="Session" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="Weight Loss" disabled>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Subscription" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Subscription Name :</span>
+                            </label>
+                            <input type="text" name="Subscription" placeholder="" required="required"
+                              autofocus="autofocus" class=" form-control" value="L&S ultimate" disabled>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Email" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Date :</span>
+                            </label>
+                            <input type="text" name="Email" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="21 june 2024" disabled>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Time" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Time :</span>
+                            </label>
+                            <input type="text" name="Time" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="5 pm" disabled>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Reason" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Reason :</span>
+                            </label>
+                            <textarea class="form-control" placeholder="Reason" value=""
+                              disabled>Unexpectedly called in to work on a last-minute project that required my immediate attention.</textarea>
+
+                          </div>
+                        </div>
+                      </form>
+                      <!-- <div class="row buttons mt-5">
+                        <center>
+
+                          <button type="submit" class="btn btn-theme">Submit</button>
+                        </center>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="rescheduleModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Reschedule Sessions</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+                      <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="User Name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>User Name :</span>
+                            </label>
+                            <input type="text" name="User Name" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="John123">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Session" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Session Subject :</span>
+                            </label>
+                            <input type="text" name="Session" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="Weight Loss">
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Email" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Date :</span>
+                            </label>
+                            <input type="text" name="Email" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="21 june 2024">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Time" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Time :</span>
+                            </label>
+                            <input type="text" name="Time" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="5 pm">
+                          </div>
+                        </div>
+                    </div>
+                    </form>
+                    <div class="row buttons mb-4">
+                      <center>
+
+                        <button type="submit" class="btn btn-theme">Submit</button>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "admin_footer.html" %}
+
+   <script>
+
+
+    $(document).ready(function () {
+      $('#admin-fitnessCoach-missed-sessions').DataTable();
+      $(".viewmodal-btn").click(function () {
+        $("#view-modal").show();
+      });
+      $(".modal-close-btn").click(function () {
+        $("#view-modal").hide();
+      });
+
+    });
+  </script>

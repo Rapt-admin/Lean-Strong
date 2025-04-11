@@ -1,0 +1,116 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Campaigns</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title sp-card-title text-center mb-0">
+                "Whole Foods Challenge"</h5>
+              <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-md-12 ">
+                  <div class="cr-card" id="campaigns">
+                    <div class="cr-card-content bg-white row" style="margin: 0px;padding-left: 15px;
+                    ">
+
+                      <div class="col-lg-3">
+                        <img src="{% static 'users/img/campaign-1.jpg' %}" class="campaign-img">
+                        <ul class="social-list">
+                          <li><a href="#"><img src="{% static 'users/img/fb.png' %}"></a></li>
+                          <li><a href="#"><img src="{% static 'users/img/insta.png' %}"></a></li>
+                        </ul>
+                      </div>
+                      <div class="col-lg-9">
+                        <p class="campaign-ht">
+                          The "Whole Foods Challenge" is an innovative campaign designed to encourage individuals to
+                          improve their diet by consuming only whole, unprocessed foods for a set period. The challenge
+                          promotes a holistic approach to nutrition, emphasizing the consumption of fruits, vegetables,
+                          whole grains, lean proteins, and healthy fats while eliminating processed and artificial
+                          ingredients. By focusing on the quality of food intake, the campaign aims to help participants
+                          develop healthier eating habits that can lead to long-term wellness and vitality.
+                        </p>
+                        <div class="d-flex justify-content-between">
+                          <p><b>Start Date :</b> 23 june 2024</p>
+                          <p><b>Till Date :</b> 23 june 2024</p>
+                        </div>
+                      </div>
+                      <div><a href=""><button class="btn btn-theme float-end">Participate</button></a></div>
+
+
+
+                    </div>
+
+
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title sp-card-title text-center mb-0">
+                "Hydration Challenge"</h5>
+              <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-md-12">
+                  <div class="cr-card" id="campaigns">
+                    <div class="cr-card-content bg-white row" style="margin: 0px;padding-left: 15px;
+                    ">
+
+                      <div class="col-lg-3">
+                        <img src="{% static 'users/img/campaign-2.jpg' %}" class="campaign-img">
+                        <ul class="social-list">
+                          <li><a href="#"><img src="{% static 'users/img/fb.png' %}"></a></li>
+                          <li><a href="#"><img src="{% static 'users/img/insta.png' %}"></a></li>
+                        </ul>
+
+                      </div>
+                      <div class="col-lg-9 ">
+                        <p class="campaign-ht">
+                          The "Hydration Challenge" is an engaging and impactful campaign designed to encourage
+                          individuals to increase their water intake and prioritize proper hydration. This challenge
+                          typically involves participants committing to a daily water consumption goal for a specific
+                          period, such as 30 days.The campaign aims to raise awareness about the importance of staying
+                          hydrated for overall health and well-being.
+                        </p>
+                        <div class="d-flex justify-content-between">
+                          <p><b>Start Date :</b> 23 june 2024</p>
+                          <p><b>Till Date :</b> 23 june 2024</p>
+                        </div>
+                      </div>
+
+                      <div><a href=""><button class="btn btn-theme float-end">Participate</button></a></div>
+
+                    </div>
+
+
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "user-footer.html" %}

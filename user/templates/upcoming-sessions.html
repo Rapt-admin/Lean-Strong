@@ -1,0 +1,103 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Upcoming Sessions</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-xxl-12 col-xl-12 col-md-12">
+              <div class="cr-card" id="campaigns">
+                <div class="cr-card-header card-head-br">
+                  <h4 class="cr-card-title">Upcoming Sessions</h4>
+
+                </div>
+                <div class="cr-card-content bg-white row" style="margin: 0px;">
+
+                  <div class="gallery">
+
+
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-1.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Diet</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-2.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Lifestyle</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-1.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Diet</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-2.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Lifestyle</p>
+                    </div>
+
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-1.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Diet</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-2.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Lifestyle</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-1.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Diet</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-2.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Lifestyle</p>
+                    </div>
+                  </div>
+
+                  <div id="videoModal" class="modal">
+                    <div class="modal-content">
+                      <video controls id="modalVideo">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "user-footer.html" %}

@@ -1,0 +1,152 @@
+{% load static %}
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'adminUserDash' %}">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'allUsers' %}">
+        <i class="bi bi-person"></i>
+        <span>All Users</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-gem"></i><span>Main Site</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="icons-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'manageCampaigns' %}">
+            <i class="bi bi-circle"></i><span>Campaign</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'manageBlogs' %}">
+            <i class="bi bi-circle"></i><span>Blogs</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'manageCompanyContatcInfo' %}">
+            <i class="bi bi-circle"></i><span>Contact Info</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'manageFaq' %}">
+            <i class="bi bi-circle"></i><span>FAQ's</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'manageSubscriptionPlans' %}">
+            <i class="bi bi-circle"></i><span>Subscription Plans</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#edit-fitness" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-gem"></i><span>Clients Site</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="edit-fitness" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+        <li>
+          <a href="{% url 'manageUsersForRenewal' %}">
+            <i class="bi bi-circle"></i><span>Users For Renewal</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#edit-dietician" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-gem"></i><span>Dietician Site</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="edit-dietician" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+        <li>
+          <a href="{% url 'manageDietitianActiveSession' %}">
+            <i class="bi bi-circle"></i><span>Active Sessions</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'manageDietitianInactiveSession' %}">
+            <i class="bi bi-circle"></i><span>Inactive Sessions</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'manageDietitianMissedSession' %}">
+            <i class="bi bi-circle"></i><span>Missed Sessions</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#edit-fitness" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-gem"></i><span>Fitness Coach Site</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="edit-fitness" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+        <li>
+          <a href="{% url 'manageFitnessCoachActiveSession' %}">
+            <i class="bi bi-circle"></i><span>Active Sessions</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'manageFitnessCoachInactiveSession' %}">
+            <i class="bi bi-circle"></i><span>Inactive Sessions</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'manageFitnessCoachMissedSession' %}">
+            <i class="bi bi-circle"></i><span>Missed Sessions</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'manageEnquiries' %}">
+        <i class="bi bi-chat-dots"></i>
+        <span>Enquiries</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'manageAdminUserProfile' %}">
+        <i class="bi bi-person"></i>
+        <span>Profile</span>
+      </a>
+    </li>
+
+
+
+  </ul>
+
+</aside><!-- End Sidebar-->
+<div class="nav-bar">
+  <a href="{% url 'adminUserDash' %}" class="nav-item">
+    <i class="ri-home-4-line"></i>
+    <p>Home</p>
+  </a>
+  <a href="{% url 'adminUserDash' %}" class="nav-item">
+    <i class="bi bi-gem"></i>
+    <p>allUsers</p>
+  </a>
+  <a href="{% url 'manageEnquiries' %}" class="nav-item">
+    <i class="bi bi-gem"></i>
+    <p>Enquiries</p>
+  </a>
+  <a href="{% url 'manageAdminUserProfile' %}" class="nav-item">
+    <i class="ri-user-line"></i>
+    <p>Profile</p>
+  </a>
+</div>

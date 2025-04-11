@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diet Plan</title>
+    <style>
+        body { font-family: DejaVu Sans, sans-serif; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>Diet Plan</h1>
+    <p>Diet Name: {{ userDietPlan.Diet_name }}</p>
+    <p>Suggested By: {{ userDietPlan.Diet_suggested_by }}</p>
+    <p>Start Date: {{ userDietPlan.Diet_start_date }}</p>
+    <p>End Date: {{ userDietPlan.Diet_end_date }}</p>
+    <p>Status: {{ userDietPlan.status }}</p>
+</body>
+</html>

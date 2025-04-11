@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+	<title>Lean & Strong</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+	<link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}" >
+
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" >
+
+	<link rel="stylesheet" href="{% static 'css/aos.css' %}" >
+
+	<link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}" >
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}" >
+
+
+	<link rel="stylesheet" href="{% static 'css/flaticon.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}" >
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+		integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+		integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="{% url "index" %}"><img src="{% static 'images/logo6.png' %}"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="{% url "index" %}" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="{% url "about" %}" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="{% url "plan&pricing" %}" class="nav-link">Plan & Pricing</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
+							Educate
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+							<a class="dropdown-item" href="{% url "recipes" %}">Recipes</a>
+							<a class="dropdown-item" href="{% url "bmr" %}">BMR & TDEE Calculator</a>
+							<a class="dropdown-item" href="{% url "whr" %}">WHR (Waist to Hip Ratio)</a>
+						</div>
+					</li>
+					<li class="nav-item"><a href="{% url "campaigns" %}" class="nav-link">Campaigns</a></li>
+					<li class="nav-item"><a href="{% url "blogs" %}" class="nav-link">Blogs</a></li>
+
+					<li class="nav-item"><a href="{% url "contact" %}" class="nav-link">Contact</a></li>
+
+
+				</ul>
+
+				<div class="mob-res d-flex">
+					{%if request.session.user_data %}
+						<ul class="user-login-drop">
+							<li class="nav-item dropdown">
+
+								<a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
+									data-bs-toggle="dropdown">
+									<img src="{% static 'images/profile-img.jpg' %}" alt="Profile" class="rounded-circle">
+									<span class=" d-md-block dropdown-toggle pl-2">{{ request.session.user_data.firstname }} {{ request.session.user_data.lastname }}</span>
+
+								</a>
+								<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+									<li>
+										<a class="dropdown-item d-flex align-items-center" href="{% url "dashboard" %}">
+											<i class="bi bi-person"></i>
+											<span>Dashboard</span>
+										</a>
+									</li>
+									<li>
+										<hr class="dropdown-divider">
+									</li>
+									<li>
+										<a class="dropdown-item d-flex align-items-center" href="{% url "logout" %}">
+											<i class="bi bi-box-arrow-right"></i>
+											<span>Sign Out</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul> 
+					{%else%}
+						<ul class="navbar-nav ml-auto login-btns pr-3">
+							<li class="nav-item"><a href="{% url "signin" %}" class="nav-link">Sign In</a></li>
+							<li class="nav-item divider"><a href="" class="nav-link">|</a></li>
+							<li class="nav-item"><a href="{% url "signup" %} " class="nav-link">Sign Up</a></li>
+						</ul>
+					{%endif%}
+					
+					<div class="cart">
+						<a href="{% url "cart" %} ">
+							<i class="ri-shopping-cart-2-fill"></i>
+							<span class="counter">0</span>
+						</a>
+					</div>
+				</div>
+				</ul>
+			</div>
+
+
+		</div>
+	</nav>
+	<!-- END nav -->

@@ -1,0 +1,171 @@
+{% include "header.html" %}
+
+  <section class="hero-wrap js-fullheight bread-bg">
+    <div class="container">
+      <div class="row no-gutters slider-text  align-items-center justify-content-center" style="padding-top: 130px;">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-3 bread">Cart</h1>
+        </div>
+      </div>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> >
+        <span>Cart</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="ftco-section contact-section">
+    <div class="container">
+      <div class="row block-9" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
+        <div class="col-md-8 ftco-animate p-5" style="background: #ffffff;
+        border: 1px solid whitesmoke;">
+          <div class="col-md-12 mb-4 cart-head" style="    background: #fafafa;
+          padding-top: 12px;
+
+      ">
+            <h2 class="h4">Shooping Cart</h2>
+            <p>( 1 Items )</p>
+          </div>
+          <div class="col-md-12 mb-4 cart-head">
+            <table class="cart-table">
+              <tr>
+                <th class="column-1">ITEM Details</th>
+                <th class="column-2">Quantity</th>
+                <th class="column-3">Price</th>
+                <th class="column-4">Total</th>
+              </tr>
+              <tr class="mt-4">
+                <td class="column-1">
+                  <div class="cart-item">
+                    <div><img src="images/elite.jpg" /></div>
+                    <div class="p-3">
+                      <h6>Elite Subscription</h6>
+                      <p>for 3 months</p>
+                    </div>
+
+                  </div>
+
+                </td>
+
+                <td class="column-2"> <span class="input-number-decrement">–</span><input class="input-number"
+                    type="text" value="1" min="0" max="10"><span class="input-number-increment">+</span></td>
+
+                <td class="column-3">Rs. 3500</td>
+                <td class="column-4">Rs. 3500</td>
+              </tr>
+
+            </table>
+          </div>
+
+          <div class="col-md-12 mb-3">
+            <a href="plan&pricing.html" class="btn btn-primary d-block" style="width: 200px;margin-top: 255px;"><i
+                class="ri-arrow-left-line"></i> Continue Shopping</a>
+          </div>
+
+
+
+
+
+        </div>
+
+        <div class="col-md-4 contact-info ftco-animate bg-light p-4" style="
+        border: 1px solid whitesmoke;">
+          <div class="row">
+            <div class="col-md-12 mb-4" style="padding-top: 35px;">
+              <h2 class="h4">Order Summary</h2>
+            </div>
+            <div class="col-md-12 mb-4 summary-head">
+              <p><span>Shooping Cart:</span></p>
+              <p><span>Rs: </span>3500/-</p>
+            </div>
+            <div class="col-md-12 mb-3">
+              <p><span>PROMO Code</span></p>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Eneter PROMO Code">
+              </div>
+            </div>
+            <div class="col-md-12 mb-3">
+              <p><span>Shipping</span></p>
+              <div class="form-group">
+                <select id="dropdown" name="dropdown" class="form-control">
+                  <option value="option1">Standard Delivery - Rs. 40</option>
+                  <option value="option1">Express Delivery - Rs. 100</option>
+
+                </select>
+              </div>
+            </div>
+            <div class="col-md-12 mb-3">
+              <a href="#" class="btn btn-primary d-block " style="width: 150px;">APPLY</a>
+            </div>
+
+            <hr class="hr">
+            <div class="col-md-12 mb-4 summary-head">
+              <p><span>TOTAL COST</span></p>
+              <p><span>Rs: </span>3500/-</p>
+            </div>
+            <div class="col-md-12 mb-3">
+              <center><a href="#" class="btn btn-primary d-block " style="width: 150px; ">CHECKOUT</a></center>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+{% include "footer.html" %}
+
+ <script>
+    (function () {
+
+      window.inputNumber = function (el) {
+
+        var min = el.attr('min') || false;
+        var max = el.attr('max') || false;
+
+        var els = {};
+
+        els.dec = el.prev();
+        els.inc = el.next();
+
+        el.each(function () {
+          init($(this));
+        });
+
+        function init(el) {
+
+          els.dec.on('click', decrement);
+          els.inc.on('click', increment);
+
+          function decrement() {
+            var value = el[0].value;
+            value--;
+            if (!min || value >= min) {
+              el[0].value = value;
+            }
+          }
+
+          function increment() {
+            var value = el[0].value;
+            value++;
+            if (!max || value <= max) {
+              el[0].value = value++;
+            }
+          }
+        }
+      }
+    })();
+
+    inputNumber($('.input-number'));
+
+
+
+
+
+  </script>

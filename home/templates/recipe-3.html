@@ -1,0 +1,86 @@
+{% include "header.html" %}
+
+{%load static%}
+
+	<section class="hero-wrap js-fullheight bread-bg">
+
+		<div class="container">
+			<div class="row no-gutters slider-text  align-items-center justify-content-center"
+				style="padding-top: 130px;">
+				<div class="col-md-9 ftco-animate text-center">
+					<h1 class="mb-3 bread">Recipes Details</h1>
+
+				</div>
+			</div>
+			<div class="breadcrumb">
+				<a href="{% url "index" %}">Home</a> >
+				<a href="">Educate</a> >
+				<a href="{% url "recipes" %}">Recipes</a> >
+				<span>Recipe Details</span>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="ftco-section ftco-intro ">
+		<div class=" container">
+			<div class="row justify-content-center mb-5">
+				<div class="col-md-7 heading-section ftco-animate text-center">
+					<h2 class="mb-1">5 Ingredient Tomato Soup</h2>
+				</div>
+
+			</div>
+			<div class="row justify-content-end">
+				<div class="col-md-6">
+
+					<img src="{% static "images/recipe-3.jpg" %}" width="500px" style="border-radius: 10px;">
+				</div>
+				<div class="col-md-6">
+					<p class="ftco-animate">"Outstanding! Followed exactly, just a little less salt, came out so
+						beautifully. It’s so easy and delightful to cook, made the whole house smell good and I barely
+						did any chopping. My husband and I devoured a bowl with some garlic toast. I almost halved the
+						recipe but decided against it, so glad I have leftovers now!"
+					</p>
+					<h4>How To Make This Easy Peasy Tomato Soup</h4>
+					<ul class="do-list">
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>canned
+								Canned San Marzano tomatoes, </a></li>
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>onion
+								chunks,</a>
+						</li>
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>and
+								butter! THAT’S IT!
+							</a></li>
+
+
+
+
+					</ul>
+
+
+				</div>
+			</div>
+			<div class="mt-5">
+
+				<p class="ftco-animate">
+
+					I made the Marcella Hazan style pasta sauce for a pasta recipe, but when we were all sampling it in
+					the office, Jenna said: “this actually reminds me of tomato soup!” And that comment really started
+					me down a path of obsession. I started eating this as tomato soup instead of tomato sauce, and I
+					realized that this is a total game-changer.
+				</p>
+				<p class="ftco-animate">
+					There was one day in particular where I came back inside from a chilly day hiking around with the
+					girls (and by “hiking around” I mean basically walking at a snail’s pace, getting in and out of the
+					stroller, picking up 100 acorns and admiring the colorful trees within a 3 block stretch), and I
+					popped this in the Instant Pot, whipped up a batch of garlic bread, and just devoured it. It was
+					maybe one of my favorite meals of 2023 – just the right thing at just the right moment.
+				</p>
+
+			</div>
+		</div>
+	</section>
+
+
+
+{% include "footer.html" %}

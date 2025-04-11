@@ -1,0 +1,165 @@
+
+{% include "header.html" %}
+
+  <section class="hero-wrap js-fullheight bread-bg">
+    <div class="container">
+      <div class="row no-gutters slider-text  align-items-center justify-content-center" style="padding-top: 130px;">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-3 bread">FAQ</h1>
+        </div>
+      </div>
+      <div class="breadcrumb">
+        <a href="{% url "index" %}">Home</a> >
+        <span>FAQ</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="ftco-section contact-section">
+    <div class="container">
+
+
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false">
+              <span class="accordion-title">How can I lose weight effectively and safely?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Losing weight effectively and safely will provide tips and guidance on healthy and sustainable weight
+                loss strategies, including
+                balanced nutrition, regular exercise, and lifestyle changes. It emphasizes the importance of creating a
+                calorie deficit through a balanced diet and regular physical activity. The answer will delve into the
+                significance of setting realistic goals and adopting sustainable lifestyle changes to achieve long-term
+                success in weight management. Additionally, it will address common misconceptions about fad diets and
+                quick fixes, highlighting the importance of prioritizing overall health and well-being. Readers will
+                learn about the role of behavior modification, mindful eating, and self-monitoring in supporting weight
+                loss efforts.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-2" aria-expanded="false">
+              <span class="accordion-title">What are the best foods for boosting metabolism?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Boosting metabolism will discuss foods that can help increase metabolism naturally, such as lean
+                proteins, whole
+                grains, fruits, and vegetables, to support weight management goals.The answer will outline the benefits
+                of incorporating lean proteins, whole grains, fruits, and vegetables into one's diet to enhance
+                metabolic function. It will explain how these nutrient-dense foods can help increase energy expenditure
+                and promote fat burning. Furthermore, the FAQ will discuss the importance of staying hydrated and
+                consuming metabolism-boosting beverages like green tea or coffee. Readers will also learn about the role
+                of spices and herbs, such as cayenne pepper and ginger, in stimulating metabolism. Additionally, the
+                answer will highlight the significance of regular physical activity in maintaining a healthy metabolism
+                and overall well-being. By following the recommendations provided, individuals can optimize their
+                dietary choices to support a healthy metabolism and achieve their fitness goals effectively.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false">
+              <span class="accordion-title">Is it necessary to count calories to lose weight?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                The importance of calorie tracking for weight loss and provide tips on how to monitor
+                calorie intake effectively while maintaining a balanced diet.The answer will explain the concept of
+                calorie balance and the role it plays in achieving a caloric deficit for weight loss. Readers will learn
+                about the importance of understanding energy balance and how tracking calorie intake can help
+                individuals make informed food choices. The FAQ will provide tips on how to calculate daily calorie
+                needs based on factors like age, gender, weight, and activity level. Additionally, it will discuss the
+                benefits of using food journals or mobile apps to monitor calorie intake accurately. Readers will also
+                gain insights into the potential drawbacks of solely focusing on calorie counting and the importance of
+                prioritizing nutrient-dense foods for overall health. By offering a balanced perspective on calorie
+                tracking, this FAQ aims to empower individuals to make informed decisions about their dietary habits and
+                weight loss journey.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-4" aria-expanded="false">
+              <span class="accordion-title">How can I build muscle on a plant-based diet?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Explore plant-based protein sources and strategies for optimizing muscle growth and recovery for
+                individuals following a vegetarian or vegan diet.Readers will discover a variety of plant-based protein
+                sources that can support muscle development, such as legumes, tofu, tempeh, and quinoa. The answer will
+                emphasize the importance of consuming an adequate amount of protein to meet the body's needs for muscle
+                repair and growth. Additionally, readers will learn about the benefits of combining different
+                plant-based protein sources to ensure a complete amino acid profile. The FAQ will also discuss the role
+                of carbohydrates and healthy fats in supporting energy levels and muscle function during workouts.
+                Furthermore, it will provide guidance on meal planning and timing to maximize muscle protein synthesis
+                and enhance recovery post-exercise. By following the recommendations outlined in this FAQ, individuals
+                can effectively build and maintain muscle mass on a plant-based diet while supporting their fitness
+                goals and overall health.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-5" aria-expanded="false">
+              <span class="accordion-title">What are the benefits of meal prepping for a healthy diet?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                This will highlight the advantages of meal prepping, such as saving time, reducing food waste, and
+                promoting healthier eating habits for busy individuals.The FAQ will provide tips on how to plan balanced
+                and nutritious meals that align with dietary goals and preferences. Additionally, it will address the
+                importance of portion control and mindful eating practices when meal prepping to support weight
+                management and overall well-being. By incorporating meal prepping into their routine, individuals can
+                streamline their meal planning process, improve their dietary habits, and set themselves up for success
+                in achieving their nutrition and fitness goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </section>
+
+
+
+{% include "footer.html" %}
+
+<script>
+    const items = document.querySelectorAll('.accordion button');
+
+    function toggleAccordion() {
+      const itemToggle = this.getAttribute('aria-expanded');
+
+      for (i = 0; i < items.length; i++) {
+        items[i].setAttribute('aria-expanded', 'false');
+      }
+
+      if (itemToggle == 'false') {
+        this.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    items.forEach((item) => item.addEventListener('click', toggleAccordion));
+
+
+
+
+  </script>

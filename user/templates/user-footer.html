@@ -1,0 +1,194 @@
+{% load static %}
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Lean & Strong</span></strong>. All Rights Reserved
+  </div>
+
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script src="{% static 'users/vendor/apexcharts/apexcharts.min.js' %}"></script>
+<script src="{% static 'users/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'users/vendor/chart.js/chart.umd.js' %}"></script>
+<script src="{% static 'users/vendor/echarts/echarts.min.js' %}"></script>
+<script src="{% static 'users/vendor/quill/quill.js' %}"></script>
+<script src="{% static 'users/vendor/simple-datatables/simple-datatables.js' %}"></script>
+<script src="{% static 'users/vendor/tinymce/tinymce.min.js' %}"></script>
+<script src="{% static 'users/vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'users/js/jquery-3.6.4.min.js' %}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="https://code.iconify.design/1/1.0.4/iconify.min.js">   </script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'users/js/main.js' %}"></script>
+<script src="https://unpkg.com/@fullcalendar/core@4.3.1/main.min.js"></script>
+<script src="https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.js"></script>
+<script src="https://unpkg.com/@fullcalendar/timegrid@4.3.0/main.min.js"></script>
+<script src="https://unpkg.com/@fullcalendar/interaction@4.3.0/main.min.js"></script>
+
+
+<script>
+  $(document).ready(function () {
+    var currentPage = window.location.pathname;
+
+    $('.sidebar-nav .nav-link').removeClass('active collapse');
+    $('.nav-content').addClass('collapsed');
+
+    console.log(currentPage)
+
+    $('.nav-link').each(function () {
+      var linkUrl = $(this).attr('href');
+      console.log('outer link ' + linkUrl)
+
+      if (currentPage === linkUrl) {
+        $(this).addClass('active').removeClass('collapse');
+
+      }
+    });
+
+    $('.nav-content a').each(function () {
+      var linkUrl = $(this).attr('href');
+      console.log('inside link ' + linkUrl)
+
+      if (currentPage === linkUrl) {
+        $(this).addClass('active');
+        $(this).closest('.nav-item').find('.nav-link').removeClass('collapsed').addClass('active')
+        $(this).closest('.nav-content').removeClass('collapsed').addClass('show collapse')
+      }
+    });
+
+
+    $('.data-table').DataTable();
+    $('#bpaddreadingsBtn').click(function () {
+      $('.bpaddreading').toggle();
+      if ($('.bpaddreading').is(':visible')) {
+        $('.bpaddreading').find('input:first').focus();
+      }
+    });
+
+    $('#sugaraddreadingsBtn').click(function () {
+      $('.sugaraddreading').toggle();
+      if ($('.sugaraddreading').is(':visible')) {
+        $('.sugaraddreading').find('input:last').focus();
+      }
+    });
+
+
+    $(function () {
+
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      function cb(start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      }
+
+      $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+      }, cb);
+
+      cb(start, end);
+
+    });
+
+
+
+
+    // for Blood Pressure
+
+    $("#view-records-bp-btn").click(function () {
+      $("#view-record-bp-tap").toggle();
+      $("#view-record-bp-tap .nav-link").trigger("click");
+    });
+    $("#bp-monitor-tab").click(function () {
+      $("#view-record-bp-tap").hide();
+    });
+
+    // For Blood Sugar
+    $("#view-records-sugar-btn").click(function () {
+      $("#view-record-sugar-tap").toggle();
+      $("#view-record-sugar-tap .nav-link").trigger("click");
+    });
+    $("#sugar-monitor-tab").click(function () {
+      $("#view-record-sugar-tap").hide();
+    });
+
+  });
+
+  const glassNumElement = document.getElementById('glassNum');
+  const litreElement = document.getElementById('litre');
+  const incrementButton = document.getElementById('increment');
+  const decrementButton = document.getElementById('decrement');
+
+  const glassToLitreRatio = 0.25; // Each glass corresponds to 0.24 litre
+
+  incrementButton.addEventListener('click', () => {
+    let glassNum = parseInt(glassNumElement.textContent);
+    glassNum++;
+    updateValues(glassNum);
+  });
+
+  decrementButton.addEventListener('click', () => {
+    let glassNum = parseInt(glassNumElement.textContent);
+    if (glassNum > 0) {
+      glassNum--;
+      updateValues(glassNum);
+    }
+  });
+
+  function updateValues(glassNum) {
+    glassNumElement.textContent = glassNum;
+    const litres = (glassNum * glassToLitreRatio).toFixed(2);
+    litreElement.textContent = litres;
+  }
+
+  // Initialize values
+  updateValues(parseInt(glassNumElement.textContent));
+
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const hrNumElement = document.getElementById('HrNum');
+    const hrDecrementButton = document.getElementById('hrdecrement');
+    const hrIncrementButton = document.getElementById('hrincrement');
+
+    // Function to update the displayed number
+    const updateNumber = (increment) => {
+      let currentNumber = parseInt(hrNumElement.textContent, 10);
+      currentNumber += increment;
+      if (currentNumber < 0) {
+        currentNumber = 0;
+      }
+      hrNumElement.textContent = currentNumber;
+    };
+
+    // Event listener for decrement button
+    hrDecrementButton.addEventListener('click', () => {
+      updateNumber(-1);
+    });
+
+    // Event listener for increment button
+    hrIncrementButton.addEventListener('click', () => {
+      updateNumber(1);
+    });
+  });
+
+</script>
+</body>
+
+</html>

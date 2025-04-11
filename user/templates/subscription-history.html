@@ -1,0 +1,187 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Subscription History</h1>
+
+
+  </div><!-- End Page Title -->
+
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="d-flex justify-content-between">
+              <div>
+                <h5 class="card-title sp-card-title"> </h5>
+              </div>
+
+              <div id="reportrange" class="date-range-style">
+                <i class="ri-calendar-2-line"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+
+
+            <!-- Table with stripped rows -->
+
+            <table class="display pt-3 data-table">
+              <thead>
+                <tr>
+                  <th>
+                    <b>Subscription Name</b>
+                  </th>
+                  <th class="hide-mob">Subscription Type</th>
+                  <th>Expert Name </th>
+                  <th class="hide-mob">Purchased on </th>
+                  <th class="hide-mob">Valid upto </th>
+                  <th>Action </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Basic</td>
+                  <td class="hide-mob">Quarterly</td>
+                  <td>Akshada
+                    Siddharth
+                  </td>
+                  <td class="hide-mob">20/6/2024</td>
+                  <td class="hide-mob">19/7/2024</td>
+                  <td> <a data-bs-toggle="modal" data-bs-target="#viewModal"><i data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="View" class="ri-eye-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+            <div class="modal fade" id="viewModal" tabindex="-1">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Subscription History</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body ">
+                    <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Subscription Name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Subscription Name :</span>
+                          </label>
+                          <input type="text" name="Subscription Name" placeholder="" required="required"
+                            autofocus="autofocus" class=" form-control" value="L&S Essential" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Subscription Type" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Subscription Type :</span>
+                          </label>
+                          <input type="text" name="Subscription Type" placeholder="" required="required"
+                            autofocus="autofocus" class=" form-control" value="Quarterly" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Expert Name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Expert Name :</span>
+                          </label>
+                          <input type="text" name="Expert Name" placeholder="" required="required" autofocus="autofocus"
+                            class=" form-control" value="Akshada Siddharth" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="from-date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>From Date :</span>
+                          </label>
+                          <input type="text" name="from-date" placeholder="" required="required" autofocus="autofocus"
+                            class=" form-control" value="20/6/2024" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="valid" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Valid Till Date :</span>
+                          </label>
+                          <input type="text" name="valid" placeholder="" required="required" autofocus="autofocus"
+                            class=" form-control" value="19/7/2024" disabled>
+                        </div>
+                      </div>
+
+                    </form>
+                    <!-- <div class="row buttons mt-5">
+                        <center>
+
+                          <button type="submit" class="btn btn-theme">Submit</button>
+                        </center>
+                      </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- End Table with stripped rows -->
+            <div id="view-modal" class="modal bg-model">
+
+              <div class="modal-content createavatar-model">
+
+                <div class="modal-close-btn">
+                  <i class="ri-close-large-fill"></i>
+                </div>
+                <center class="model-heading">
+                  <h4>Subscription History</h4>
+                </center>
+                <div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="title">Subscription Name: <span>Basic</span></div>
+                      <div class="title">Subscription Type: <span>Quarterly </span></div>
+                      <div class="title">Expert Name : <span>Akshada
+                          Siddharth</span></div>
+                    </div>
+
+                    <div class="col-lg-6">
+
+                      <div class="title">Purchased on:<span>20/5/2024</span></div>
+                      <div class="title">Valid upto :<span>20/5/2024</span></div>
+                      <div class="title">Status:<span><span class="badge rounded-pill bg-success">
+                            Active</span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+{% include "user-footer.html" %}

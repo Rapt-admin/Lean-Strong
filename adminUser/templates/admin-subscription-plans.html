@@ -1,0 +1,466 @@
+{% load static %}
+
+	{% include "admin_header.html" %}
+	{% include "admin_sidebarmenu.html" %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Subscription</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-12">
+
+          <div class="card">
+            <div class="card-body tabs-header">
+
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title sp-card-title mb-0"></h5>
+                <div>
+                  <button class="btn btn-theme mt-3" data-bs-toggle="modal" data-bs-target="#largeModal"><i
+                      class="ri-add-circle-line"></i> Add Subscription
+                  </button>
+                  <button class="btn btn-theme mt-3" id="tabs-sp-btn"><i class="ri-add-circle-line"></i> Edit
+                    Feature</button>
+                </div>
+              </div>
+
+              <div class="modal fade" id="largeModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Add Subscription</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+                      <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                        <div class="col-lg-12 col-12 px-14 ">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal">
+                              <span>Enter Subscription Name :</span>
+                            </label>
+                            <input type="text" name="add-subscription" placeholder="Enter Subscription Name"
+                              required="required" autofocus="autofocus" class=" form-control" value="">
+                          </div>
+
+                        </div>
+
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Monthly :</span>
+                            </label>
+                            <input type="text" name="monthly" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Quaterly :</span>
+                            </label>
+                            <input type="text" name="Quaterly" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Half Yearly :</span>
+                            </label>
+                            <input type="text" name="Half" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Annually :</span>
+                            </label>
+                            <input type="text" name="Annually" placeholder="" required="required" autofocus="autofocus"
+                              class=" form-control" value="">
+                          </div>
+                        </div>
+
+                      </form>
+                      <div class="row buttons mt-5">
+                        <center>
+
+                          <button type="submit" class="btn btn-theme">Save Changes</button>
+                        </center>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="editModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Edit Subscription</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+                      <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                        <div class="col-lg-12 col-12 px-14 ">
+                          <div class="form-group mb-lg-20">
+                            <label for="Name" class="gray-600 f-lg-18 f-16 font-weight-normal">
+                              <span>Subscription Name :</span>
+                            </label>
+                            <input type="text" name="Name" placeholder="subscription Name" required="required"
+                              autofocus="autofocus" class=" form-control" value="L&S Essential" disabled>
+                          </div>
+
+                        </div>
+
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Monthly" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Monthly :</span>
+                            </label>
+                            <input type="text" name="monthly" placeholder="Monthly" required="required"
+                              autofocus="autofocus" class=" form-control" value="2499">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Quaterly" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Quaterly :</span>
+                            </label>
+                            <input type="text" name="Quaterly" placeholder="Quaterly" required="required"
+                              autofocus="autofocus" class=" form-control" value="7199">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Half" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Half Yearly :</span>
+                            </label>
+                            <input type="text" name="Half" placeholder="Half Yearly" required="required"
+                              autofocus="autofocus" class=" form-control" value="13499">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 mt-2">
+                          <div class="form-group mb-lg-20">
+                            <label for="Annually" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                              <span>Annually :</span>
+                            </label>
+                            <input type="text" name="Annually" placeholder="Annually" required="required"
+                              autofocus="autofocus" class=" form-control" value="15499">
+                          </div>
+                        </div>
+
+                      </form>
+                      <div class="row buttons mt-5">
+                        <center>
+
+                          <button type="submit" class="btn btn-theme">Save Changes</button>
+                        </center>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+                <li class="nav-item">
+                  <button class="nav-link active" id="first-tab" data-bs-toggle="tab"
+                    data-bs-target="#subscriptions">Subscriptions</button>
+                </li>
+
+
+                <li class="nav-item">
+                  <button class="nav-link" id="second-tab" data-bs-toggle="tab" data-bs-target="#add-measurements">Add
+                    Feature
+                  </button>
+                </li>
+                <li class="nav-item update-link" id="update-link">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#update-measurements">Edit
+                    Feature
+                  </button>
+                </li>
+
+              </ul>
+              <div class="tab-content pt-2">
+                <div class="tab-pane fade show active profile-overview" id="subscriptions">
+                  <div class="card-body">
+                    <form method="POST" novalidate="novalidate" class="contact-form mb-5">
+
+                      <div class="row mt-4">
+
+                        <table class="display pt-3  text-center" id="admin-subscription-plans">
+                          <thead>
+                            <tr>
+                              <th>
+                                <b>Subscription Name</b>
+                              </th>
+                              <th>Monthly</th>
+                              <th>Quarterly</th>
+                              <th>Half Yearly</th>
+                              <th>Annually</th>
+                              <th>Action </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>L&S Essential</td>
+                              <td>2499</td>
+                              <td>7199</td>
+                              <td>13499</td>
+                              <td>15499</td>
+                              <td>
+                                <a data-bs-toggle="modal" data-bs-target="#editModal"><i data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Edit" class="ri-pencil-fill"></i>
+                                </a>
+                                <a class="style-btn"><i class="ri-delete-bin-4-fill"></i></a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>L&S Accelerate</td>
+                              <td>2999</td>
+                              <td>7999</td>
+                              <td>15999</td>
+                              <td>21999</td>
+                              <td>
+                                <a data-bs-toggle="modal" data-bs-target="#editModal"><i data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Edit" class="ri-pencil-fill"></i>
+                                </a>
+                                <a class="style-btn"><i class="ri-delete-bin-4-fill"></i></a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>L&S Ultimate</td>
+                              <td>3499</td>
+                              <td>9499</td>
+                              <td>17999</td>
+                              <td>29999</td>
+                              <td>
+                                <a data-bs-toggle="modal" data-bs-target="#editModal"><i data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Edit" class="ri-pencil-fill"></i>
+                                </a>
+                                <a class="style-btn"><i class="ri-delete-bin-4-fill"></i></a>
+                              </td>
+                            </tr>
+
+
+
+                          </tbody>
+                        </table>
+
+
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+                <div class="tab-pane fade show  profile-overview" id="add-measurements">
+                  <div class="card-body">
+                    <form method="POST" novalidate="novalidate" class="contact-form mb-5">
+
+
+
+                      <div class="row mt-4">
+
+
+                        <div class="col-lg-12 col-12 px-14 ">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                              <span>Enter Feature Name:</span>
+                            </label>
+                            <input type="text" name="Feature" placeholder="Feature" required="required"
+                              autofocus="autofocus" class=" form-control" value="">
+                          </div>
+
+                        </div>
+
+                        <div class="col-lg-12 col-12 px-14 mt-4">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal">
+                              <span>Required Counters :</span>
+                            </label>
+                            <label><input type="radio" name="counters" value="counters" checked> Yes</label>
+                            <label><input type="radio" name="counters" value="counters"> No</label>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="row buttons mt-5">
+                        <center>
+
+                          <button type="submit" class="btn btn-theme">Save Changes</button>
+                        </center>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="tab-pane fade profile-edit pt-3 container" id="update-measurements">
+                  <div class="card-body mt-4">
+                    <form>
+                      <table class="table datatable text-center">
+                        <thead>
+                          <tr>
+                            <th>
+                              <b>Features</b>
+                            </th>
+                            <th>L&S Essential</th>
+                            <th>L&S Accelerate</th>
+                            <th>L&S Ultimate</th>
+                            <th>IsCounter Required</th>
+                            <th>Action </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Total Consultation</td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled></td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled>
+                            </td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled></td>
+                            <td>No</td>
+                            <td>
+                              <a class="style-btn" id="edit-btn"><i data-bs-toggle="tooltip" data-bs-placement="top"
+                                  title="Edit" class="ri-pencil-fill"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Total no. of Consultations - Nutritionist</td>
+                            <td> <input class="input-num" type="text" value="2" disabled></td>
+                            <td><input class="input-num" type="text" value="3" disabled>
+                            </td>
+                            <td><input class="input-num" type="text" value="4" disabled></td>
+                            <td>Yes</td>
+                            <td>
+                              <a class="style-btn" id="edit-btn"><i data-bs-toggle="tooltip" data-bs-placement="top"
+                                  title="Edit" class="ri-pencil-fill"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Workout Plan</td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled></td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled>
+                            </td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled></td>
+                            <td>No</td>
+                            <td>
+                              <a class="style-btn" id="edit-btn"><i data-bs-toggle="tooltip" data-bs-placement="top"
+                                  title="Edit" class="ri-pencil-fill"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Diat Plan</td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled></td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled>
+                            </td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled></td>
+                            <td>No</td>
+                            <td>
+                              <a class="style-btn" id="edit-btn"><i data-bs-toggle="tooltip" data-bs-placement="top"
+                                  title="Edit" class="ri-pencil-fill"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Fitness Plan</td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled></td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled>
+                            </td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled></td>
+                            <td>No</td>
+                            <td>
+                              <a class="style-btn" id="edit-btn"><i data-bs-toggle="tooltip" data-bs-placement="top"
+                                  title="Edit" class="ri-pencil-fill"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Reference Videos Workout</td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled></td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled>
+                            </td>
+                            <td> <input class="" type="checkbox" id="feature" checked disabled></td>
+                            <td>No</td>
+                            <td>
+                              <a class="style-btn" id="edit-btn"><i data-bs-toggle="tooltip" data-bs-placement="top"
+                                  title="Edit" class="ri-pencil-fill"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+
+                      <div class="row buttons mt-5">
+                        <center>
+
+                          <button type="submit" class="btn btn-theme">Save Changes</button>
+                        </center>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+
+
+          </div><!-- End Bordered Tabs -->
+
+        </div>
+      </div>
+
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "admin_footer.html" %}
+
+  <script>
+
+
+    $(document).ready(function () {
+      $('#admin-subscription-plans').DataTable();
+      $("#tabs-sp-btn").click(function () {
+        $("#update-link").toggle();
+        $("#update-link .nav-link").trigger("click");
+      });
+      $("#first-tab").click(function () {
+        $("#update-link").hide();
+
+      });
+
+      $("#first-tab").click(function () {
+        $("#update-link").hide();
+
+      });
+
+
+      document.querySelectorAll('.style-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const row = this.closest('tr');
+          row.querySelectorAll('input').forEach(input => {
+            input.disabled = !input.disabled;
+          });
+        });
+      });
+
+
+    });
+
+
+  </script>

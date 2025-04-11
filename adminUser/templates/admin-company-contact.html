@@ -1,0 +1,125 @@
+{% load static %}
+
+	{% include "admin_header.html" %}
+	{% include "admin_sidebarmenu.html" %}
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Contact</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-12">
+
+          <div class="card">
+            <div class="card-body tabs-header mt-4">
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" id="first-tab" data-bs-toggle="tab"
+                    data-bs-target="#view-measurements">Edit Contact</button>
+                </li>
+              </ul>
+              <div class="card-body">
+                <form method="POST" novalidate="novalidate" class="contact-form mb-5">
+
+
+
+                  <div class="row mt-4">
+                    <div>
+                      <h5 class="card-title sp-card-title mb-0">Contact</h5>
+                    </div>
+
+                    <div class="col-lg-6 col-6 px-14 ">
+                      <div class="form-group mb-lg-20">
+                        <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                          <span>Address :</span>
+                        </label>
+
+                        <textarea class="form-control" placeholder="Address"
+                          value="">198 West 21th Street, Pune - 400006, Maharashtra</textarea>
+                      </div>
+
+                    </div>
+
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                          <span>Phone :</span>
+                        </label>
+                        <input type="text" name="Phone" placeholder="Phone" required="required" autofocus="autofocus"
+                          class=" form-control" value=" + 1235 2355 98">
+                      </div>
+
+                    </div>
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                          <span>Email :</span>
+                        </label>
+                        <input type="text" name="Email" placeholder="Email" required="required" autofocus="autofocus"
+                          class=" form-control" value="info@lean&strong.com">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                          <span>Website :</span>
+                        </label>
+                        <input type="text" name="Website" placeholder="Website" required="required"
+                          autofocus="autofocus" class=" form-control" value="lean&strong.com">
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                  <div class="row buttons mt-5">
+                    <center><button type="submit" class="btn btn-theme">Submit</button></center>
+                  </div>
+                </form>
+              </div>
+
+
+
+
+            </div>
+
+
+
+          </div><!-- End Bordered Tabs -->
+
+        </div>
+      </div>
+
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+   {% include "admin_footer.html" %}
+
+   <script>
+
+
+    $(document).ready(function () {
+      $(".tabs-sp-btn").click(function () {
+        $("#update-link").toggle();
+        $("#update-link .nav-link").trigger("click");
+      });
+      $("#first-tab").click(function () {
+        $("#update-link").hide();
+
+      });
+
+
+
+    });
+
+  </script>

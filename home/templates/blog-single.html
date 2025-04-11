@@ -1,0 +1,199 @@
+{% include "header.html" %}
+{% load static %}
+
+
+  <section class="hero-wrap js-fullheight bread-bg">
+    <div class="container">
+      <div class="row no-gutters slider-text  align-items-center justify-content-center" style="padding-top: 130px;">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-3 bread">Blogs</h1>
+        </div>
+      </div>
+      <div class="breadcrumb">
+        <a href="{% url "index" %}">Home</a> >
+        <a href="{% url "blogs" %}">Blogs</a> >
+        <span>Blog Details</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 ftco-animate">
+          <h2 class="mb-3">Unlocking the Power of Nutrition</h2>
+          <p> A Guide to Fueling Your Fitness Journey"
+            Description: Dive into the world of nutrition and discover how the right foods can enhance your fitness
+            goals. Learn about the importance of macronutrients, micronutrients, and meal timing to optimize your
+            performance in the gym and recover effectively. This blog will provide you with practical tips and meal
+            ideas to help you fuel your body for success. </p>
+          <p>
+            <img src="{%static 'images/image_1.jpg' %}" alt="" class="img-fluid">
+          </p>
+          <p>The Ultimate HIIT Workout Guide: Boost Your Metabolism and Burn Fat"
+            High-Intensity Interval Training (HIIT) is a popular and effective workout strategy for improving
+            cardiovascular fitness and burning calories. In this blog, you will find a comprehensive guide to HIIT
+            workouts, including the benefits, different workout formats, and tips for maximizing your results. Get ready
+            to rev up your metabolism and torch fat with these intense and efficient workouts. </p>
+          <h2 class="mb-3 mt-5">#2. Mindful Eating: How to Cultivate a Healthy Relationship with Food</h2>
+          <p> Developing a healthy relationship with food is essential for long-term success in maintaining a balanced
+            diet. This blog explores the concept of mindful eating and how it can help you make better food choices,
+            enjoy your meals more, and prevent overeating. Discover practical strategies for practicing mindful eating,
+            such as paying attention to hunger cues, savoring each bite, and avoiding distractions while eating. Embrace
+            a mindful approach to nutrition and transform your eating habits for the better.</p>
+          <p>
+            <img src="{%static 'images/image_2.jpg' %}" alt="" class="img-fluid">
+          </p>
+          <p>Building a Stronger, Leaner Body"
+            Description: Strength training is a fundamental component of any fitness routine, helping to increase muscle
+            mass, boost metabolism, and improve overall strength and endurance. In this blog, you will learn the basics
+            of strength training, including different exercises, equipment options, and training techniques. Discover
+            how to design a personalized strength training program that targets specific muscle groups and adapts to
+            your fitness goals. Whether you're a beginner looking to tone up or an experienced lifter aiming to build
+            muscle, this guide will help you navigate the world of strength training with confidence. </p>
+
+          <p>The connection between mental health and physical fitness is a powerful one, with each influencing the
+            other in profound ways. In this blog, we explore how mental well-being can impact your motivation, energy
+            levels, and overall performance in your fitness journey. Learn about the importance of stress management,
+            mindfulness practices, and positive self-talk in enhancing your workout experience and achieving your
+            fitness goals. By prioritizing your mental health alongside your physical fitness, you can create a holistic
+            approach to well-being that supports your overall health and happiness.</p>
+          <div class="tag-widget post-tag-container mb-5 mt-5">
+            <div class="tagcloud">
+              <a href="#" class="tag-cloud-link">Life</a>
+              <a href="#" class="tag-cloud-link">Sport</a>
+              <a href="#" class="tag-cloud-link">Tech</a>
+              <a href="#" class="tag-cloud-link">Travel</a>
+            </div>
+          </div>
+
+
+
+
+          <div class="pt-5 mt-5">
+            <h3 class="mb-5">6 Comments</h3>
+            <ul class="comment-list">
+              <li class="comment">
+                <div class="vcard bio">
+                  <img src="{%static 'images/person_2.jpg' %}" alt="Image placeholder">
+                </div>
+                <div class="comment-body">
+                  <h3>John Doe</h3>
+                  <div class="meta">Dec 27, 2018 at 2:21pm</div>
+                  <p>Mindful eating is something I've been trying to practice more, and this blog has given me some
+                    great tips to stay on track. Thank you!</p>
+                  <p><a href="#" class="reply">Reply</a></p>
+                </div>
+              </li>
+
+              <li class="comment">
+                <div class="vcard bio">
+                  <img src="{%static 'images/person_1.jpg' %}" alt="Image placeholder">
+                </div>
+                <div class="comment-body">
+                  <h3>John Doe</h3>
+                  <div class="meta">Dec 27, 2018 at 2:21pm</div>
+                  <p>Strength training has always intimidated me, but this blog broke it down in such an approachable
+                    way. Feeling motivated to hit the weights now!</p>
+                  <p><a href="#" class="reply">Reply</a></p>
+                </div>
+
+
+              </li>
+
+            </ul>
+            <!-- END comment-list -->
+
+            <div class="comment-form-wrap pt-5">
+              <h3 class="mb-5">Leave a comment</h3>
+              <form action="#" class="bg-light p-4">
+                <div class="form-group">
+                  <label for="name">Name *</label>
+                  <input type="text" class="form-control bg-white" id="name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="website">Website</label>
+                  <input type="url" class="form-control" id="website">
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div> <!-- .col-md-8 -->
+        <div class="col-lg-4 sidebar ftco-animate">
+          <div class="sidebar-box ftco-animate">
+            <div class="categories">
+              <h3 class="heading-2">Categories</h3>
+              <li><a href="#">Workout <span>(12)</span></a></li>
+              <li><a href="#">Gym <span>(22)</span></a></li>
+              <li><a href="#">Crossfit <span>(37)</span></a></li>
+              <li><a href="#">Body Fit <span>(42)</span></a></li>
+              <li><a href="#">Fitness <span>(14)</span></a></li>
+              <li><a href="#">Yoga <span>(140)</span></a></li>
+            </div>
+          </div>
+
+          <div class="sidebar-box ftco-animate">
+            <h3 class="heading-2">Recent Blog</h3>
+            <div class="block-21 mb-4 d-flex">
+              <a class="blog-img mr-4" style="background-image: url('{% static "images/image_1.jpg" %}');"></a>
+              <div class="text">
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a>
+                </h3>
+                <div class="meta">
+                  <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="block-21 mb-4 d-flex">
+              <a class="blog-img mr-4" style="background-image: url('{% static "images/image_2.jpg" %}');"></a>
+              <div class="text">
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a>
+                </h3>
+                <div class="meta">
+                  <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="block-21 mb-4 d-flex">
+              <a class="blog-img mr-4" style="background-image: url('{% static "images/image_3.jpg" %}');"></a>
+              <div class="text">
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a>
+                </h3>
+                <div class="meta">
+                  <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </section> <!-- .section -->
+
+
+{% include "footer.html" %}

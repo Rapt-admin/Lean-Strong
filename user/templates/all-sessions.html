@@ -1,0 +1,202 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>All Sessions</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-xxl-12 col-xl-12 col-md-12">
+              <div class="cr-card" id="campaigns">
+                <div class="cr-card-header card-head-br">
+                  <h4 class="cr-card-title">Today's Sessions</h4>
+                  <div class="header-tools">
+                    <div class="viewall-link">
+                      <a href="todays-sessions.html">View All</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="cr-card-content bg-white row" style="margin: 0px;">
+
+                  <div class="gallery">
+
+
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-1.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Diet</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-2.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Lifestyle</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-1.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Diet</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-2.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Lifestyle</p>
+                    </div>
+                  </div>
+
+                  <div id="videoModal" class="modal">
+                    <div class="modal-content">
+                      <video controls id="modalVideo">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xxl-12 col-xl-12 col-md-12">
+              <div class="cr-card revenue-overview">
+                <div class="cr-card-header header-575 card-head-br">
+                  <h4 class="cr-card-title">Upcoming Sessions</h4>
+                  <div class="header-tools">
+                    <div class="viewall-link">
+                      <a href="upcoming-sessions.html">View All</a>
+                    </div>
+                    <div class="cr-date-range date">
+                      <span>Mar 13, 2024 - Mar 13, 2024</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="cr-card-content bg-white row" style="margin: 0px;">
+
+
+                  <div class="gallery">
+
+
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-1.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Diet</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-2.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Lifestyle</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-1.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Diet</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-2.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Lifestyle</p>
+                    </div>
+                  </div>
+
+                  <div id="videoModal" class="modal">
+                    <div class="modal-content">
+                      <video controls id="modalVideo">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xxl-12 col-xl-12 col-md-12">
+              <div class="cr-card" id="campaigns">
+                <div class="cr-card-header card-head-br">
+                  <h4 class="cr-card-title">Completed Sessions</h4>
+                  <div class="header-tools">
+                    <div class="viewall-link">
+                      <a href="completed-sessions.html">View All</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="cr-card-content bg-white row" style="margin: 0px;">
+
+
+                  <div class="gallery">
+
+
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-1.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Diet</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-2.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Lifestyle</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-1.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Diet</p>
+                    </div>
+                    <div class="video-card">
+                      <video muted poster="{% static 'users/img/video-thumb-2.jpg' %}">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                      <p>Healthy Lifestyle</p>
+                    </div>
+                  </div>
+
+                  <div id="videoModal" class="modal">
+                    <div class="modal-content">
+                      <video controls id="modalVideo">
+                        <source src="{% static 'users/img/lesson-thum/lessonvideo-1.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+ {% include "user-footer.html" %}

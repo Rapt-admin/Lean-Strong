@@ -1,0 +1,124 @@
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'dtDash' %}">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#sessions" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-calendar-event"></i><span>Sessions</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="sessions" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+        <li>
+          <a href="{% url 'dtTodaySession' %}">
+            <i class="bi bi-circle"></i><span>Today's sessions</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'dtUpcomingSession' %}">
+            <i class="bi bi-circle"></i><span>Upcoming sessions</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'dtCompletedSession' %}">
+            <i class="bi bi-circle"></i><span>Completed sessions</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'dtMissedSession' %}">
+            <i class="bi bi-circle"></i><span>Missed sessions</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#clients" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-people-fill"></i><span>Clients</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="clients" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+        <li>
+          <a href="{% url 'dtAllClients' %}">
+            <i class="bi bi-circle"></i><span>All Clients</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'dtActiveClients' %}">
+            <i class="bi bi-circle"></i><span>Active Clients</span>
+          </a>
+        </li>
+
+
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#leads" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-search"></i><span>Leads</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="leads" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+        <li>
+          <a href="{% url 'dtAllLeads' %}">
+            <i class="bi bi-circle"></i><span>All Leads</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'dtConvertedLeads' %}">
+            <i class="bi bi-circle"></i><span>Converted Leads</span>
+          </a>
+        </li>
+
+
+      </ul>
+    </li>
+
+
+
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'dtClientsForRenewal' %}">
+        <i class="bi bi-person"></i>
+        <span>Renewal Clients</span>
+      </a>
+    </li>
+
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'dtProfile' %}">
+        <i class="bi bi-person"></i>
+        <span>Profile</span>
+      </a>
+    </li>
+
+
+
+  </ul>
+
+</aside><!-- End Sidebar-->
+<div class="nav-bar">
+  <a href="{% url 'dtDash' %}" class="nav-item">
+    <i class="ri-home-4-line"></i>
+    <p>Home</p>
+  </a>
+  <a href="{% url 'dtTodaySession' %}" class="nav-item">
+    <i class="bi bi-gem"></i>
+    <p>Sessions</p>
+  </a>
+  <a href="{% url 'dtAllLeads' %}" class="nav-item">
+    <i class="bi bi-gem"></i>
+    <p>Leads</p>
+  </a>
+  <a href="{% url 'dtProfile' %}" class="nav-item">
+    <i class="ri-user-line"></i>
+    <p>Profile</p>
+  </a>
+</div>

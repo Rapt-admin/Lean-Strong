@@ -1,0 +1,582 @@
+{% load static %}
+
+{% include "dietitian_header.html" %}
+{% include "dietitian_sidebarmenu.html" %}
+
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Today's Sessions</h1>
+
+  </div><!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row">
+
+
+      <div class="col-lg-12">
+        <div class="row">
+
+          <!-- Sales Card -->
+          <div class="col-xxl-12 col-md-12">
+            <div class="card info-card sales-card today-session-card">
+
+              <div class="card-body">
+                <div class="ongoing-top">
+                  <div>
+                    <h5>Session 1</h5>
+                    <p>22 June 2024 | <span> 11: 00 IST</span></p>
+                  </div>
+                  <div>
+                    <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#callLog">Call Log</button>
+                    <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#reschedule">Reschedule
+                      Session</button>
+
+                    <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#writenote">Write
+                      Note</button>
+                    <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#startsession">Start
+                      Session</button>
+
+                  </div>
+                </div>
+
+
+
+
+
+                <div class="ongoing-bottom">
+                  <div>
+                    <p>Name</p>
+                    <h6 class="sp-link"><a href="user-overview.html">Gustavo Xavier</a></h6>
+                  </div>
+                  <div>
+                    <p>Height(in cm)</p>
+                    <h6>179</h6>
+                  </div>
+                  <div>
+                    <p>Current Body Weight</p>
+                    <h6>75 kg</h6>
+                  </div>
+                  <div>
+                    <p>Additional Info</p>
+                    <h6>
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#additional-info"
+                        style="border-radius: 30px; border:none">
+                        <i class="bi bi-info"></i>
+                      </button>
+                    </h6>
+
+
+
+                    <div class="modal fade" id="additional-info" tabindex="-1">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="width: 100%;">
+                          <div class="modal-header">
+                            <h5 class="modal-title"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <ul class="nav nav-tabs nav-tabs-bordered">
+
+                              <li class="nav-item">
+                                <button class="nav-link active" data-bs-toggle="tab"
+                                  data-bs-target="#profile-overview">Personal Information</button>
+                              </li>
+
+                              <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab"
+                                  data-bs-target="#profile-edit">Lifestyle</button>
+                              </li>
+
+                              <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab"
+                                  data-bs-target="#profile-settings">Measurements</button>
+                              </li>
+
+                              <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab"
+                                  data-bs-target="#profile-change-password">Past Consultation</button>
+                              </li>
+
+                            </ul>
+                            <div class="tab-content pt-2">
+
+                              <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                                <!-- Profile Edit Form -->
+                                <form class="contact-form ">
+                                  <div class="row mb-3">
+                                    <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
+                                      Image</label>
+                                    <div class="col-md-8 col-lg-9">
+                                      <img src="{% static 'users/img/profile-img.jpg' %}" alt="Profile">
+                                    </div>
+                                  </div>
+
+                                  <div class="row mb-3">
+                                    <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                                    <div class="col-md-8 col-lg-9">
+                                      <input name="fullName" type="text" class="form-control" id="fullName"
+                                        value="Kevin Anderson">
+                                    </div>
+                                  </div>
+
+
+
+                                  <div class="row mb-3">
+                                    <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
+                                    <div class="col-md-8 col-lg-9">
+                                      <input name="country" type="text" class="form-control" id="Country" value="USA">
+                                    </div>
+                                  </div>
+
+                                  <div class="row mb-3">
+                                    <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                                    <div class="col-md-8 col-lg-9">
+                                      <input name="address" type="text" class="form-control" id="Address"
+                                        value="A108 Adam Street, New York, NY 535022">
+                                    </div>
+                                  </div>
+
+                                  <div class="row mb-3">
+                                    <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                                    <div class="col-md-8 col-lg-9">
+                                      <input name="phone" type="text" class="form-control" id="Phone"
+                                        value="(436) 486-3538 x29071">
+                                    </div>
+                                  </div>
+
+
+
+                                </form><!-- End Profile Edit Form -->
+
+
+
+
+                              </div>
+
+                              <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                                <h5 class="card-title">Lifestyle</h5>
+                                <p class="small fst-italic"> Their daily routine typically involves early mornings,
+                                  long commutes, and late nights, leaving little time for self-care and relaxation.
+                                  Despite their hectic schedule, the patient tries to prioritize healthy habits such
+                                  as regular exercise, balanced meals, and adequate sleep. However, stress and time
+                                  constraints often lead to occasional indulgence in fast food and sugary snacks. The
+                                  patient recognizes the importance of maintaining a healthy lifestyle but struggles
+                                  to consistently make healthy choices amidst the demands of their daily life. Regular
+                                  check-ups with healthcare providers help the patient stay informed about their
+                                  health and make necessary adjustments to their lifestyle habits.</p>
+
+
+
+                              </div>
+
+                              <div class="tab-pane fade pt-3" id="profile-settings">
+
+                                <form method="POST" id="tdeeForm" novalidate="novalidate" class="contact-form ">
+
+
+                                  <div class="row radio-checks">
+                                    <div class="col-lg-6 col-6 px-14 mt-2">
+                                      <div class="form-group mb-lg-20">
+                                        <label for="age" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                          <span>Height (in cm)</span>
+                                        </label>
+                                        <input type="number" name="age" id="age" placeholder="Years" required="required"
+                                          autofocus="autofocus" class="form-control" max="100" min="1" value="182"
+                                          disabled>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-6 px-14 mt-2">
+                                      <div class="form-group mb-lg-20">
+                                        <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                          <span>Current Body Weight (in kg)</span>
+                                        </label>
+                                        <input type="number" name="weight" id="weight" placeholder="Kg"
+                                          required="required" autofocus="autofocus" class="form-control" min="3"
+                                          max="150" value="65" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-6 px-14 mt-2">
+                                      <div class="form-group mb-lg-20">
+                                        <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                          <span>Medical Condition</span>
+                                        </label>
+                                        <input type="text" name="feet" id="feet" placeholder="Feet" required="required"
+                                          autofocus="autofocus" class="form-control" value="Diabetes" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-6 px-14 mt-2">
+                                      <div class="form-group mb-lg-20">
+                                        <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                          <span>Diagnosed</span>
+                                        </label>
+                                        <input type="text" name="inch" id="inch" placeholder="Inch" required="required"
+                                          autofocus="autofocus" class="form-control mt-0" value="24/12/2023" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-6 px-14 mt-2">
+                                      <div class="form-group mb-lg-20">
+                                        <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                          <span>Severity</span>
+                                        </label>
+                                        <input type="text" name="feet" id="feet" placeholder="Feet" required="required"
+                                          autofocus="autofocus" class="form-control" value="Mild" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-6 px-14 mt-2">
+                                      <div class="form-group mb-lg-20">
+                                        <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                          <span>Test Report</span>
+                                        </label>
+                                        <input type="text" name="inch" id="inch" placeholder="Inch" required="required"
+                                          autofocus="autofocus" class="form-control mt-0" value="diabetes.pdf" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-6 px-14 mt-2">
+                                      <div class="form-group mb-lg-20">
+                                        <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                          <span>Medication</span>
+                                        </label>
+                                        <input type="text" name="inch" id="inch" placeholder="Inch" required="required"
+                                          autofocus="autofocus" class="form-control mt-0" value="Metformin" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-6 px-14 mt-2">
+                                      <div class="form-group mb-lg-20">
+                                        <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                          <span>Medication Time</span>
+                                        </label>
+                                        <input type="text" name="inch" id="inch" placeholder="Inch" required="required"
+                                          autofocus="autofocus" class="form-control mt-0" value="Morning & Night"
+                                          disabled>
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+                                </form>
+
+                              </div>
+
+                              <div class="tab-pane fade pt-3" id="profile-change-password">
+                                <!-- Change Password Form -->
+
+                                <h5 class="card-title">Report</h5>
+                                <p class="small fst-italic">During the dietician consultation session with the
+                                  diabetic customer, it was noted that the customer has been struggling to maintain
+                                  stable blood sugar levels due to inconsistent meal planning and portion control. The
+                                  dietician emphasized the importance of a balanced diet rich in whole grains, lean
+                                  proteins, fruits, and vegetables while limiting intake of refined sugars and
+                                  processed foods. The customer was provided with a personalized meal plan and
+                                  educated on the importance of regular monitoring of blood sugar levels to track
+                                  progress. Additionally, the dietician recommended incorporating regular physical
+                                  activity into the customer's routine to further support blood sugar management and
+                                  overall health. Follow-up appointments were scheduled to monitor progress and make
+                                  any necessary adjustments to the meal plan.</p>
+                                </form><!-- End Change Password Form -->
+
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+                  </div>
+                </div>
+
+
+
+              </div>
+
+            </div>
+            <div class="card info-card sales-card today-session-card">
+
+              <div class="card-body">
+                <div class="ongoing-top">
+                  <div>
+                    <h5>Session 2</h5>
+                    <p>23 June 2024 | <span> 12: 00 IST</span></p>
+                  </div>
+                  <div>
+                    <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#callLog">Call Log</button>
+
+                    <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#reschedule">Reschedule
+                      Session</button> <button class="btn btn-theme" data-bs-toggle="modal"
+                      data-bs-target="#writenote">Write
+                      Note</button>
+                    <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#startsession">Start
+                      Session</button>
+                  </div>
+                </div>
+                <div class="ongoing-bottom">
+                  <div>
+                    <p>Name</p>
+                    <h6 class="sp-link"><a href="user-overview.html">Gustavo Xavier</a></h6>
+                  </div>
+                  <div>
+                    <p>Height(in cm)</p>
+                    <h6>179</h6>
+                  </div>
+                  <div>
+                    <p>Current Body Weight</p>
+                    <h6>75 kg</h6>
+                  </div>
+                  <div>
+                    <p>Additional Info</p>
+                    <h6>
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#additional-info"
+                        style="border-radius: 30px; border:none">
+                        <i class="bi bi-info"></i>
+                      </button>
+                    </h6>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div><!-- End Sales Card -->
+
+
+
+
+          <div class="modal fade" id="callLog" tabindex="-1">
+            <div class="modal-dialog ">
+              <div class="modal-content" style="width: 100%;">
+                <div class="modal-header">
+                  <h5 class="modal-title">Call Log</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                  <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+
+                    <!-- <div class="col-lg-12 col-12 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="sessionType" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Session Type :</span>
+                          </label>
+                          <div class="d-flex justify-content-between">
+                            <label><input type="radio" name="sessionType" value="Audio" checked>
+                              Audio Session</label><br>
+                            <label><input type="radio" name="sessionType" value="Video"> Video Session</label>
+                          </div>
+                        </div>
+                      </div> -->
+                    <div class="col-lg-12 col-12 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="topic" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Topic :</span>
+                        </label>
+                        <input type="text" name="topic" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="">
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="SelectDate" class="gray-600 f-lg-18 f-16 font-weight-normal">
+                          <span>Date:</span>
+                        </label>
+                        <input type="date" name="SelectDate" class="form-control" required="required"
+                          autofocus="autofocus">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="SelectTime" class="gray-600 f-lg-18 f-16 font-weight-normal">
+                          <span>Time:</span>
+                        </label>
+                        <input type="time" name="SelectTime" class="form-control" required="required">
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="duration" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Duration :</span>
+                        </label>
+                        <input type="text" name="duration" placeholder="in min" required="required"
+                          autofocus="autofocus" class=" form-control" value="">
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-theme">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade" id="reschedule" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content" style="width: 100%;">
+                <div class="modal-header">
+                  <h5 class="modal-title">Reschedule Session</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                  <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="old-date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Old Date :</span>
+                        </label>
+                        <input type="text" name="old-date" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="22 June 2024" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="old-time" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Old Time :</span>
+                        </label>
+                        <input type="text" name="old-time" placeholder="11:00" required="required" autofocus="autofocus"
+                          class=" form-control" value="1 Month" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="new-date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>New Date :</span>
+                        </label>
+                        <input type="text" name="new-date" placeholder="" required="required" autofocus="autofocus"
+                          class="form-control" value="">
+
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="new-time" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>New Time :</span>
+                        </label>
+                        <input type="text" name="new-time" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="">
+                      </div>
+                    </div>
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-theme">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="writenote" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content" style="width: 100%;">
+                <div class="modal-header">
+                  <h5 class="modal-title">Write Note</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                  <form method="POST" novalidate="novalidate">
+                    <div class="row ">
+
+
+                      <div class="col-lg-12 col-12 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <textarea id="editor" class="form-control editor-box"
+                            placeholder="Enter text here"></textarea>
+
+                        </div>
+                      </div>
+
+                    </div>
+
+
+
+                  </form>
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-theme">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="startsession" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content" style="width: 100%;">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                  <video autoplay muted loop controls style="    width: -webkit-fill-available;border-radius: 20px;">
+                    <source src="{% static 'users/img/lessonvideo-1.mp4' %}" type="video/mp4">
+                  </video>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+{% include "dietitian_footer.html" %}
+<script>
+
+  $(document).ready(function () {
+    var quill = new Quill('#editor', {
+      theme: 'snow'
+    });
+
+    $('#time').timepicker({
+      timeFormat: 'HH:mm',
+      interval: 30,
+      minTime: '00:00',
+      maxTime: '23:30',
+      dynamic: false,
+      dropdown: true,
+      scrollbar: true
+    });
+
+    $('input[name="new-date"]').datepicker({
+      format: 'dd MM yyyy',
+      autoclose: true,
+      todayHighlight: true
+    });
+  });
+</script>

@@ -1,0 +1,457 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Today's Sessions</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-xl-12 ">
+          <div class="cr-card revenue-overview">
+            <div class="cr-card-header header-575">
+              <div class="header-tools">
+                <h4 class="cr-card-title">Today's Sessions</h4>
+              </div>
+              <div class="header-tools">
+                <div id="chatButton" class="emoji-button">
+                  <i class="ri-chat-3-line"></i>
+                  <p>Chat</p>
+                </div>
+                <div id="messageButton" class="emoji-button">
+                  <i class="ri-team-fill"></i>
+                  <p>People</p>
+                </div>
+                <div class="divider">
+                </div>
+                <div id="camera-btn" class="emoji-button">
+                  <i class="ri-video-on-line camera-on" style="display: none;"></i>
+                  <i class="ri-video-off-line camera-off"></i>
+                  <p>Camera</p>
+                </div>
+                <div id="mic-btn" class="emoji-button">
+                  <i class="ri-mic-line mic-on" style="display: none;"></i>
+                  <i class="ri-mic-off-line mic-off"></i>
+                  <p>Mic</p>
+                </div>
+                <button class="btn btn-theme">Join</button>
+                <button class="btn btn-leave" data-bs-toggle="modal" data-bs-target="#verticalycentered">Leave</button>
+              </div>
+            </div>
+            <div class="cr-card-content dark-corner">
+              <div id="tabs" class="main-tab-sec row">
+                <div class="col-xl-3">
+                  <div class="lesson-tabs">
+                    <ul style="background: #fff;">
+                      <li><a href="#tab-1" class="active">
+                          <div><img src="{% static 'users/img/lesson-1.png' %}" width="100" />
+                            <div class="d-flex justify-content-between pt-1">
+                              <p><span class="bold">Date: </span>23 June</p>
+                              <p><span class="bold">Time: </span>10 AM</p>
+                            </div>
+                            <div class="extrainfo">
+                              <div>
+                                <h6><span class="bold">Topic: </span>Weight Loss</h6>
+                                <h6><span class="bold">Duration: </span>1 Hour</h6>
+                                <h6><span class="bold">By: </span>Anderson</h6>
+                              </div>
+                            </div>
+
+
+                          </div>
+                        </a></li>
+                      <li><a href="#tab-2">
+                          <div><img src="{% static 'users/img/lesson-2.png' %}" width="100" />
+                            <div class="d-flex justify-content-between pt-1">
+                              <p><span class="bold">Date: </span>24 June</p>
+                              <p><span class="bold">Time: </span>12 PM</p>
+                            </div>
+                            <div class="extrainfo">
+                              <div>
+                                <h6><span class="bold">Topic: </span>Healthy Diet</h6>
+                                <h6><span class="bold">Duration: </span>Emma</h6>
+                                <h6><span class="bold">By: </span>30 Min</h6>
+                              </div>
+                            </div>
+                          </div>
+
+                        </a></li>
+                      <li class="lesson-disabled"><a href="#tab-3">
+                          <div><img src="{% static 'users/img/lesson-3.png' %}" width="100" />
+                            <div class="d-flex justify-content-between pt-1">
+                              <p><span class="bold">Date: </span>25 June</p>
+                              <p><span class="bold">Time: </span>3 PM</p>
+                            </div>
+                            <div class="extrainfo disabled">
+                              <div>
+                                <h6><span class="bold">Topic: </span>Weight Gain</h6>
+                                <h6><span class="bold">Duration: </span>Emma</h6>
+                                <h6><span class="bold">By: </span>1 Hour</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </a></li>
+                      <!-- Add more tabs as needed -->
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xl-9 col-sm-12" style="padding-left:0px;">
+                  <div style="display: flex;padding-left: 0px; gap: 10px;">
+                    <div class="video-section">
+                      <div id="tab-1" class="tab-content active">
+                        <video autoplay muted loop controls>
+                          <source src="{% static 'users/img/lessonvideo-1.mp4' type="video/mp4' %}" >
+
+
+                        </video>
+                        <div class=" video-bottom">
+                          <center>
+                            <p class="m-b-0 mt-2">Topic: Weight Loss</p>
+
+                          </center>
+
+                        </div>
+
+                        <div class="modal fade" id="verticalycentered" tabindex="-1">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content" style="width: 100%;">
+                              <div class="modal-header">
+                                <h5 class="modal-title">Submit Reading</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                  aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Please rate your recent dietician session by providing feedback on the following
+                                  aspects: professionalism, knowledge, communication, helpfulness, and overall
+                                  satisfaction. Your input is valuable and will help us improve our services. Thank you
+                                  for taking the time to submit your rating.</p>
+
+                                <form method="POST" novalidate="novalidate" class="contact-form mb-5 mt-5">
+                                  <div class="row ">
+
+
+                                    <div class="col-lg-12 col-12 px-14 mt-2">
+                                      <div class="form-group mb-lg-20">
+                                        <label for="date" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                          <span>Your Review</span>
+                                        </label>
+                                        <textarea class="form-control" placeholder="Review" value=""></textarea>
+                                      </div>
+                                    </div>
+
+                                  </div>
+
+
+
+                                </form>
+                                <div>
+                                  <center>
+                                    <form class="sp-rating" style="margin: 0 auto;">
+                                      <label>
+                                        <input type="radio" name="stars" value="1" />
+                                        <span class="icon">★</span>
+                                      </label>
+                                      <label>
+                                        <input type="radio" name="stars" value="2" />
+                                        <span class="icon">★</span>
+                                        <span class="icon">★</span>
+                                      </label>
+                                      <label>
+                                        <input type="radio" name="stars" value="3" />
+                                        <span class="icon">★</span>
+                                        <span class="icon">★</span>
+                                        <span class="icon">★</span>
+                                      </label>
+                                      <label>
+                                        <input type="radio" name="stars" value="4" />
+                                        <span class="icon">★</span>
+                                        <span class="icon">★</span>
+                                        <span class="icon">★</span>
+                                        <span class="icon">★</span>
+                                      </label>
+                                      <label>
+                                        <input type="radio" name="stars" value="5" />
+                                        <span class="icon">★</span>
+                                        <span class="icon">★</span>
+                                        <span class="icon">★</span>
+                                        <span class="icon">★</span>
+                                        <span class="icon">★</span>
+                                      </label>
+                                    </form>
+                                  </center>
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-theme">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="tab-2" class="tab-content">
+                        <video autoplay muted loop controls>
+                          <source src="{% static 'users/img/lessonvideo-1.mp4" type="video/mp4">
+                        </video>
+                        <div class=" video-bottom">
+                          <center>
+                            <p class="m-b-0 mt-2">Topic: Healthy Diet</p>
+                          </center>
+                        </div>
+                      </div>
+                      <div id="tab-3" class="tab-content">
+                        <video autoplay muted loop controls>
+                          <source src="{% static 'users/img/lessonvideo-1.mp4" type="video/mp4">
+                        </video>
+                        <div class=" video-bottom">
+                          <center>
+                            <p class="m-b-0 mt-2">Topic: Weight Gain</p>
+                          </center>
+                        </div>
+                      </div>
+
+                      <div id="chatbox">
+                        <div class="box-wrapper-chat">
+                          <div class="participants">
+                            <div>Chat</div>
+                            <div><a href="#"><i class="ri-close-circle-line"></i></a></div>
+                          </div>
+                          <div class="chat-msg">
+
+                            <p class="receiver">Thanks for your help!</p>
+
+
+                            <p class="sender">No Problem</p>
+                            <p class="sender">can I help you with anything else</p>
+
+
+                            <p class="receiver">Thanks for your help!</p>
+
+
+                            <p class="sender">No Problem</p>
+                            <p class="sender">can I help you with anything else</p>
+
+
+                            <p class="receiver">No, thanks for Asking</p>
+                          </div>
+
+
+                          <div class="chat-bottom">
+                            <form class="number-search">
+                              <input class="search-input form-group" type="text" placeholder="Type a message..">
+                              </a>
+                            </form>
+                            <div class="edit-emoji">
+                              <div class="edit">
+                                <a href=""><i class="ri-edit-2-fill"></i></a>
+                                <a href=""><i class="ri-attachment-2"></i></a>
+                                <a href=""><i class="ri-emoji-sticker-fill"></i></a>
+                                <a href=""><i class="ri-file-gif-fill"></i></a>
+                              </div>
+                              <div><a href=""><i class="ri-send-plane-fill"></i></a></div>
+                            </div>
+                          </div>
+
+
+
+
+                        </div>
+                      </div>
+                      <div id="messagebox">
+                        <div class="box-wrapper">
+                          <div class="participants">
+                            <div>Participants</div>
+                            <div><a href="#"><i class="ri-close-circle-line"></i></a></div>
+                          </div>
+                          <form class="number-search">
+                            <input class="search-input" type="text" placeholder="Enter name or phone number..">
+                            </a>
+                          </form>
+                          <p class="current"><span><i class="ri-arrow-down-s-line"></i></span> Currently in this call
+                            <strong>(2)</strong>
+                          </p>
+                          <div>
+                            <div class="users-list">
+                              <div><span><i class="ri-user-2-fill symbol"></i></span>John Doe</div>
+                              <div><a href="#"><i class="ri-mic-fill symbol-mic"></i></a></div>
+                            </div>
+                            <div class="users-list">
+                              <div><span><i class="ri-user-2-fill symbol"></i></span>Martin Doe</div>
+                              <div><a href="#"><i class="ri-mic-fill symbol-mic"></i></a></div>
+                            </div>
+                          </div>
+
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <section class="section">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-xxl-12 col-xl-12 col-md-12">
+                  <div class="cr-card" id="campaigns">
+                    <div class="cr-card-header card-head-br">
+                      <h4 class="cr-card-title">Upcoming Sessions</h4>
+                      <div class="header-tools">
+                        <div id="reportrange" class="date-range-style">
+                          <i class="ri-calendar-2-line"></i>&nbsp;
+                          <span></span> <i class="fa fa-caret-down"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cr-card-content bg-white row" style="margin: 0px;">
+
+
+
+                      <div class="lesson-tabs upcoming-lessons">
+                        <ul style="background: #fff;">
+                          <li><a href="">
+                              <div><img src="{% static 'users/img/lesson-1.png' %}" width="100" />
+                                <div class="d-flex justify-content-between pt-1">
+                                  <p><span class="bold">Date: </span>23 June</p>
+                                  <p><span class="bold">Time: </span>10 AM</p>
+                                </div>
+                                <div class="extrainfo">
+                                  <div>
+                                    <h6><span class="bold">Topic: </span>Weight Loss</h6>
+                                    <h6><span class="bold">Duration: </span>1 Hour</h6>
+                                    <h6><span class="bold">By: </span>Anderson</h6>
+                                  </div>
+                                </div>
+
+
+                              </div>
+                            </a></li>
+                          <li><a href="">
+                              <div><img src="{% static 'users/img/lesson-2.png' %}" width="100" />
+                                <div class="d-flex justify-content-between pt-1">
+                                  <p><span class="bold">Date: </span>24 June</p>
+                                  <p><span class="bold">Time: </span>12 PM</p>
+                                </div>
+                                <div class="extrainfo">
+                                  <div>
+                                    <h6><span class="bold">Topic: </span>Healthy Diet</h6>
+                                    <h6><span class="bold">Duration: </span>Emma</h6>
+                                    <h6><span class="bold">By: </span>30 Min</h6>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </a></li>
+                          <li><a href="">
+                              <div><img src="{% static 'users/img/lesson-3.png' %}" width="100" />
+                                <div class="d-flex justify-content-between pt-1">
+                                  <p><span class="bold">Date: </span>25 June</p>
+                                  <p><span class="bold">Time: </span>3 PM</p>
+                                </div>
+                                <div class="extrainfo">
+                                  <div>
+                                    <h6><span class="bold">Topic: </span>Weight Gain</h6>
+                                    <h6><span class="bold">Duration: </span>Emma</h6>
+                                    <h6><span class="bold">By: </span>1 Hour</h6>
+                                  </div>
+                                </div>
+                              </div>
+                            </a></li>
+
+                          <!-- Add more tabs as needed -->
+                        </ul>
+                      </div>
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "user-footer.html" %}
+   <script>
+    $(document).ready(function () {
+      $(function () {
+        $("#tabs ul li a").click(function () {
+          var tab_id = $(this).attr('href');
+
+          $("#tabs ul li a").removeClass('active');
+          $(".tab-content").hide();
+
+          $(this).addClass('active');
+          $(tab_id).show();
+
+          return false;
+        });
+
+        const chatbox = document.getElementById('chatbox');
+        const toggleBtn = document.getElementById('toggleBtn');
+
+        $('#chatButton').click(function () {
+          $('#chatbox').toggle();
+          $('#messagebox').hide();
+        });
+
+        $('#messageButton').click(function () {
+          $('#messagebox').toggle();
+          $('#chatbox').hide();
+        });
+        $('#mic-btn').click(function () {
+          $('.mic-on').toggle();
+          $('.mic-off').toggle();
+        });
+        $('#camera-btn').click(function () {
+          $('.camera-on').toggle();
+          $('.camera-off').toggle();
+        });
+
+
+        $('.lesson-tabs li').hover(function () {
+          $(this).find('.extrainfo').show();
+        }, function () {
+          $(this).find('.extrainfo').hide();
+        });
+
+      });
+
+    });
+
+
+  </script>

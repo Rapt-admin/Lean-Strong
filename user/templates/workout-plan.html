@@ -1,0 +1,706 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+<link href="https://unpkg.com/@fullcalendar/core@4.3.1/main.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.css" rel="stylesheet" />
+<script src="https://unpkg.com/@fullcalendar/timegrid@4.3.0/main.min.css"></script>
+
+
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Workout Plan</h1>
+  </div><!-- End Page Title -->
+
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+
+          <div class="card">
+            <div class="card-body pt-3">
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" data-bs-toggle="tab"
+                    data-bs-target="#workout-calendar">Calendar</button>
+                </li>
+
+                <li class="nav-item workout-plantab">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#workout-plan">Workout Plan</button>
+                </li>
+
+                <li class="nav-item workout-videostab">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#workout-videos">Workout
+                    Videos</button>
+                </li>
+
+              </ul>
+              <div class="tab-content pt-2">
+
+                <div class="tab-pane fade show active " id="workout-calendar">
+                  <div class="col-md-12">
+                    <div id='calendar' style="position: relative;"></div>
+                    <div class="date hurrey" data-date="2024-08-03">
+                      <div class="message success d-flex">
+                        <p class="emoji"><img src="{% static 'users/img/happy.gif' %}"></p>
+                        <p class="hurrey pt-1">Hurrey!</p>
+
+                      </div>
+                    </div>
+                    <div class="date behind" data-date="2024-08-13">
+                      <div class="message failure d-flex">
+                        <p class="emoji"><img src="{% static 'users/img/sad.gif' %}"></p>
+                        <p class="behind pt-1">You're Behind!</p>
+                      </div>
+                    </div>
+                    <div class="workout-name" data-date="2024-08-03">
+                      <div class="exersice">
+                        <span class="badge bg-success text-light " id="view-workout-btn">Workout plan</span>
+
+
+
+
+
+
+
+
+
+
+                      </div>
+                    </div>
+                    <div class="workout-name" data-date="2024-08-13">
+                      <div class="exersice">
+                        <span class="badge bg-success text-light" id="view-workout-btn">Workout plan</span>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="workout-plan">
+
+                  <ul class="nav nav-tabs nav-tabs-bordered d-flex custom-tabs" id="borderedTabJustified"
+                    role="tablist">
+                    <li class="nav-item flex-fill" role="presentation">
+                      <button class="nav-link w-100 active" id="chest-tab" data-bs-toggle="tab"
+                        data-bs-target="#bordered-justified-home" type="button" role="tab" aria-controls="home"
+                        aria-selected="true">Chest Workout</button>
+                    </li>
+                    <li class="nav-item flex-fill" role="presentation">
+                      <button class="nav-link w-100" id="shoulder-tab" data-bs-toggle="tab"
+                        data-bs-target="#bordered-justified-profile" type="button" role="tab" aria-controls="profile"
+                        aria-selected="false">Shoulder Workout</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="borderedTabJustifiedContent">
+                    <div class="tab-pane fade show custom-table active" id="bordered-justified-home" role="tabpanel"
+                      aria-labelledby="chest-tab">
+                      <table class="table table-borderless ">
+                        <thead class="th-border">
+                          <tr>
+                            <th scope="col">Workout</th>
+                            <th scope="col">Workout Name</th>
+                            <th scope="col">Number of Sets</th>
+                            <th scope="col">Number of Reps</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td scope="row"><a href="#"><img src="{% static 'users/img/workout-1.png' %}" width="100px"
+                                  alt=""></a>
+                            </td>
+                            <td>Barbell Bench Press</td>
+                            <td>4</td>
+                            <td class="fw-bold">12</td>
+                          </tr>
+                          <tr>
+                            <td scope="row"><a href="#"><img src="{% static 'users/img/workout-2.png' %}" width="100px"
+                                  alt=""></a>
+                            </td>
+                            <td>Push Ups</td>
+                            <td>2</td>
+                            <td class="fw-bold">10</td>
+                          </tr>
+                          <tr>
+                            <td scope="row"><a href="#"><img src="{% static 'users/img/workout-3.png' %}" width="100px"
+                                  alt=""></a>
+                            </td>
+                            <td>Pec Fly</td>
+                            <td>3</td>
+                            <td class="fw-bold">12</td>
+                          </tr>
+                          <tr>
+                            <td scope="row"><a href="#"><img src="{% static 'users/img/workout-3.png' %}" width="100px"
+                                  alt=""></a>
+                            </td>
+                            <td>Incline Bench Press</td>
+                            <td>4</td>
+                            <td class="fw-bold">10</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="tab-pane fade custom-table" id="bordered-justified-profile" role="tabpanel"
+                      aria-labelledby="shoulder-tab">
+                      <table class="table table-borderless ">
+                        <thead class="th-border">
+                          <tr>
+                            <th scope="col">Workout</th>
+                            <th scope="col">Workout Name</th>
+                            <th scope="col">Number of Sets</th>
+                            <th scope="col">Number of Reps</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td scope="row"><a href="#"><img src="{% static 'users/img/shoulder-1.png' %}" width="100px"
+                                  alt=""></a>
+                            </td>
+                            <td>Overhead Press</td>
+                            <td>2</td>
+                            <td class="fw-bold">12</td>
+                          </tr>
+                          <tr>
+                            <td scope="row"><a href="#"><img src="{% static 'users/img/shoulder-2.png' %}" width="100px"
+                                  alt=""></a>
+                            </td>
+                            <td>Lateral Raises</td>
+                            <td>3</td>
+                            <td class="fw-bold">12</td>
+                          </tr>
+                          <tr>
+                            <td scope="row"><a href="#"><img src="{% static 'users/img/shoulder-3.png' %}" width="100px"
+                                  alt=""></a>
+                            </td>
+                            <td>Shrugs</td>
+                            <td>2</td>
+                            <td class="fw-bold">12</td>
+                          </tr>
+                          <tr>
+                            <td scope="row"><a href="#"><img src="{% static 'users/img/shoulder-4.png' %}" width="100px"
+                                  alt=""></a>
+                            </td>
+                            <td>Reverse Flyes</td>
+                            <td>2</td>
+                            <td class="fw-bold">12</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                  </div>
+
+
+
+
+
+                  <!-- <ul class="nav nav-tabs pt-2" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                          type="button" role="tab" aria-controls="home" aria-selected="true">ssChest Workout</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                          type="button" role="tab" aria-controls="profile" aria-selected="false">Shoulder
+                          Workout</button>
+                      </li>
+                    </ul>
+                    <div class="tab-content pt-2" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <table class="table table-borderless ">
+                          <thead class="th-border">
+                            <tr>
+                              <th scope="col">Workout</th>
+                              <th scope="col">Workout Name</th>
+                              <th scope="col">Number of Sets</th>
+                              <th scope="col">Number of Reps</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row"><a href="#"><img src="{% static 'users/img/workout-1.png' %}" width="100px"
+                                    alt=""></a>
+                              </th>
+                              <td>Barbell Bench Press</td>
+                              <td>4</td>
+                              <td class="fw-bold">12</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><a href="#"><img src="{% static 'users/img/workout-2.png' %}" width="100px"
+                                    alt=""></a>
+                              </th>
+                              <td>Push Ups</td>
+                              <td>2</td>
+                              <td class="fw-bold">10</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><a href="#"><img src="{% static 'users/img/workout-3.png' %}" width="100px"
+                                    alt=""></a>
+                              </th>
+                              <td>Pec Fly</td>
+                              <td>3</td>
+                              <td class="fw-bold">12</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><a href="#"><img src="{% static 'users/img/workout-3.png' %}" width="100px"
+                                    alt=""></a>
+                              </th>
+                              <td>Incline Bench Press</td>
+                              <td>4</td>
+                              <td class="fw-bold">10</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <table class="table table-borderless ">
+                          <thead class="th-border">
+                            <tr>
+                              <th scope="col">Workout</th>
+                              <th scope="col">Workout Name</th>
+                              <th scope="col">Number of Sets</th>
+                              <th scope="col">Number of Reps</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row"><a href="#"><img src="{% static 'users/img/shoulder-1.png' %}" width="100px"
+                                    alt=""></a>
+                              </th>
+                              <td>Overhead Press</td>
+                              <td>2</td>
+                              <td class="fw-bold">12</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><a href="#"><img src="{% static 'users/img/shoulder-2.png' %}" width="100px"
+                                    alt=""></a>
+                              </th>
+                              <td>Lateral Raises</td>
+                              <td>3</td>
+                              <td class="fw-bold">12</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><a href="#"><img src="{% static 'users/img/shoulder-3.png' %}" width="100px"
+                                    alt=""></a>
+                              </th>
+                              <td>Shrugs</td>
+                              <td>2</td>
+                              <td class="fw-bold">12</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><a href="#"><img src="{% static 'users/img/shoulder-4.png' %}" width="100px"
+                                    alt=""></a>
+                              </th>
+                              <td>Reverse Flyes</td>
+                              <td>2</td>
+                              <td class="fw-bold">12</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                    </div> -->
+
+                </div>
+
+                <div class="tab-pane fade" id="workout-videos">
+
+                  <ul class="nav nav-tabs nav-tabs-bordered d-flex custom-tabs" id="borderedTabJustified"
+                    role="tablist">
+                    <li class="nav-item flex-fill" role="presentation">
+                      <button class="nav-link w-100 active" id="chest-tab-video" data-bs-toggle="tab"
+                        data-bs-target="#bordered-justified-chest" type="button" role="tab" aria-controls="chest"
+                        aria-selected="true">Chest Workout</button>
+                    </li>
+                    <li class="nav-item flex-fill" role="presentation">
+                      <button class="nav-link w-100" id="shoulder-tab-video" data-bs-toggle="tab"
+                        data-bs-target="#bordered-justified-shoulder" type="button" role="tab" aria-controls="shoulder"
+                        aria-selected="false">Shoulder Workout</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="borderedTabJustifiedContent">
+                    <div class="tab-pane fade show custom-table active" id="bordered-justified-chest" role="tabpanel"
+                      aria-labelledby="chest-tab-video">
+                      <div class="gallery">
+
+
+                        <div class="video-card">
+                          <video muted poster="{% static 'users/img/barbell.jpg' %}">
+                            <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                          </video>
+                          <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                          <p>Barbell Bench Press</p>
+                        </div>
+                        <div class="video-card">
+                          <video muted poster="{% static 'users/img/pushups.jpg' %}">
+                            <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                          </video>
+                          <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                          <p>Pushups </p>
+                        </div>
+                        <div class="video-card">
+                          <video muted poster="{% static 'users/img/pecfly.jpg' %}">
+                            <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                          </video>
+                          <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                          <p>Pec Fly</p>
+
+                        </div>
+                        <div class="video-card">
+                          <video muted poster="{% static 'users/img/incline.jpg' %}">
+                            <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                          </video>
+                          <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                          <p>Incline Press</p>
+                        </div>
+
+
+
+                      </div>
+                    </div>
+                    <div class="tab-pane fade custom-table" id="bordered-justified-shoulder" role="tabpanel"
+                      aria-labelledby="shoulder-tab-video">
+                      <div class="gallery">
+
+
+                        <div class="video-card">
+                          <video muted poster="{% static 'users/img/Overheadpress.jpg' %}">
+                            <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                          </video>
+                          <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                          <p>Overhead Press</p>
+                        </div>
+                        <div class="video-card">
+                          <video muted poster="{% static 'users/img/pushups.jpg' %}">
+                            <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                          </video>
+                          <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                          <p>Lateral Raises </p>
+                        </div>
+                        <div class="video-card">
+                          <video muted poster="{% static 'users/img/lateral.jpg' %}">
+                            <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                          </video>
+                          <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                          <p>Shrugs</p>
+
+                        </div>
+                        <div class="video-card">
+                          <video muted poster="{% static 'users/img/reverse.jpg' %}">
+                            <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                          </video>
+                          <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                          <p>Reverse Flyes</p>
+                        </div>
+
+
+
+                      </div>
+                    </div>
+                    <div id="videoModal" class="modal">
+                      <div class="modal-content" style="width: 60%;">
+                        <video controls id="modalVideo">
+                          <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  <!--
+                    <ul class="nav nav-tabs pt-2" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="chestwork-tab" data-bs-toggle="tab"
+                          data-bs-target="#chestwork" type="button" role="tab" aria-controls="chestwork"
+                          aria-selected="true">Chest Workout</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="shoulderwork-tab" data-bs-toggle="tab"
+                          data-bs-target="#shoulderwork" type="button" role="tab" aria-controls="shoulderwork"
+                          aria-selected="false">Shoulder
+                          Workout</button>
+                      </li>
+                    </ul>
+                    <div class="tab-content pt-2" id="myTabContent">
+                      <div class="tab-pane fade show active" id="chestwork" role="tabpanel"
+                        aria-labelledby="chestwork-tab">
+                        <div class="gallery">
+
+
+                          <div class="video-card">
+                            <video muted poster="{% static 'users/img/barbell.jpg' %}">
+                              <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                            </video>
+                            <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                            <p>Barbell Bench Press</p>
+                          </div>
+                          <div class="video-card">
+                            <video muted poster="{% static 'users/img/pushups.jpg' %}">
+                              <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                            </video>
+                            <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                            <p>Pushups </p>
+                          </div>
+                          <div class="video-card">
+                            <video muted poster="{% static 'users/img/pecfly.jpg' %}">
+                              <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                            </video>
+                            <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                            <p>Pec Fly</p>
+
+                          </div>
+                          <div class="video-card">
+                            <video muted poster="{% static 'users/img/incline.jpg' %}">
+                              <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                            </video>
+                            <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                            <p>Incline Press</p>
+                          </div>
+
+
+
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="shoulderwork" role="tabpanel" aria-labelledby="shoulderwork-tab">
+                        <div class="gallery">
+
+
+                          <div class="video-card">
+                            <video muted poster="{% static 'users/img/Overheadpress.jpg' %}">
+                              <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                            </video>
+                            <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                            <p>Overhead Press</p>
+                          </div>
+                          <div class="video-card">
+                            <video muted poster="{% static 'users/img/pushups.jpg' %}">
+                              <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                            </video>
+                            <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                            <p>Lateral Raises </p>
+                          </div>
+                          <div class="video-card">
+                            <video muted poster="{% static 'users/img/lateral.jpg' %}">
+                              <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                            </video>
+                            <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                            <p>Shrugs</p>
+
+                          </div>
+                          <div class="video-card">
+                            <video muted poster="{% static 'users/img/reverse.jpg' %}">
+                              <source src="{% static 'users/img/demo.mp4" type="video/mp4">
+                            </video>
+                            <p class="play-button"><i class="ri-play-circle-fill"></i></p>
+                            <p>Reverse Flyes</p>
+                          </div>
+
+
+
+                        </div>
+
+                      </div>
+
+                    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+              </div><!-- End Bordered Tabs -->
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+
+
+<script src="https://unpkg.com/@fullcalendar/core@4.3.1/main.min.js"></script>
+<script src="https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.js"></script>
+<script src="https://unpkg.com/@fullcalendar/timegrid@4.3.0/main.min.js"></script>
+<script src="https://unpkg.com/@fullcalendar/interaction@4.3.0/main.min.js"></script>
+
+<script>
+
+
+
+  $('.play-button,.video-card').click(function () {
+    $('#videoModal').show();
+    $('#modalVideo').get(0).play();
+  });
+
+  $('#videoModal').click(function () {
+    $(this).hide();
+    $('#modalVideo').get(0).pause();
+  });
+
+
+
+
+
+
+
+
+
+  $('#view-workout-btn').on('click', function () {
+    $('[data-bs-target="#workout-plan"]').click();
+    $('.workout-videostab').show();
+    $('.workout-plantab').show();
+  });
+
+
+
+  const calendarEl = $('#calendar')[0];
+  let awaitingSecondClick = false;
+  const currentDate = new Date();
+  currentDate.setUTCHours(0, 0, 0, 0);
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth();
+  const currentDay = currentDate.getDate();
+  const defaultDate = new Date(currentYear, currentMonth, currentDay);
+
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    plugins: ['dayGrid', 'interaction'],
+    dateClick: () => {
+      if (!awaitingSecondClick) {
+        awaitingSecondClick = true;
+        setTimeout(() => awaitingSecondClick = false, 500);
+      }
+    },
+    headerToolbar: {
+      right: 'prevYear,prev,next,nextYear'
+    },
+    initialDate: defaultDate,
+    editable: true,
+    eventLimit: true,
+    events: []
+  });
+  calendar.render();
+
+  function positionDivs() {
+    $('.date, .workout-name').each(function () {
+      const dateDiv = $(this);
+      const dates = dateDiv.data('date').split(',');
+      let positioned = false;
+
+      dates.forEach(function (date) {
+        const calendarDateEl = $(`[data-date='${date.trim()}']`, calendarEl);
+        if (calendarDateEl.length) {
+          const calendarDateRect = calendarDateEl[0].getBoundingClientRect();
+          const calendarRect = calendarEl.getBoundingClientRect();
+          const clone = dateDiv.clone(true).appendTo(calendarEl).css({
+            position: 'absolute',
+            top: `${calendarDateRect.top - calendarRect.top}px`,
+            left: `${calendarDateRect.left - calendarRect.left}px`,
+            display: 'block'
+          });
+
+
+          positioned = true;
+        }
+      });
+
+      if (!positioned) {
+        dateDiv.css('display', 'none');
+      }
+    });
+  }
+
+
+
+
+
+
+
+
+
+  positionDivs();
+
+  $(window).on('resize', function () {
+    calendarEl.querySelectorAll('.date, .workout-name').forEach(div => div.remove());
+    positionDivs();
+  });
+
+
+
+  $("#view-workout-btn").click(function () {
+    $("#view-workout").show();
+  });
+  $(".workout-close-btn").click(function () {
+    $("#view-workout").hide();
+  });
+
+
+  $('.date').each(function () {
+    const dates = $(this).data('date').split(',');
+    dates.forEach(function (date) {
+      const calendarDateEl = $(`td[data-date='${date.trim()}']`, calendarEl);
+      if (calendarDateEl.length) {
+        calendarDateEl.addClass('hurrey-bg');
+      }
+    });
+  });
+
+  $('.behind').each(function () {
+    const dates = $(this).data('date').split(',');
+    dates.forEach(function (date) {
+      const calendarDateEl = $(`td[data-date='${date.trim()}']`, calendarEl);
+      if (calendarDateEl.length) {
+        calendarDateEl.addClass('behind-bg');
+      }
+    });
+  });
+
+
+
+
+
+
+
+
+
+</script>
+
+{% include "user-footer.html" %}

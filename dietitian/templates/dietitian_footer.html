@@ -1,0 +1,106 @@
+{% load static%}
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Lean & Strong</span></strong>. All Rights Reserved
+  </div>
+
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js' %}"></script>
+<script src="{% static 'users//vendor/apexcharts/apexcharts.min.js' %}"></script>
+<script src="{% static 'users//vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'users//vendor/chart.js/chart.umd.js' %}"></script>
+<script src="{% static 'users//vendor/echarts/echarts.min.js' %}"></script>
+<script src="{% static 'users//vendor/quill/quill.js' %}"></script>
+<script src="{% static 'users//vendor/simple-datatables/simple-datatables.js' %}"></script>
+<script src="{% static 'users//vendor/tinymce/tinymce.min.js' %}"></script>
+<script src="{% static 'users//vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'users//js/jquery-3.6.4.min.js' %}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="https://code.iconify.design/1/1.0.4/iconify.min.js">   </script>
+<!-- Template Main JS File -->
+<script src="{% static 'users//js/main.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('#dtdash-consultation-due').DataTable();
+    $('#dtdash-consultation-upcoming').DataTable();
+    $('#dtdash-consultation-past').DataTable();
+
+    var currentPage = window.location.pathname;
+
+    $('sidebar-nav .nav-link').removeClass('active collapse');
+    $('.nav-content').addClass('collapsed');
+
+    console.log(currentPage)
+
+    $('.nav-link').each(function () {
+      var linkUrl = $(this).attr('href');
+      console.log('outer link ' + linkUrl)
+
+      if (currentPage === linkUrl) {
+        $(this).addClass('active').removeClass('collapse');
+
+      }
+    });
+    $('.nav-content a').each(function () {
+      var linkUrl = $(this).attr('href');
+      console.log('inside link ' + linkUrl)
+
+      if (currentPage === linkUrl) {
+        $(this).addClass('active');
+        $(this).closest('.nav-item').find('.nav-link').removeClass('collapsed').addClass('active')
+        $(this).closest('.nav-content').removeClass('collapsed').addClass('show collapse')
+      }
+    });
+
+
+    $(function () {
+
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      function cb(start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      }
+
+      $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+      }, cb);
+
+      cb(start, end);
+
+    });
+
+
+
+
+
+
+
+
+
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet Plan</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+  <style>
+    .pdf-content {
+      font-family: 'Quicksand';
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pdf-content .card-title {
+      margin-bottom: 1rem;
+      position: absolute;
+      top: -18px;
+      font-size: 13px;
+      background: #73a284;
+      padding: 8px 9px;
+      color: #fff!important;
+      border-radius: 10px;
+      font-weight: 600!important;
+    }
+
+
+    .pdf-card {
+      border-radius: 23px;
+      height: 270px;
+      border: 2px solid #73a284;
+      position: relative;
+      margin: 25px 0px;
+      background-color: #ffffff;
+    }
+
+    .pdf-content .card-body {
+      padding: 24px 0px;
+    }
+
+    .pdf-content .diet-list {
+      width: 100%;
+      text-align: left;
+      background-image: linear-gradient(to right, #73a284 33%, rgba(255, 255, 255, 0) 0%);
+      background-position: bottom;
+      background-size: 7px 1px;
+      background-repeat: repeat-x;
+      padding: 5px;
+      border-radius: 5px;
+      padding-top: 7px;
+      color: #000;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .pdf-content .diet-input {
+      margin-bottom: 1rem;
+    }
+
+    .pdf-content .heading {
+      font-size: 50px;
+      font-weight: bold;
+      color: #73a284;
+      margin-top: 60px;
+    }
+
+    .pdf-content .user-sec {
+      display: flex;
+      justify-content: space-around;
+      margin: 24px 10px 40px 10px;
+      font-weight: bold;
+      padding: 30px 0;
+    }
+
+
+    .pdf-content .user-sec div {
+      font-size: 15px;
+      color: #0c0c0c;
+
+    }
+
+    .pdf-content .user-sec span {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000000;
+      padding-left: 7px;
+    }
+
+    .pdf-content .plus {
+      font-size: 18px;
+      font-weight: bold;
+      color: #73a284;
+      padding-left: 7px;
+    }
+
+    .pdf-content .row.centered-row {
+      justify-content: center;
+    }
+
+    .pdf-content .overlay {
+      position: absolute;
+      top: 180px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9;
+    }
+
+    .pdf-content .overlay img {
+      max-width: 700px;
+      max-height: 700px;
+      opacity: 0.15;
+      position: absolute;
+      top: 250px;
+    }
+
+#pdf-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  opacity: 0;
+}
+
+
+    .col-md-3 {
+  width: 25%;
+  float: left;
+}
+
+@media (max-width: 768px) {
+  .col-md-3 {
+    width: 33.33%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-md-3 {
+    width: 50%; /*
+  }
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+  {% csrf_token %}
+
+  <div
+    style="background-image:url('{% static "users/img/diet-bg.png" %}' );background-size: cover;background-repeat: no-repeat; width: 100%;height: 100%;">
+    <div class="overlay">
+      <img src="{% static 'users/img/watermark.png' %}"  alt="watermark">
+    </div>
+    <div class="container" style="background-color: transparent;padding-top: 25px;">
+      <h1 class="text-center heading ">Diet Plan</h1>
+      <div class="user-sec">
+        <div>To : <span>John Doe</span></div>
+        <div>VALID UPTO : <span>25 Aug 2024</span></div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 offset-1 row centered-row" id="cardContainer">
+
+          <div class="col-md-3 col-sm-6 mb-5">
+            <div class="pdf-card  day" id="monday">
+              <div class="card-body d-flex flex-column align-items-center">
+                <h2 class="card-title text-center">Early Morning Meal</h2>
+                <div>
+                  <div class="diet-list mb-1">
+                    BeetRoot Stir-Fry <span>+</span> 1 Cup Herbal Tea
+                  </div>
+                  <div class="diet-list mb-1">
+                    Apple Cinnemon Oats <span>+</span> 5 Almonds
+                  </div>
+                  <div class="diet-list mb-1">
+                    Fresh Fruit <span>+</span> Sunflower Seeds
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-5">
+            <div class="pdf-card  day" id="tuesday">
+              <div class="card-body d-flex flex-column align-items-center">
+                <h2 class="card-title text-center">Pre-workout Meal</h2>
+                <div>
+                  <div class="diet-list mb-1">
+                    BeetRoot Stir-Fry <span>+</span> 1 Cup Herbal Tea
+                  </div>
+                  <div class="diet-list mb-1">
+                    Apple Cinnemon Oats <span>+</span> 5 Almonds
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-5">
+            <div class="pdf-card  day" id="wednesday">
+              <div class="card-body d-flex flex-column align-items-center">
+                <h2 class="card-title text-center">Post-workout Meal</h2>
+                <div>
+                  <div class="diet-list mb-1">
+                    BeetRoot Stir-Fry <span>+</span> 1 Cup Herbal Tea
+                  </div>
+                  <div class="diet-list mb-1">
+                    Apple Cinnemon Oats <span>+</span> 5 Almonds
+                  </div>
+                  <div class="diet-list mb-1">
+                    Fresh Fruit <span>+</span> Sunflower Seeds
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-5">
+            <div class="pdf-card  day" id="thursday">
+              <div class="card-body d-flex flex-column align-items-center">
+                <h2 class="card-title text-center">Breakfast Meal</h2>
+                <div>
+                  <div class="diet-list mb-1">
+                    BeetRoot Stir-Fry <span>+</span> 1 Cup Herbal Tea
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-5">
+            <div class="pdf-card  day" id="friday">
+              <div class="card-body d-flex flex-column align-items-center">
+                <h2 class="card-title text-center">Before Lunch Meal</h2>
+                <div>
+                  <div class="diet-list mb-1">
+                    BeetRoot Stir-Fry <span>+</span> 1 Cup Herbal Tea
+                  </div>
+                  <div class="diet-list mb-1">
+                    Apple Cinnemon Oats <span>+</span> 5 Almonds
+                  </div>
+                  <div class="diet-list mb-1">
+                    Fresh Fruit <span>+</span> Sunflower Seeds
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-5">
+            <div class="pdf-card  day" id="saturday">
+              <div class="card-body d-flex flex-column align-items-center">
+                <h2 class="card-title text-center">Lunch Meal</h2>
+                <div>
+                  <div class="diet-list mb-1">
+                    BeetRoot Stir-Fry <span>+</span> 1 Cup Herbal Tea
+                  </div>
+                  <div class="diet-list mb-1">
+                    Fresh Fruit <span>+</span> Sunflower Seeds
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-5">
+            <div class="pdf-card  day" id="thursday">
+              <div class="card-body d-flex flex-column align-items-center">
+                <h2 class="card-title text-center">Evening Snacks Meal</h2>
+                <div>
+                  <div class="diet-list mb-1">
+                    BeetRoot Stir-Fry <span>+</span> 1 Cup Herbal Tea
+                  </div>
+                  <div class="diet-list mb-1">
+                    Fresh Fruit <span>+</span> Sunflower Seeds
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-5">
+            <div class="pdf-card  day" id="friday">
+              <div class="card-body d-flex flex-column align-items-center">
+                <h2 class="card-title text-center">Dinner Meal</h2>
+                <div>
+                  <div class="diet-list mb-1">
+                    BeetRoot Stir-Fry <span>+</span> 1 Cup Herbal Tea
+                  </div>
+                  <div class="diet-list mb-1">
+                    Apple Cinnemon Oats <span>+</span> 5 Almonds
+                  </div>
+                  <div class="diet-list mb-1">
+                    Fresh Fruit <span>+</span> Sunflower Seeds
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 mb-5">
+            <div class="pdf-card  day" id="saturday">
+              <div class="card-body d-flex flex-column align-items-center">
+                <h2 class="card-title text-center">Before Bed Meal</h2>
+                <div>
+                  <div class="diet-list mb-1">
+                    BeetRoot Stir-Fry <span>+</span> 1 Cup Herbal Tea
+                  </div>
+                  <div class="diet-list mb-1">
+                    Apple Cinnemon Oats <span>+</span> 5 Almonds
+                  </div>
+                  <div class="diet-list mb-1">
+                    Fresh Fruit <span>+</span> Sunflower Seeds
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    // Pdf grid tree
+    $(document).ready(function () {
+      function updateLayout() {
+        var $cards = $('#cardContainer .col-md-3');
+        var rows = [4, 3, 2];
+        var currentIndex = 0;
+        var currentRow = 0;
+
+        $cards.removeClass('offset-md-1 offset-md-2');
+
+        $cards.each(function (index, card) {
+          if (currentRow >= rows.length || currentIndex >= rows[currentRow]) {
+            currentRow++;
+            currentIndex = 0;
+          }
+          if (currentRow < rows.length && currentIndex < rows[currentRow]) {
+            if (currentIndex === 0 && rows[currentRow] < 4) {
+              $(card).addClass(`offset-md-${(4 - rows[currentRow]) / 2}`);
+            }
+            currentIndex++;
+          }
+        });
+      }
+      updateLayout();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,415 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Purchase Service</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+
+
+
+              <div class="col-xs-12 col-md-12 plan-table">
+                <div class="row justify-content-center mt-3 pb-1 mb-3">
+                  <div class="col-md-12 heading-section ftco-animate text-center">
+                    <h3 class="mb-1">Select the package that best suits your needs.</h3>
+                    <p>Pay monthly, or save big with an annual subscription.</p>
+                  </div>
+                </div>
+                <table class="pricing-table">
+                  <tbody>
+                    <tr>
+                      <td width="30%" class="pricing-table-text">
+                        <center>
+                          <h6>Select Package Type</h6>
+                        </center>
+                        <div class="radio-container">
+
+                          <div class="radio-column">
+                            <label><input type="radio" name="frequency" value="monthly" checked> Monthly</label><br>
+                            <label><input type="radio" name="frequency" value="halfyearly"> Half Yearly</label>
+                          </div>
+                          <div class="radio-column">
+
+                            <label><input type="radio" name="frequency" value="quarterly"> Quarterly</label><br>
+                            <label><input type="radio" name="frequency" value="annually"> Annually</label>
+                          </div>
+                        </div>
+
+
+                      </td>
+                      <td width="20%" class="essential">
+                        <div class="pricing-table-item">
+                          <div class="pricing-table-item-head">
+                            <p>L&S</p>
+                            <p>Essential</p>
+                          </div>
+                          <div class="pricing-table-item-price">
+                            <p></p>
+                            <p class="rupees">&#8377; <span id="essentialOldPrice" class="old-pr">3,499</span>/-</p>
+                            <p>&#8377; <span id="essentialPrice" class="price">2499</span><span class="price">/-</span>
+                            </p>
+                            <p class="per">per month</p>
+                          </div>
+                          <div class="pricing-table-item-purchase">
+                            <a href="#" class="btn btn-theme d-block px-1 py-2 ">BUY NOW</a>
+                          </div>
+                        </div>
+                      </td>
+                      <td width="20%" class="accelerate position-relative">
+
+                        <p class="most-popular">Most Popular</p>
+                        <div class="pricing-table-item">
+                          <div class="pricing-table-item-head">
+                            <p>L&S</p>
+                            <p>Accelerate</p>
+                          </div>
+                          <div class="pricing-table-item-price">
+
+
+                            <p class="rupees">&#8377; <span id="accelerateOldPrice" class="old-pr">3,999</span>/-</p>
+                            <p>&#8377; <span id="acceleratePrice" class="price">2999</span><span class="price">/-</span>
+                            </p>
+                            <p class="per">per month</p>
+                          </div>
+                          <div class="pricing-table-item-purchase">
+                            <a href="#" class="btn btn-theme d-block px-1 py-2 ">BUY NOW</a>
+                          </div>
+                        </div>
+                      </td>
+                      <td width="20%" class="ultimate">
+                        <div class="pricing-table-item">
+                          <div class="pricing-table-item-head">
+                            <p>L&S</p>
+                            <p>Ultimate</p>
+                          </div>
+                          <div class="pricing-table-item-price">
+
+                            <p class="rupees">&#8377; <span id="ultimateOldPrice" class="old-pr">4,499</span>/-</p>
+                            <p>&#8377; <span id="ultimatePrice" class="price">3499</span><span class="price">/-</span>
+                            </p>
+                            <p class="per">per month</p>
+                          </div>
+                          <div class="pricing-table-item-purchase">
+                            <a href="#" class="btn btn-theme d-block px-1 py-2 ">BUY NOW</a>
+                          </div>
+                        </div>
+              </div>
+              </td>
+              </tr>
+
+              <tr class="pricing-table-list">
+                <td>Initial Consultation</td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Total Number of Consultations -Nutritionist (Monthly) </td>
+                <!-- <td>
+                    <a>
+                      <span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="0"
+                        max="15"><span class="input-number-increment" data-toggle="tooltip"
+                        title="You can also avail this feature with this package on extra cost of Rs. 300">+</span>
+                    </a>
+
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td>2</td>
+                <td>4</td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Workout Plan</td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td class="accordion-trigger expansion-tab">Diet Plan</td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr style="display: none ">
+                <td colspan="4" class="accordion-child ">
+                  <table class="accordion-content">
+                    <tr class="pricing-table-list">
+                      <td class="w-first">
+                        <div class="row">
+                          <div class="col-8 border-r">Number of Initial consultation with nutritionist</div>
+                          <div class="col-4 pt-2">
+                            <label><input type="radio" name="ava1" value="audio" checked="checked"> Audio</label><br>
+                            <label><input type="radio" name="ava1" value="video"> video</label>
+                          </div>
+                        </div>
+
+                      </td>
+                      <td class="w-col">1</td>
+                      <td class="w-col">3</td>
+                      <td class="w-col">4</td>
+                    </tr>
+                    <tr class="pricing-table-list">
+                      <td class="w-first">
+                        <div class="row">
+                          <div class="col-8 border-r pt-4">Customized Diet Plan</div>
+                          <div class="col-4 pt-2">
+                            <label><input type="radio" name="ava2" value="audio" checked="checked"> Audio</label><br>
+                            <label><input type="radio" name="ava2" value="video"> video</label>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="w-col">1</td>
+                      <td class="w-col">3</td>
+                      <td class="w-col">4</td>
+                    </tr>
+                    <tr class="pricing-table-list">
+
+                      <td class="w-first">
+                        <div class="row">
+                          <div class="col-8 border-r pt-3">Nutritionist Follow up Cycle (In Days) </div>
+                          <div class="col-4 pt-2">
+                            <label><input type="radio" name="ava3" value="audio" checked="checked"> Audio</label><br>
+                            <label><input type="radio" name="ava3" value="video"> video</label>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="w-col">30</td>
+                      <td class="w-col">10</td>
+                      <td class="w-col">7</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+
+              <tr class="pricing-table-list" style="background: #F2F2F2;">
+                <td class="accordion-trigger expansion-tab">Fitness Plan </td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr style="display: none ">
+                <td colspan="4" class="accordion-child ">
+                  <table class="accordion-content">
+                    <tr class="pricing-table-list">
+                      <td class="w-first">
+                        <div class="row">
+                          <div class="col-8 border-r"> Number of Consultation with a fitness coach (per week)</div>
+                          <div class="col-4 pt-2">
+                            <label><input type="radio" name="avb1" value="audio" checked="checked"> Audio</label><br>
+                            <label><input type="radio" name="avb1" value="video"> video</label>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="w-col">1</td>
+                      <td class="w-col">2</td>
+                      <td class="w-col">3</td>
+                    </tr>
+                    <tr class="pricing-table-list">
+                      <td class="w-first">
+                        <div class="row">
+                          <div class="col-8 border-r pt-3">recorded youtube videos for workouts</div>
+                          <div class="col-4 pt-2">
+                            <label><input type="radio" name="avb2" value="audio" checked="checked"> Audio</label><br>
+                            <label><input type="radio" name="avb2" value="video"> video</label>
+                          </div>
+                        </div>
+
+                      </td>
+                      <td class="w-col">1</td>
+                      <td class="w-col">3</td>
+                      <td class="w-col">4</td>
+                    </tr>
+                    <tr class="pricing-table-list">
+                      <td class="w-first">
+                        <div class="row">
+                          <div class="col-8 border-r pt-3">Group sessions (per week)</div>
+                          <div class="col-4 pt-2">
+                            <label><input type="radio" name="avb3" value="audio" checked="checked"> Audio</label><br>
+                            <label><input type="radio" name="avb3" value="video"> video</label>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="w-col">1</td>
+                      <td class="w-col">3</td>
+                      <td class="w-col">4</td>
+                    </tr>
+                    <tr class="pricing-table-list">
+                      <td class="w-first">
+                        <div class="row ">
+                          <div class="col-8 border-r pt-2"> 1:1 personal session if needed</div>
+                          <div class="col-4 pt-2">
+                            <label><input type="radio" name="avb4" value="audio" checked="checked"> Audio</label><br>
+                            <label><input type="radio" name="avb4" value="video"> video</label>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="w-col">1</td>
+                      <td class="w-col">3</td>
+                      <td class="w-col">4</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr class="pricing-table-list">
+                <td>Reference videos workout </td>
+                <!-- <td><input type="checkbox" value="300"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 300 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Month-end Follow-up</td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Video Call Consultations</td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Personal Chat</td>
+                <!-- <td><input type="checkbox" name="box" value="300"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 300 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>WhatsAp Support Group </td>
+                <!-- <td><input type="checkbox" name="box" value="300"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 300 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Meal Picture Review </td>
+                <!-- <td><input type="checkbox" name="box" value="300"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 300 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>PCOS Health </td>
+                <!-- <td><input type="checkbox" name="box" value="300"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 300 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Thyroid Wellness</td>
+                <!-- <td><input type="checkbox" name="box" value="500"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 500 by selecting the given checkbox.">
+                  </td>
+                  <td><input type="checkbox" name="box" value="500"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 500 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Type 2 Diabetes</td>
+                <!-- <td><input type="checkbox" name="box" value="300"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 300 by selecting the given checkbox.">
+                  </td>
+                  <td><input type="checkbox" name="box" value="500"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 500 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Menopausal Health </td>
+                <!-- <td><input type="checkbox" value="500"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 500 by selecting the given checkbox.">
+                  </td>
+                  <td><input type="checkbox" value="300"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 300 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Prehab (Understanding your body prior to workout)</td>
+                <!-- <td><input type="checkbox" name="box" value="300"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 300 by selecting the given checkbox.">
+                  </td>
+                  <td><input type="checkbox" name="box" value="500"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 500 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Rehab (Working on the recovery post injury) </td>
+                <!-- <td><input type="checkbox" value="300"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 300 by selecting the given checkbox.">
+                  </td>
+                  <td><input type="checkbox" value="500"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 500 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              <tr class="pricing-table-list">
+                <td>Psychologist </td>
+                <!-- <td><input type="checkbox" name="box" value="300"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 300 by selecting the given checkbox.">
+                  </td>
+                  <td><input type="checkbox" name="box" value="500"
+                      data-tip="You can also avail this feature with this package on extra cost of Rs. 500 by selecting the given checkbox.">
+                  </td> -->
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+                <td><i class="ri-check-line"></i></td>
+              </tr>
+              </tbody>
+              </table>
+
+            </div>
+            <p class="p-3">This chart outlines the services included in each plan, allowing clients to choose the one
+              that
+              best
+              suits
+              their needs and preferences.</p>
+
+
+
+          </div>
+        </div>
+
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "user-footer.html" %}

@@ -1,0 +1,320 @@
+{% load static %}
+
+	{% include "fc_header.html" %}
+	{% include "fc_sidebarmenu.html" %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Create Group Session</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-12 col-sm-12">
+
+          <div class="card">
+            <div class="card-body tabs-header">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5 class="card-title sp-card-title mb-0"></h5>
+                </div>
+
+
+                <div class="d-flex ">
+                  <div id="reportrange" class="date-range-style">
+                    <i class="ri-calendar-2-line"></i>&nbsp;
+                    <span></span> <i class="fa fa-caret-down"></i>
+                  </div>
+                </div>
+
+              </div>
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" id="first-tab" data-bs-toggle="tab"
+                    data-bs-target="#group-session-list">Group Session List</button>
+                </li>
+
+                <!-- <li class="nav-item" id="second-tab">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#group-session-list">Group Session list
+                  </button>
+                </li> -->
+                <li class="nav-item " id="second-tab" style="display: none;">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#create-new-group-session">Create New
+                    Group
+                    Session
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content pt-2">
+
+                <div class="tab-pane fade show active profile-edit pt-3 container" id="group-session-list">
+                  <button class="btn btn-theme tabs-sp-btn" id="add-measurements-btn">Create New Group
+                    Session</button>
+                  <div class="row">
+                    <div class="col-lg-12">
+
+
+
+                      <table class="display pt-3" id="fc-create-group-session">
+                        <thead>
+                          <tr>
+                            <th>
+                              <b>Group Name</b>
+                            </th>
+                            <th>Session Date</th>
+                            <th>Session Time</th>
+                            <th>Status</th>
+                            <th>Action </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+
+                            <td class="sp-link">
+                              <a href="user-overview.html">
+                                Group-1
+                              </a>
+                            </td>
+
+                            <td>24 july 2024</td>
+                            <td>5 pm</td>
+                            <td><span class="badge rounded-pill bg-danger">Expired</span></td>
+                            <td>
+                              <a data-bs-toggle="modal" data-bs-target="#viewGroup"><i data-bs-toggle="tooltip"
+                                  data-bs-placement="top" title="View" class="ri-eye-fill"></i>
+                              </a>
+                              <a data-bs-toggle="modal" data-bs-target="#assignUser"><i data-bs-toggle="tooltip"
+                                  data-bs-placement="top" title="Assign Users" class="ri-user-shared-2-line"></i>
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <div class="modal fade" id="viewGroup" tabindex="-1">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">View Group</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body ">
+                              <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                                <div class="col-lg-6 col-6 px-14 mt-2">
+                                  <div class="form-group mb-lg-20">
+                                    <label for="group-name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                      <span>Group Name :</span>
+                                    </label>
+                                    <input type="text" name="group-name" placeholder="" required="required"
+                                      autofocus="autofocus" class=" form-control" value="Exercise" disabled>
+                                  </div>
+                                </div>
+
+
+                                <div class="col-lg-6 col-6 px-14 mt-2">
+                                  <div class="form-group mb-lg-20">
+                                    <label for="Subject" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                      <span>Subject :</span>
+                                    </label>
+                                    <input type="text" name="Subject" placeholder="" required="required"
+                                      autofocus="autofocus" class=" form-control" value="Weight Loss" disabled>
+                                  </div>
+                                </div>
+                                <div class="col-lg-6 col-6 px-14 mt-2">
+                                  <div class="form-group mb-lg-20">
+                                    <label for="Session-Title" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                      <span>Session Title :</span>
+                                    </label>
+                                    <input type="text" name="Session-Title" placeholder="" required="required"
+                                      autofocus="autofocus" class=" form-control" value="Weight Loss" disabled>
+                                  </div>
+                                </div>
+
+                              </form>
+                              <!-- <div class="row buttons mt-5">
+                                  <center>
+
+                                    <button type="submit" class="btn btn-theme">Submit</button>
+                                  </center>
+                                </div> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="modal fade" id="assignUser" tabindex="-1">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">Assign Users</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body ">
+                              <div class="row">
+                                <div class="col-lg-12">
+
+
+
+                                  <table class="table datatable">
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          <input type="checkbox" id="selectAllCheckbox">
+                                        </th>
+                                        <th>
+                                          <b>User Name</b>
+                                        </th>
+                                        <th>Name</th>
+                                        <th>Mobile</th>
+                                        <th>Email</th>
+                                        <th>Subscription</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          <input type="checkbox" class="rowCheckbox">
+                                        </td>
+                                        <td class="sp-link">
+                                          <a href="user-overview.html">
+                                            John123
+                                          </a>
+                                        </td>
+                                        <td>John Doe</td>
+                                        <td>8888888888</td>
+                                        <td>johndoe@gmail.com</td>
+                                        <td>L&S Ultimate</td>
+                                      </tr>
+                                      <!-- Add more rows as needed -->
+                                    </tbody>
+                                  </table>
+                                  <div class="row buttons mt-5">
+                                    <center>
+                                      <button type="submit" class="btn btn-theme">Assign</button>
+                                    </center>
+                                  </div>
+
+
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="tab-pane fade profile-edit pt-3 container" id="create-new-group-session">
+
+                  <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="group-name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Group Name :</span>
+                        </label>
+                        <input type="text" name="group-name" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="">
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Session Date :</span>
+                        </label>
+                        <input type="text" name="date" placeholder="" required="required" autofocus="autofocus"
+                          class="form-control" value="">
+
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="time" class="gray-600 f-lg-18 f-16 font-weight-normal">
+                          <span>Session Time :</span>
+                        </label>
+                        <input type="text" id="time" name="time" placeholder="" required="required"
+                          autofocus="autofocus" class="form-control" value="">
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-6 px-14 mt-2">
+
+
+                      <div class="form-group mb-lg-20">
+                        <label for="maxPeople" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Max peaople allowed:</span>
+                        </label>
+                        <select name="maxPeople" class="form-control" required="required" autofocus="autofocus">
+                          <option value="">Select</option>
+                          <option value="10">10</option>
+                          <option value="15">10</option>
+                          <option value="20">20</option>
+                        </select>
+                      </div>
+
+
+                    </div>
+
+                  </form>
+                  <div class="row buttons mb-5">
+                    <center>
+
+                      <button type="submit" class="btn btn-theme">Submit</button>
+                    </center>
+                  </div>
+                </div>
+
+
+
+
+
+              </div><!-- End Bordered Tabs -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  {% include "fc_footer.html" %}
+    <script>
+
+
+    $(document).ready(function () {
+      $('#fc-create-group-session').DataTable();
+      $("#add-measurements-btn").click(function () {
+        $("#second-tab").toggle();
+        $("#second-tab .nav-link").trigger("click");
+      });
+      $("#edit-measurement-btn").click(function () {
+        $("#second-tab").toggle();
+        $("#second-tab .nav-link").trigger("click");
+      });
+
+      $("#first-tab").click(function () {
+        $("#second-tab").hide();
+      });
+
+
+
+
+      document.getElementById('selectAllCheckbox').addEventListener('change', function () {
+        const checkboxes = document.querySelectorAll('.rowCheckbox');
+        checkboxes.forEach(checkbox => {
+          checkbox.checked = this.checked;
+        });
+      });
+
+    });
+  </script>

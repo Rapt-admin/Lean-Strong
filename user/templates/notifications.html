@@ -1,0 +1,151 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Notifications</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title sp-card-title "></h5>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="cr-card card-default product-list bg-white">
+                    <div class="cr-card-content" style="padding:0px 24px;">
+                      <div class="table-responsive" id="multi-filter-select">
+                        <table id="product_list" class="table" style="width:100%">
+                          <thead>
+                            <tr>
+                              <th style="padding: 0px 5px; " width="40" class="sorting_1">
+                                <input class="select form-check-input" style="margin-bottom: 10px; margin-left: 4px;"
+                                  type="checkbox" value="" id="flexCheckDefault">
+                              </th>
+                              <th width="20"><input class="star" type="checkbox"><br /><br /></th>
+
+                              <th>Notifications Message</th>
+                              <th width="100">Time</th>
+                              <th width="20">Action</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            <tr>
+                              <td class="sorting_1">
+                                <input class="select form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              </td>
+                              <td><input class="star" type="checkbox"><br /><br /></td>
+
+                              <td class="notification-msg"> Reminder: Tomorrow's coaching lesson for Std 1-4 students
+                                will focus on math concepts. Make sure to have your child's math workbook ready!
+                                <span><a class="view-btn view-more-btn"> view more...</a></span>
+                              </td>
+                              <td>Just Now</td>
+                              <td>
+                                <button type="button" class="trash-btn">
+                                  <i class="ri-delete-bin-fill"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="sorting_1">
+                                <input class="select form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              </td>
+                              <td><input class="star" type="checkbox"><br /><br /></td>
+
+                              <td class="notification-msg"> Don't forget: Coaching session for Std 1-4 students on
+                                English language skills is scheduled for this Friday. Prepare some fun language games to
+                                practice at home! <span><a class="view-btn view-more-btn"> view more...</a></span></td>
+                              <td>30 min ago</td>
+                              <td>
+                                <button type="button" class="trash-btn">
+                                  <i class="ri-delete-bin-fill"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="sorting_1">
+                                <input class="select form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              </td>
+                              <td><input class="star" type="checkbox"><br /><br /></td>
+
+                              <td class="notification-msg">Important Notice: Next week's coaching lesson for Std 1-4
+                                will cover science topics. Encourage your child to explore nature and ask questions to
+                                prepare. <span><a class="view-btn view-more-btn"> view more...</a></span></td>
+                              <td>18hr ago</td>
+                              <td>
+                                <button type="button" class="trash-btn">
+                                  <i class="ri-delete-bin-fill"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <input class="select form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              </td>
+                              <td><input class="star" type="checkbox"><br /><br /></td>
+
+                              <td class="notification-msg"> Friendly Reminder: This week's coaching session for Std 1-4
+                                students will include a storytelling activity. Help your child choose a favorite story
+                                to share with the group.<span><a class="view-btn view-more-btn"> view more...</a></span>
+                              </td>
+                              <td>1 day ago</td>
+                              <td>
+                                <button type="button" class="trash-btn">
+                                  <i class="ri-delete-bin-fill"></i>
+                                </button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <input class="select form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              </td>
+                              <td><input class="star" type="checkbox"><br /><br /></td>
+
+                              <td class="notification-msg">Mark Your Calendar: Special coaching lesson for Std 1-4
+                                students on creative arts happening next month. Start collecting art supplies for a fun
+                                and interactive session!<span><a class="view-btn view-more-btn"> view more...</a></span>
+                              </td>
+                              <td>5 days ago</td>
+                              <td>
+                                <button type="button" class="trash-btn">
+                                  <i class="ri-delete-bin-fill"></i>
+                                </button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+
+                    <div id="viewModal" class="modal">
+
+                      <div class="modal-content offer-model notification-model">
+                        <div class="modal-close-btn"><i class="ri-close-large-fill"></i></div>
+
+                        <p> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "user-footer.html" %}

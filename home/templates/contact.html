@@ -1,0 +1,66 @@
+{% include "header.html" %}
+
+
+{% load static %}
+
+  <section class="hero-wrap js-fullheight bread-bg">
+    
+    <div class="container">
+      <div class="row no-gutters slider-text  align-items-center justify-content-center" style="padding-top: 130px;">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-3 bread">Contact</h1>
+        </div>
+      </div>
+      <div class="breadcrumb">
+        <a href="{% url "index" %}">Home</a> >
+        <span>Contact</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="ftco-section contact-section">
+    <center><h2 class="pb-5">A friendly customer support team that's always just a click away</h2 class="pb-4"></center>
+    <div class="container">
+      <div class="row block-9">
+       
+        <div class="col-md-4 contact-info ftco-animate bg-light p-4">
+          <div class="row contacts-info">
+            <div class="col-md-12 mb-4">
+              <h2 class="h4">Contact Information</h2>
+            </div>
+            {% if companyContactDetailsData %}
+                <div class="col-md-12 mb-1  pb-1">
+                <!-- <p><span>Address:</span> {{companyContactDetailsData.first.address}} {% if companyContactDetailsData%} 
+                    {% else %} {{"Test"}} {% endif %}</p> -->
+                    <p><span><i class="ri-home-2-fill"></i></span> {{companyContactDetailsData.first.address}} </p>
+                </div>
+                <div class="col-md-12 mb-1">
+                  <p class="c-black"><span><i class="ri-phone-fill"></i></span> <a   href="tel://1234567920">  {{companyContactDetailsData.first.mobile_number}} </a></p>
+                </div>
+                <div class="col-md-12 mb-1">
+                  <p class="c-black"><span><i class="ri-mail-fill"></i></span> <a  href="mailto:info@lean&strong.com"> {{companyContactDetailsData.first.email}} </a></p>
+                </div>
+                <div class="col-md-12 mb-1">
+                  <p><span><i class="ri-global-line"></i></span> <a href="#" style="color:blue;">{{companyContactDetailsData.first.website}}</a></p>
+                </div>
+            {% else %} 
+                <div class="col-md-12 mb-3">
+                    <p><b >No Contact Information is available. Please ask your admin to add the required information </b></p>
+                </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6 ftco-animate" id="formDiv">
+          {% include "contact-inner.html" %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="map" class="map"></div>
+
+  
+{% include "footer.html" %}

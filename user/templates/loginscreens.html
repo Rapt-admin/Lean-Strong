@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Lean&Strong Clients</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- <link href="
+    https://cdn.jsdelivr.net/npm/mobiscroll-javascript@3.2.6/dist/css/mobiscroll.min.css
+    " rel="stylesheet">
+  <script src="
+    https://cdn.jsdelivr.net/npm/mobiscroll-javascript@3.2.6/dist/js/mobiscroll.javascript.min.js
+    "></script> -->
+
+</head>
+
+<body>
+
+
+  <div class="login-screens-container">
+    <div class="login-screens active" id="gender-screen">
+      <div class="top-text-wrapper">
+        <h4>Select Your Gender ?</h4>
+        <div class="login-info-card">
+          <i class="ri-lightbulb-fill"></i>
+          <h3>Knowing your gender help us tailor the workout for you based on your metabolic rate</h3>
+
+        </div>
+      </div>
+      <div class="grid-wrapper grid-col-auto">
+        <label for="radio-card-1" class="radio-card">
+          <input type="radio" name="gender" id="radio-card-1" checked />
+          <div class="card-content-wrapper">
+            <span class="check-icon"></span>
+            <div class="card-content shift">
+              <img src="../assets/img/man-1.png" alt="" />
+              <h4>Male</h4>
+            </div>
+          </div>
+        </label>
+
+
+        <label for="radio-card-2" class="radio-card">
+          <input type="radio" name="gender" id="radio-card-2" />
+          <div class="card-content-wrapper">
+            <span class="check-icon"></span>
+            <div class="card-content shift">
+              <img src="../assets/img/women-1.png" alt="" />
+              <h4>Female</h4>
+            </div>
+          </div>
+        </label>
+
+      </div>
+      <div class="next-btn-container-main">
+        <button class="btn health-btn next-cw" id="submit-gender">Next</button>
+      </div>
+
+    </div>
+    <div class="login-screens" id="focus-area">
+      <div class="top-text-wrapper">
+
+        <p>
+
+        </p>
+        <h4>Select Your Focus Area ?</h4>
+
+      </div>
+      <div class="focus-section">
+        <div class="checkboxes__row">
+          <div class="checkboxes__item">
+            <label class="checkbox style-d">
+              <input type="checkbox" checked="checked" />
+              <div class="checkbox__checkmark"></div>
+              <div class="checkbox__body">Arms</div>
+            </label>
+            <label class="checkbox style-d">
+              <input type="checkbox" />
+              <div class="checkbox__checkmark"></div>
+              <div class="checkbox__body">Abs</div>
+            </label>
+            <label class="checkbox style-d">
+              <input type="checkbox" />
+              <div class="checkbox__checkmark"></div>
+              <div class="checkbox__body">Butt</div>
+            </label>
+            <label class="checkbox style-d">
+              <input type="checkbox" />
+              <div class="checkbox__checkmark"></div>
+              <div class="checkbox__body">Leg</div>
+            </label>
+            <label class="checkbox style-d">
+              <input type="checkbox" />
+              <div class="checkbox__checkmark"></div>
+              <div class="checkbox__body">Full Body</div>
+            </label>
+          </div>
+        </div>
+        <div class="focus-pic">
+          <img id="focusimg" src="../assets/img/focus-area-female.png" alt="" />
+        </div>
+      </div>
+      <div class="next-btn-container">
+        <a class="back-btn"><i class="ri-arrow-left-s-line"></i>Back</a>
+        <button class="btn health-btn next-cw" id="submit-focus-area">Next</button>
+
+
+      </div>
+    </div>
+    <div class="login-screens " id="goal-screen">
+      <div class="top-text-wrapper">
+        <h4>What's your main Goal ?</h4>
+        <div class="login-info-card">
+          <i class="ri-focus-2-line"></i>
+          <h3>We'll taolir the best blend of strength and cardio training to slign with your goal.</h3>
+
+        </div>
+      </div>
+      <div class="goal-container">
+        <label for="loose-weight" class="radio-card">
+          <input type="radio" name="goal" id="loose-weight" checked />
+          <div class="card-content-wrapper loosewight">
+            <span class="check-icon"></span>
+            <div class="card-content">
+              <h4>Loose Weight</h4>
+
+            </div>
+          </div>
+        </label>
+
+
+        <label for="build-muscle" class="radio-card">
+          <input type="radio" name="goal" id="build-muscle" />
+          <div class="card-content-wrapper build-muscle">
+            <span class="check-icon"></span>
+            <div class="card-content">
+              <h4>Build Muscle</h4>
+            </div>
+          </div>
+        </label>
+        <label for="keep-fit" class="radio-card">
+          <input type="radio" name="goal" id="keep-fit" />
+          <div class="card-content-wrapper keep-fit">
+            <span class="check-icon"></span>
+            <div class="card-content">
+              <h4>Keep Fit</h4>
+            </div>
+          </div>
+        </label>
+
+      </div>
+      <div class="next-btn-container">
+        <a class="back-btn"><i class="ri-arrow-left-s-line"></i>Back</a>
+        <button class="btn health-btn next-cw" id="submit-goal">Next</button>
+      </div>
+
+
+    </div>
+    <div class="login-screens " id="year-screen">
+
+      <div class="top-text-wrapper">
+        <!-- <input id="date" type="hidden" /> -->
+
+
+        <h4>What's your Birth Year ?</h4>
+        <div class="login-info-card">
+          <i class="ri-cake-2-line"></i>
+          <h3>This will help us to adjust the workout's for you age</h3>
+
+        </div>
+      </div>
+      <div class="year-picker-container">
+        <div class="fade-overlay"></div>
+        <div class="highlight-box"></div>
+        <div class="year-picker">
+          <div class="year" data-year="1900">1900</div>
+
+        </div>
+      </div>
+      <div class="next-btn-container">
+        <a class="back-btn"><i class="ri-arrow-left-s-line"></i>Back</a>
+        <button class="btn health-btn next-cw" id="submit-year">Next</button>
+      </div>
+    </div>
+    <div class="login-screens " id="currentheight-screen">
+      <div class="top-text-wrapper">
+
+        <h4>How tall are you ?</h4>
+
+      </div>
+      <div class="container-height">
+        <div class="unit-toggle-height">
+          <button id="inch-height" class="unit-btn-height inch-btn ">inch</button>
+          <button id="cm-height" class="unit-btn-height cm-btn active">cm</button>
+        </div>
+        <div class="height-selector-container">
+          <div class="image-display-height">
+            <img id="bodyImageHeight" src="../assets/img/height-selector-male.png" alt="Body height">
+          </div>
+          <div class="vertical-scale">
+            <img src="../assets/img/cm.png" class="scale-img">
+            <input type="hidden" id="heightCurrentSelectedValue" value="210" />
+            <div class="scale-mark-height" data-value-height="210">210</div>
+
+            <div class="scale-mark-height" data-value-height="200">200</div>
+            <div class="scale-mark-height" data-value-height="190">190</div>
+            <div class="scale-mark-height" data-value-height="180">180</div>
+            <div class="scale-mark-height" data-value-height="170">170</div>
+            <div class="scale-mark-height" data-value-height="160">160</div>
+            <div class="scale-mark-height" data-value-height="150">150</div>
+            <div class="scale-mark-height" data-value-height="140">140</div>
+            <div class="scale-mark-height" data-value-height="130">130</div>
+            <div class="scale-mark-height" data-value-height="120">120</div>
+            <div class="scale-mark-height" data-value-height="110">110</div>
+            <div class="scale-mark-height" data-value-height="100">100</div>
+            <div class="scale-mark-height" data-value-height="90">90</div>
+
+          </div>
+          <div class="height-slider-container ">
+            <div class="height-indicator">
+              <input type="number" id="heightValueDisplay" class="current-ht" min="110" max="210" value="210" />
+              <span id="heightValueDisplayUnit">cm</span>
+            </div>
+            <input type="range" id="heightRangeSelector" min="90" max="210" value="210" orient="vertical">
+
+
+
+          </div>
+
+        </div>
+
+        <div class="next-btn-container mt-5">
+          <a class="back-btn"><i class="ri-arrow-left-s-line"></i>Back</a>
+          <button class="btn health-btn next-cw" id="submit-currentheight">Next</button>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="login-screens " id="currentweight-screen">
+      <div class="top-text-wrapper">
+
+        <h4>What is your Current Weight ?</h4>
+
+      </div>
+      <div class="container">
+        <div class="unit-toggle">
+          <button id="lbs" class="unit-btn lbs-btn">lbs</button>
+          <button id="kg" class="unit-btn kg-btn active">kg</button>
+        </div>
+
+
+        <div class="image-display">
+          <img id="bodyImage" src="image1.png" alt="Body Image">
+          <!-- <div class="scale-mark"></div> -->
+          <div class="weight-container">
+            <input type="text" id="weightValue" class="current-weight" value="46">
+            <div id="weightunit">kg</div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="weight-slider">
+        <input type="range" id="weightRange" min="20" max="150" value="46">
+      </div>
+      <div class="scale">
+        <div class="scale-mark" data-value="20">20</div>
+        <div class="scale-mark" data-value="30">30</div>
+        <div class="scale-mark" data-value="40">40</div>
+        <div class="scale-mark" data-value="50">50</div>
+        <div class="scale-mark" data-value="60">60</div>
+        <div class="scale-mark" data-value="70">70</div>
+        <div class="scale-mark" data-value="80">80</div>
+        <div class="scale-mark" data-value="90">90</div>
+        <div class="scale-mark" data-value="100">100</div>
+        <div class="scale-mark" data-value="110">110</div>
+        <div class="scale-mark" data-value="120">120</div>
+        <div class="scale-mark" data-value="130">130</div>
+        <div class="scale-mark" data-value="140">140</div>
+        <div class="scale-mark" data-value="150">150</div>
+      </div>
+
+      <div class="bmi-display">
+        <p class="bmi-current">Current BMI: <span id="bmiValue">20.5</span></p>
+        <p class="bmi-status">Normal weight</p>
+        <div class="login-info-card">
+          <p class="bmi-advice">Make exercise a daily habit not only to maintain a balanced physique but also to feel
+            more energized and confident every day.</p>
+
+        </div>
+
+      </div>
+      <div class="next-btn-container">
+        <a class="back-btn"><i class="ri-arrow-left-s-line"></i>Back</a>
+        <button class="btn health-btn next-cw" id="submit-currentweight">Next</button>
+      </div>
+    </div>
+    <div class="login-screens " id="workout-screen">
+      <div class="top-text-wrapper">
+
+        <h4>How often would you like to work out?</h4>
+
+      </div>
+      <div class="container-height text-center">
+        <div class="calendar-img">
+          <img src="../assets/img/calendar.png" class="calendar-img">
+          <h2 class="display-value"></h2>
+        </div>
+        <div class="workout-times"><span class="display-value">4</span> time/week</div>
+        <div id="quote">The more, the better!</div>
+        <input type="range" id="workout-range" min="1" max="4" step="1" value="4">
+        <div class="labels">
+          <span>Less</span>
+          <span>More</span>
+        </div>
+
+        <div class="next-btn-container">
+          <a class="back-btn"><i class="ri-arrow-left-s-line"></i>Back</a>
+          <button class="btn health-btn next-cw" id="submit-workout">Next</button>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+</body>
+
+<!-- Vendor JS Files -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/chart.js/chart.umd.js"></script>
+<script src="../assets/vendor/echarts/echarts.min.js"></script>
+<script src="../assets/vendor/quill/quill.js"></script>
+<script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="../assets/vendor/php-email-form/validate.js"></script>
+<script src="../assets/js/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="https://code.iconify.design/1/1.0.4/iconify.min.js">   </script>
+
+
+
+
+<!-- Template Main JS File -->
+<script src="../assets/js/main.js"></script>
+<script>
+
+
+  $(document).ready(function () {
+
+    $('#submit-gender').click(function () {
+      var gender = $('input[name="gender"]:checked').next('.card-content-wrapper').find('h4').text();
+      localStorage.setItem('gender', gender);
+    });
+
+
+
+    // Focus Area
+
+    $('#submit-focus-area').click(function () {
+      var focusAreas = [];
+      $('#focus-area input:checked').each(function () {
+        focusAreas.push($(this).siblings('.checkbox__body').text().trim());
+      });
+      if (focusAreas.includes("Full Body")) {
+        focusAreas = ["Arms", "Abs", "Butt", "Leg"];
+      }
+      localStorage.setItem('focusAreas', JSON.stringify(focusAreas));
+
+      let gender = localStorage.getItem('gender');
+      let genderPath = (gender === "Female") ? "female" : "male";
+
+      let cardContentWrapper = $(".goal-container .card-content-wrapper");
+
+      if (cardContentWrapper.hasClass("male") || cardContentWrapper.hasClass("female")) {
+        cardContentWrapper.removeClass("male female").addClass(genderPath);
+      } else {
+        cardContentWrapper.addClass(genderPath);
+      }
+    });
+
+
+    // Goal Screen
+    $('#submit-goal').click(function () {
+      var goal = $('input[name="goal"]:checked').next('.card-content-wrapper').find('h4').text();
+      localStorage.setItem('goal', goal);
+    });
+
+    // Year Screen
+    $('#submit-year').click(function () {
+
+      var year = $('.year-picker .year').attr('data-year');
+      localStorage.setItem('birthYear', year);
+      let gender = localStorage.getItem('gender');
+      let genderPath = (gender === "Female") ? "female" : "male";
+
+      $('#bodyImageHeight').attr('src', `../assets/img/height-selector-${genderPath}.png`);
+
+    });
+
+
+
+    // Current Height
+    $('#submit-currentheight').click(function () {
+      var heightValue = $('#heightValueDisplay').text();
+      localStorage.setItem('heightValue', heightValue);
+      let gender = localStorage.getItem('gender');
+      let genderPath = (gender === "Female") ? "female" : "male";
+      $('#bodyImage').attr('src', `../assets/img/weight-${genderPath}-1.png`);
+    });
+
+    // Current Weight
+    $('#submit-currentweight').click(function () {
+      var currentWeight = $('#weightValue').text();
+      var bmiValue = $('#bmiValue').text();
+      localStorage.setItem('currentWeight', currentWeight);
+      localStorage.setItem('bmiValue', bmiValue);
+    });
+
+
+    // Workout Frequency
+    $('#submit-workout').click(function () {
+      var workoutFrequency = $('#display-value').text();
+      localStorage.setItem('workoutFrequency', workoutFrequency);
+      // Proceed to the next action
+    });
+
+    // Event listeners for weight and height sliders
+    $('#weightRange').on('input', function () {
+      $('#weightValue').text($(this).val() + ' kg');
+      // Calculate BMI and update
+    });
+
+    $('#heightRangeSelector').on('input', function () {
+      $('#heightValueDisplay').text($(this).val() + ' cm');
+    });
+
+    $('#workout-range').on('input', function () {
+      $('#display-value').text($(this).val() + ' times/week');
+    });
+
+    $('.back-btn').on('click', function () {
+      var currentScreen = $('.login-screens.active');
+      currentScreen.removeClass('active');
+      var previousScreen = currentScreen.prev('.login-screens');
+      previousScreen.addClass('active');
+    });
+
+    $('.next-cw').on('click', function () {
+      var currentScreen = $('.login-screens.active');
+      currentScreen.removeClass('active');
+      var nextScreen = currentScreen.next('.login-screens');
+      nextScreen.addClass('active');
+
+      let gender = localStorage.getItem('gender');
+      let genderPath = (gender === "Female") ? "female" : "male";
+      $('#focusimg').attr('src', `../assets/img/focus-area-${genderPath}.png`);
+    });
+
+
+    // Focus area Checkbox
+
+    $('input[type="checkbox"]').on('change', function () {
+      const fullBodyCheckbox = $('input[type="checkbox"]').filter(function () {
+        return $(this).next().next().text().trim() === 'Full Body';
+      });
+
+      if ($(this).next().next().text().trim() === 'Full Body') {
+        if ($(this).is(':checked')) {
+          $('input[type="checkbox"]').not(this).each(function () {
+            $(this).prop('checked', true);
+            $('.checkbox.style-d').addClass("active");
+          });
+        } else {
+          $('input[type="checkbox"]').not(this).each(function () {
+            $(this).prop('checked', false);
+            $('.checkbox.style-d').removeClass("active");
+          });
+        }
+      } else {
+        if (!$(this).is(':checked')) {
+          if (fullBodyCheckbox.is(':checked')) {
+            fullBodyCheckbox.prop('checked', false);
+            fullBodyCheckbox.closest('.checkbox.style-d').removeClass('active');
+          }
+        }
+
+        // Check if all checkboxes except "Full Body" are checked
+        const allChecked = $('input[type="checkbox"]').not(fullBodyCheckbox).length === $('input[type="checkbox"]:checked').not(fullBodyCheckbox).length;
+        if (allChecked) {
+          fullBodyCheckbox.prop('checked', true);
+          fullBodyCheckbox.closest('.checkbox.style-d').addClass('active');
+        }
+      }
+    });
+
+    $('.checkbox.style-d input[type="checkbox"]').each(function () {
+      const parentLabel = $(this).closest('.checkbox.style-d');
+
+      function updateActiveClass() {
+        if ($(this).is(':checked')) {
+          parentLabel.addClass('active');
+        } else {
+          parentLabel.removeClass('active');
+        }
+      }
+
+      updateActiveClass.call(this);
+      $(this).change(updateActiveClass);
+    });
+
+
+
+    // Select Year
+
+    const currentYear = new Date().getFullYear();
+    const yearPicker = $('.year-picker');
+
+    for (let year = 1901; year <= currentYear; year++) {
+      yearPicker.append(`<div class="year" data-year="${year}">${year}</div>`);
+    }
+
+    const middleOfPicker = Math.floor($('.year').length / 2);
+    yearPicker.scrollTop(middleOfPicker * 50);
+    function updateHighlightedYear() {
+      const pickerContainer = $('.year-picker-container');
+      const highlightBoxTop = pickerContainer.offset().top + (pickerContainer.height() / 2);
+      let selectedYear;
+
+      $('.year').each(function () {
+        const yearTop = $(this).offset().top;
+        const yearBottom = yearTop + $(this).height();
+
+        if (yearTop <= highlightBoxTop && yearBottom >= highlightBoxTop) {
+          selectedYear = $(this).data('year');
+          $(this).addClass('highlighted');
+        } else {
+          $(this).removeClass('highlighted');
+        }
+      });
+
+      return selectedYear;
+    }
+
+    yearPicker.on('scroll', function () {
+      updateHighlightedYear();
+    });
+
+    // $('#submit-year').on('click', function () {
+    //   const selectedYear = updateHighlightedYear();
+    //   if (selectedYear) {
+    //     alert(`Selected Year: ${selectedYear}`);
+    //   } else {
+    //     alert('Please select a year.');
+    //   }
+    // });
+
+    updateHighlightedYear();
+    const kgToLbs = 2.20462;
+
+    // Initial setup
+    let isKg = true;
+
+    function updateBMI() {
+      let weight = $('#weightRange').val();
+      if (!isKg) {
+        weight = (weight / kgToLbs).toFixed(1);
+      }
+      let height = 1.6;
+      let bmi = (weight / (height * height)).toFixed(1);
+      $('#bmiValue').text(bmi);
+
+      // Update BMI status
+      if (bmi < 18.5) {
+        $('.bmi-status').text('Underweight').css('color', '#4aaaff');
+      } else if (bmi >= 18.5 && bmi < 24.9) {
+        $('.bmi-status').text('Normal weight').css('color', 'green');
+      } else if (bmi >= 25 && bmi < 29.9) {
+        $('.bmi-status').text('Overweight').css('color', 'orange');
+      } else {
+        $('.bmi-status').text('Obese').css('color', 'red');
+      }
+    }
+
+    // Function to update body image based on weight
+    function updateImage(weight) {
+      let gender = localStorage.getItem('gender');
+      let genderPath = (gender === "Female") ? "female" : "male";
+      $('#bodyImage').attr('src', `../assets/img/weight-${genderPath}-1.png`);
+
+      // Update body image based on weight ranges
+      if (weight < 30) {
+        $('#bodyImage').attr('src', `../assets/img/weight-${genderPath}-1.png`);
+      } else if (weight >= 30 && weight < 60) {
+        $('#bodyImage').attr('src', `../assets/img/weight-${genderPath}-2.png`);
+      } else if (weight >= 60 && weight < 85) {
+        $('#bodyImage').attr('src', `../assets/img/weight-${genderPath}-3.png`);
+      } else if (weight >= 85 && weight < 100) {
+        $('#bodyImage').attr('src', `../assets/img/weight-${genderPath}-4.png`);
+      } else {
+        $('#bodyImage').attr('src', `../assets/img/weight-${genderPath}-5.png`);
+      }
+    }
+
+    // Function to update scale marks based on units (kg/lbs)
+    function updateScale() {
+      $('.scale-mark').each(function () {
+        let value = $(this).data('value');
+        if (!isKg) {
+          value = (value * kgToLbs).toFixed();
+        }
+        $(this).text(value);
+      });
+    }
+
+    //slider input
+    $('#weightRange').on('input', function () {
+      let weight = $(this).val();
+      if (!isKg) {
+        weight = (weight * kgToLbs).toFixed(0);
+      }
+      $('#weightValue').val(weight);
+      $('#weightunit').text(isKg ? ' kg' : ' lbs')
+
+      updateBMI();
+      updateImage(weight);
+    });
+
+    // Event handler for unit toggle buttons (kg/lbs)
+    $('.unit-btn').on('click', function () {
+      $('.unit-btn').removeClass('active');
+      $(this).addClass('active');
+      isKg = $(this).attr('id') === 'kg';
+      updateScale();
+      $('#weightRange').trigger('input');
+    });
+
+    // Event handler for input field change
+    $('#weightValue').on('input', function () {
+      let inputWeight = $(this).val();
+      let numericWeight = parseFloat(inputWeight);
+      let isKg = inputWeight.includes('kg');
+
+      if (!isKg) {
+        numericWeight = (numericWeight / kgToLbs).toFixed(0);
+      }
+
+      $('#weightRange').val(numericWeight);
+      updateBMI();
+      updateImage(numericWeight);
+    });
+
+    updateScale();
+    updateBMI();
+    updateImage($('#weightRange').val());
+
+
+    // Height Selector
+
+    let isCmHeight = true;
+    const cmToInch = 0.393701;
+
+    function updateHeightImage(height) {
+      const imageElement = $('#bodyImageHeight');
+      const initialHeight = 210;
+      const scaleFactor = height * 44.76 / 100;
+      const finalHeight = initialHeight + Math.round(scaleFactor, 2);
+      const currentSelectedHeight = $("#heightCurrentSelectedValue").val();
+      const reducedPoint = (initialHeight - currentSelectedHeight) * 2.50;
+      const initialImageHeightPixel = 308;
+      const finalImageHeightPixel = initialImageHeightPixel - reducedPoint;
+
+      imageElement.css('height', finalImageHeightPixel + 'px');
+      imageElement.css('width', finalImageHeightPixel * 0.5 + 'px');
+    }
+
+    function updateScaleHeight() {
+      $('.scale-mark-height').each(function () {
+        let value = $(this).data('value-height');
+        if (!isCmHeight) {
+          value = (value * cmToInch).toFixed(0);
+        }
+        $(this).text(value);
+      });
+    }
+
+    function updateHeightIndicator(height) {
+      const maxHeight = 210;
+      const minHeight = 90;
+      const containerHeight = $('.height-selector-container').height();
+      const indicatorPosition = ((height - minHeight) / (maxHeight - minHeight)) * containerHeight;
+
+      if (isCmHeight) {
+        $('.height-indicator').css('top', containerHeight - indicatorPosition + 'px')
+      } else {
+
+        $('.height-indicator').css('top', containerHeight - (indicatorPosition * 2.50) - 344 + 'px');
+      }
+
+    }
+
+    $('#heightRangeSelector').on('input', function () {
+      let height = $(this).val();
+      if (height < 110) {
+        height = 110;
+        $(this).val(height);
+      }
+      $("#heightCurrentSelectedValue").val(height);
+      if (!isCmHeight) {
+        height = (height * cmToInch).toFixed(0);
+      }
+      $('#heightValueDisplay').val(height);
+      $('#heightValueDisplayUnit').text((isCmHeight ? ' cm' : ' inch'));
+
+      updateHeightImage(height);
+      updateHeightIndicator(height);
+    });
+
+    $('#heightValueDisplay').on('input', function () {
+      let height = $(this).val();
+      if (height < 110) {
+        height = 110;
+        $(this).val(height);
+      }
+      if (!isCmHeight) {
+        height = (height / cmToInch).toFixed(0);
+      }
+      $('#heightRangeSelector').val(height);
+      $("#heightCurrentSelectedValue").val(height);
+      updateHeightImage(height);
+      updateHeightIndicator(height);
+    });
+
+    $('.unit-btn-height').on('click', function () {
+      $('.unit-btn-height').removeClass('active');
+      $(this).addClass('active');
+      isCmHeight = $(this).attr('id') === 'cm-height';
+      updateScaleHeight();
+      $('#heightRangeSelector').trigger('input');
+    });
+
+
+    updateScaleHeight();
+    updateHeightImage($('#heightRangeSelector').val());
+    updateHeightIndicator($('#heightRangeSelector').val());
+
+
+    // Workout out screen
+
+    const quotes = [
+      "Consistency is key!",
+      "Keep it going!",
+      "You're doing great!",
+      "The more, the better!"
+    ];
+
+    const updateDisplay = (value) => {
+      $('.display-value').text(`${value}`);
+      $('#quote').text(quotes[value - 1]);
+    };
+
+    $('#workout-range').on('input change', function () {
+      updateDisplay($(this).val());
+    });
+
+    // Initialize with default value
+    updateDisplay($('#workout-range').val());
+  });
+
+
+
+
+
+
+</script>
+</body>
+
+</html>

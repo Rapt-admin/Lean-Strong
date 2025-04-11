@@ -1,0 +1,619 @@
+{% load static %}	
+
+	{% include "header.html" %}
+
+
+	<div id="carouselExampleIndicators" class="carousel slide" data-interval="2500" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+		</ol>
+		<div class="carousel-inner">
+
+			<!-- Add more carousel items here -->
+			<div class="carousel-item active">
+				<section class="hero-wrap js-fullheight" style="background-image: url('{% static "images/banner-1.jpg" %}');">
+					<div class="container">
+						<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start">
+							<div class="col-md-8 ftco-animate">
+								<h1 class="mb-2">
+									NO NONSENSE<br><span class="theme-color">FAT LOSS</span>
+									<span class="wrap"></span>
+								</h1>
+								<h2 class="mb-5">Realistic Goals For Your Fitness Journey</h2>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="carousel-item">
+				<section class="hero-wrap js-fullheight" style="background-image: url('{% static "images/banner-2.jpg" %}');">
+					<!-- <div class="overlay"></div> -->
+					<div class="container">
+						<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start">
+							<div class="col-md-8 ftco-animate">
+								<h1 class="mb-2">
+									Weight gain takes <span class="theme-color">time</span><br>so does fat loss.
+									<span class="wrap"></span>
+								</h1>
+								<h2 class="mb-5">All you need is PATIENCE</h2>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="carousel-item">
+				<section class="hero-wrap js-fullheight" style="background-image: url('{% static "images/banner-3.jpg" %}');">
+					<!-- <div class="overlay"></div> -->
+					<div class="container">
+						<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start">
+							<div class="col-md-8 ftco-animate">
+								<h1 class="mb-2 banner-heading">
+									Balancing your <span><img src="{% static 'images/arrow.png' %}" ></span>&nbsp; imbalances
+									<span class="wrap"></span>
+								</h1>
+								<h1 class="sup-text theme-color">hormonal</h1>
+								<h2 class="mb-5">Empowering every stage of womanhood<br> - From Hormones to Health</h2>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="carousel-item">
+				<section class="hero-wrap js-fullheight" style="background-image: url('{% static "images/banner-4.jpg" %}');">
+					<!-- <div class="overlay"></div> -->
+					<div class="container">
+						<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start">
+							<div class="col-md-8 ftco-animate">
+								<h1 class="mb-2">
+									<span class="theme-color">Eat</span> what you love,<br>love what you eat
+									<span class="wrap"></span>
+								</h1>
+								<h2 class="mb-5">Lose weight and keep it off while eating<br> what you love</h2>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+
+
+
+
+
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-12 heading-section ftco-animate text-center">
+					<h2 class="mb-1">Why Choose Us</h2>
+				</div>
+			</div>
+			<div class="row ">
+				<div class="flip-card col-md-6 col-lg-3">
+					<div class="flip-card-inner">
+						<div class="flip-card-front front-1f">
+							<img src="{%static 'images/card-1logo.png' %}" >
+							<h5>" Mentors<br> who care " </h5>
+						</div>
+						<div class="flip-card-back front-1">
+
+
+							<p>Enlightening you with the wisdom of food. Keeping food trauma and diet drama away from
+								you </p>
+
+						</div>
+					</div>
+				</div>
+				<div class="flip-card col-md-6 col-lg-3 ">
+					<div class="flip-card-inner">
+						<div class="flip-card-front front-2f">
+							<img src="{%static 'images/card-2logo.png' %}">
+							<h5>" 100%<br> Sustainable "</h5>
+
+						</div>
+						<div class="flip-card-back front-2">
+							<p>Eating home cooked meals, and keeping your weight on track will now go hand-in-hand</p>
+						</div>
+					</div>
+				</div>
+				<div class="flip-card col-md-6 col-lg-3 ">
+					<div class="flip-card-inner">
+						<div class="flip-card-front front-3f">
+							<img src="{%static 'images/card-3logo.png' %}">
+							<h5>" No False<br> Promises "</h5>
+
+						</div>
+						<div class="flip-card-back front-3">
+							<p>No promises of moons and stars:</p>
+							<h4>Your efforts <span>^</span> define who you
+								are.</h4>
+							<h6>with our constant support</h6>
+						</div>
+					</div>
+				</div>
+				<div class="flip-card col-md-6 col-lg-3">
+					<div class="flip-card-inner">
+						<div class="flip-card-front front-4f">
+							<img src="{%static 'images/card-4logo.png' %}">
+							<h5>" Real Knowledge<br> - Real Goals "</h5>
+
+						</div>
+						<div class="flip-card-back front-4">
+							<p> We will set SMART (Specific Measurable Achievable Relevant Time-Bound) goals, which will
+								make you smart towards your journey</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+
+	<section class="ftco-section bg-light">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-12 heading-section ftco-animate text-center">
+					<h2 class="mb-1">Lean & Strong <span class="theme-color">vs</span> Others</h2>
+				</div>
+			</div>
+			<div class="row ">
+				<div class="col-lg-12 ">
+					<div class="vs-content">
+
+
+						</table>
+						<table class="vs-table">
+							<tbody>
+								<tr>
+									<td>
+
+									</td>
+									<td>
+										<h3>Our Brand</h3>
+									</td>
+									<td>
+										<h3>Others</h3>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex align-items-center">
+											<div>
+												<img src="{%static 'images/no-fad.jpg' %}" class="circle-img" />
+											</div>
+											<div>
+												No Fad Diets
+											</div>
+										</div>
+									</td>
+									<td>
+										<i class="ri-checkbox-circle-fill"></i>
+									</td>
+									<td><i class="ri-close-circle-fill"></i>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex align-items-center">
+											<div>
+												<img src="{%static 'images/no-meal.jpg' %}"  class="circle-img" />
+											</div>
+											<div>
+												No Meal Replacement Supplements
+											</div>
+										</div>
+									</td>
+									<td>
+										<i class="ri-checkbox-circle-fill"></i>
+									</td>
+									<td><i class="ri-close-circle-fill"></i>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex align-items-center">
+											<div>
+												<img src="{%static 'images/workout.jpg' %}"  class="circle-img" />
+											</div>
+											<div>
+												Easy Workout Plans
+											</div>
+										</div>
+									</td>
+									<td>
+										<i class="ri-checkbox-circle-fill"></i>
+									</td>
+									<td><i class="ri-close-circle-fill"></i>
+									</td>
+								</tr>
+								<tr>
+
+									<td>
+										<div class="d-flex align-items-center">
+											<div>
+												<img src="{%static 'images/educate.jpg' %}"  class="circle-img" />
+											</div>
+											<div>
+												Educating you about food/workouts
+											</div>
+										</div>
+									</td>
+									<td>
+										<i class="ri-checkbox-circle-fill"></i>
+									</td>
+									<td><i class="ri-close-circle-fill"></i>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex align-items-center">
+											<div>
+												<img src="{%static 'images/calories.jpg' %}"  class="circle-img" />
+											</div>
+											<div>
+												No calorie counting stress
+											</div>
+										</div>
+									<td>
+										<i class="ri-checkbox-circle-fill"></i>
+									</td>
+									<td><i class="ri-close-circle-fill"></i>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+	<section class="ftco-section ">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section ftco-animate text-center">
+					<h2 class="pb-5 mb-lg-4">Plan & Pricing</h2>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-4 ftco-animate">
+					<div class="block-7 plan-mobile">
+						<div class="text-center pricing-card">
+
+							<h2 class="heading"><span class="brand-title">Lean and Strong</span>
+								<p class="mt-2">ESSENTIAL</p>
+
+							</h2>
+							<span class="price"><sup>&#8377;</sup> <span class="number">2499<span
+										class="rs">/-</span></span></span>
+							<span class="excerpt d-block">Per Month</span>
+
+							<h3 class="heading-2 my-4">Features included</h3>
+							<p class="plus">
+							<p>
+							<h3 class="heading-2 my-4"></h3>
+							<ul class="pricing-text mb-5">
+								<li>Initial Consultation</li>
+								<li>Workout Plan</li>
+								<li>Reference videos workout </li>
+								<li>Month-end Follow-up</li>
+							</ul>
+
+							<a href="{% url "plan&pricing" %}" class="btn btn-primary d-block px-1 py-2 sp-btn">View More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 ftco-animate">
+					<div class="block-7 active-plan plan-mobile">
+						<div class="text-center pricing-card">
+							<h2 class="heading white-t"><span class="brand-title t-white">Lean and
+									Strong</span>
+
+								<p class="mt-2">ACCELERATE</p>
+							</h2>
+							<span class="price"><sup>&#8377;</sup> <span class="number">2999<span
+										class="rs white-t">/-</span></span></span>
+							<span class="excerpt d-block">Per Month</span>
+
+							<h3 class="heading-2 my-4 t-white">Basic Plan Feature</h3>
+							<p class="plus t-white">+
+							<p>
+							<ul class="pricing-text mb-5">
+								<li>Video Call Consultations</li>
+								<li>Personal Chat</li>
+								<li>WhatsAp Support Group </li>
+								<li>Meal Picture Review</li>
+							</ul>
+
+							<a href="{% url "plan&pricing" %}" class="btn btn-primary d-block px-1 py-2  ">View More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 ftco-animate">
+					<div class="block-7 plan-mobile">
+						<div class="text-center pricing-card">
+							<h2 class="heading"><span class="brand-title">Lean and Strong</span>
+
+								<p class="mt-2">ULTIMATE</p>
+							</h2>
+
+							<span class="price"><sup>&#8377;</sup> <span class="number">3499<span
+										class="rs">/-</span></span></span>
+							<span class="excerpt d-block">Per Month</span>
+
+							<h3 class="heading-2 my-4">Basic & Elite Plan Feature</h3>
+							<p class="plus">+
+							<p>
+
+							<ul class="pricing-text mb-5">
+								<li>PCOS Health </li>
+								<li>Thyroid Wellness</li>
+								<li>12 Type 2 Diabetes </li>
+								<li>Menopausal Health </li>
+							</ul>
+
+							<a href="{% url "plan&pricing" %}" class="btn btn-primary d-block px-1 py-2 sp-btn">View More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-intro  bg-light">
+		<div class=" container">
+			<div class="row justify-content-center mb-5">
+				<div class="col-md-7 heading-section ftco-animate text-center">
+					<h2 class="mb-1">A Realistic Approach for Fat Loss:</h2>
+				</div>
+
+			</div>
+			<div class="row justify-content-end">
+				<div class="col-md-6">
+
+					<img src="{%static 'images/fat-loss.jpg' %}"  width="500px" style="border-radius: 10px;">
+				</div>
+				<div class="col-md-6">
+
+					<p class="ftco-animate">A realistic approach for fat loss involves setting achievable goals and
+						making sustainable lifestyle changes. Instead of resorting to extreme diets or intense workout
+						routines, focusing on creating a calorie deficit through a balanced diet and regular exercise is
+						key. Incorporating whole foods, plenty of fruits and vegetables, lean proteins, and whole grains
+						into your meals can help you feel full and satisfied while still managing your calorie intake.
+					</p>
+					<ul class="mt-5 do-list">
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>Set
+								achievable goals </a></li>
+						<li class="ftco-animate"><a href="#"><span
+									class="ion-ios-checkmark-circle mr-3"></span>Prioritize a
+								balanced diet </a></li>
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>Stay
+								active with enjoyable exercises </a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+	<section class="ftco-section testimony-section ">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section ftco-animate text-center">
+					<h2 class="mb-1">Client Testimonial</h2>
+				</div>
+			</div>
+			<div class="row ftco-animate">
+				<div class="col-md-12">
+					<div class="carousel-testimony owl-carousel">
+						<div class="item">
+							<div class="testimony-wrap p-4 pb-5">
+								<div class="before-after">
+									<div>
+										<h3>Before</h3>
+										<div class="user-img" style="background-image: url('{% static "images/review-1before.jpg" %}');">
+										</div>
+									</div>
+									<div class="verticle"></div>
+									<div>
+										<h3>After</h3>
+										<div class="user-img" style="background-image: url('{% static "images/review-1after.jpg" %}');">
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									<div class="line pl-5">
+										<p class="mb-4 pb-1">I never knew how much a dietitian could change my life
+											until I met Sarah. Her nutrition plan was a game-changer for my weight loss
+											journey. Highly recommend!</p>
+										<span class="quote d-flex align-items-center justify-content-center">
+											<i class="icon-quote-left"></i>
+										</span>
+									</div>
+									<div class="d-flex float-right">
+										<div class="ml-4">
+											<p class="name">Gabby Smith</p>
+											<span class="position"><span><i class="ri-instagram-fill"></i></span>
+												gabby.smith4598</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap p-4 pb-5">
+								<div class="before-after">
+									<div>
+										<h3>Before</h3>
+										<div class="user-img" style="background-image: url('{% static "images/review-2before.jpg" %}');">
+										</div>
+									</div>
+									<div class="verticle"></div>
+									<div>
+										<h3>After</h3>
+										<div class="user-img" style="background-image: url('{% static "images/review-2after.jpg" %}');">
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									<div class="line pl-5">
+										<p class="mb-4 pb-1">After following my dietitian's advice, I saw amazing before
+											and after results in just a few weeks. My energy levels are up, and my
+											clothes are fitting better!</p>
+										<span class="quote d-flex align-items-center justify-content-center">
+											<i class="icon-quote-left"></i>
+										</span>
+									</div>
+
+									<div class="d-flex float-right">
+										<div class="ml-4">
+											<p class="name">Floyd Weather</p>
+											<span class="position"><span><i class="ri-instagram-fill"></i></span>
+												Weather.floyd</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap p-4 pb-5">
+								<div class="before-after">
+									<div>
+										<h3>Before</h3>
+										<div class="user-img" style="background-image: url('{% static "images/review-3before.jpg" %}');">
+										</div>
+									</div>
+									<div class="verticle"></div>
+									<div>
+										<h3>After</h3>
+										<div class="user-img" style="background-image: url('{% static "images/review-3after.jpg" %}');">
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									<div class="line pl-5">
+										<p class="mb-4 pb-1">Working with a dietitian was the best decision I made for
+											my health. The personalized meal plan helped me achieve my weight loss goals
+											faster than I ever imagined.</p>
+										<span class="quote d-flex align-items-center justify-content-center">
+											<i class="icon-quote-left"></i>
+										</span>
+									</div>
+
+									<div class="d-flex float-right">
+										<div class="ml-4">
+											<p class="name">James Dee</p>
+											<span class="position"><span><i class="ri-instagram-fill"></i></span>
+												James.45Doe</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap p-4 pb-5">
+								<div class="before-after">
+									<div>
+										<h3>Before</h3>
+										<div class="user-img" style="background-image: url('{% static "images/review-4before.jpg" %}');">
+										</div>
+									</div>
+									<div class="verticle"></div>
+									<div>
+										<h3>After</h3>
+										<div class="user-img" style="background-image: url('{% static "images/review-4after.jpg" %}');">
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									<div class="line pl-5">
+										<p class="mb-4 pb-1">I was skeptical about seeing a dietitian, but after seeing
+											my before and after photos, I'm a believer! The changes in my body and
+											confidence are incredible.</p>
+										<span class="quote d-flex align-items-center justify-content-center">
+											<i class="icon-quote-left"></i>
+										</span>
+									</div>
+
+									<div class="d-flex float-right">
+
+										<div class="ml-4">
+											<p class="name">Lance Roger</p>
+											<span class="position"><span><i class="ri-instagram-fill"></i></span>
+												Lance.Roger777</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony-wrap p-4 pb-5">
+								<div class="before-after">
+									<div>
+										<h3>Before</h3>
+										<div class="user-img" style="background-image: url('{% static "images/review-5before.jpg" %}');">
+										</div>
+									</div>
+									<div class="verticle"></div>
+									<div>
+										<h3>After</h3>
+										<div class="user-img" style="background-image: url('{% static "images/review-5after.jpg" %}');">
+										</div>
+									</div>
+								</div>
+								<div class="text">
+									<div class="line pl-5">
+										<p class="mb-4 pb-1">Thanks to my dietitian's guidance, I've lost the weight
+											that I've been struggling with for years. The transformation is
+											unbelievable, and I feel like a whole new person!</p>
+										<span class="quote d-flex align-items-center justify-content-center">
+											<i class="icon-quote-left"></i>
+										</span>
+									</div>
+
+									<div class="d-flex float-right">
+										<div class="ml-4">
+											<p class="name">Kenny Bufer</p>
+											<span class="position"><span><i class="ri-instagram-fill"></i></span>
+												Kenny.Bufer136</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item spl-item">
+							<a href="{% url "testimonials" %}" class="btn btn-primary d-block px-1 py-2 sp-btn">View
+								More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	{% include "footer.html" %}

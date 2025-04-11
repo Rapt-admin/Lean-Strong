@@ -1,0 +1,85 @@
+{% include "header.html" %}
+
+{%load static%}
+
+	<section class="hero-wrap js-fullheight bread-bg">
+
+		<div class="container">
+			<div class="row no-gutters slider-text  align-items-center justify-content-center"
+				style="padding-top: 130px;">
+				<div class="col-md-9 ftco-animate text-center">
+					<h1 class="mb-3 bread">Recipes Details</h1>
+				</div>
+			</div>
+			<div class="breadcrumb">
+				<a href="{% url "index" %}">Home</a> >
+				<a href="">Educate</a> >
+				<a href="{% url "recipes" %}">Recipes</a> >
+				<span>Recipe Details</span>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="ftco-section ftco-intro ">
+		<div class=" container">
+			<div class="row justify-content-center mb-5">
+				<div class="col-md-7 heading-section ftco-animate text-center">
+					<h2 class="mb-1">Salmon Tacos with Mango Corn Salsa</h2>
+				</div>
+
+			</div>
+			<div class="row justify-content-end">
+				<div class="col-md-6">
+
+					<img src="{% static "images/recipe-4.jpg" %}" width="500px" style="border-radius: 10px;">
+				</div>
+				<div class="col-md-6">
+					<p class="ftco-animate">"This recipe is absolutely delicious and definitely one of my new favorite
+						dishes! Thank you for sharing this amazing recipe, I will definitely be making it again and
+						again. Keep up the good work!"
+					</p>
+					<h4>In This Post: Everything You Need For Salmon Tacos</h4>
+					<ul class="do-list">
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>canned
+								salmon fillet </a></li>
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>onion
+								mango</a>
+						</li>
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>and
+								cucumber
+							</a></li>
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>onion
+								sweet corn</a>
+						</li>
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>and
+								red onion
+							</a></li>
+
+
+
+
+					</ul>
+
+
+				</div>
+			</div>
+			<div class="mt-5">
+
+				<p class="ftco-animate">
+					A few nights ago, I made them (again), and I set the sheet pan of salmon down on the table and my
+					whole family literally descended upon it and started grabbing at the salmon with their hands and
+					forks as I stood by watching in half shock, half pride. It was a feeding frenzy.
+				</p>
+				<p class="ftco-animate">
+					Of course, we love salmon. It’s a great source of nutrition and protein and, when cooked well, it
+					gently slides apart into buttery, juicy, delightful little flakes.
+				</p>
+
+			</div>
+		</div>
+	</section>
+
+
+
+{% include "footer.html" %}

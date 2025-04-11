@@ -1,0 +1,217 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Health Tracker</h1>
+
+  </div><!-- End Page Title -->
+
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <div class="card">
+          <div class="card-body">
+
+
+            <div class="d-flex justify-content-between">
+              <div>
+                <h5 class="card-title sp-card-title"></h5>
+              </div>
+
+              <div id="reportrange" class="date-range-style">
+                <i class="ri-calendar-2-line"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+
+
+
+            <!-- Table with stripped rows -->
+            <table class="display pt-3 data-table">
+              <thead>
+                <tr>
+                  <th><b>BP reading (mmHg)</b></th>
+                  <th class="hide-mob">Blood Sugar (mg/dL)</th>
+
+                  <th class="hide-mob">Medical Report</th>
+                  <th>Date</th>
+                  <th >Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="hide-mob">119/70</td>
+                  <td>75 </td>
+                  <td class="hide-mob">report.pdf </td>
+                  <td>20/5/2024</td>
+                  <td>
+                    <a data-bs-toggle="modal" data-bs-target="#editModal"><i data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Edit" class="ri-pencil-fill"></i>
+                    </a>
+                    <a data-bs-toggle="modal" data-bs-target="#viewModal"><i data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="View" class="ri-eye-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>115/80</td>
+                  <td class="hide-mob">78 </td>
+                  <td class="hide-mob">report.pdf </td>
+                  <td>21/5/2024</td>
+                  <td>
+                    <a data-bs-toggle="modal" data-bs-target="#editModal"><i data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Edit" class="ri-pencil-fill"></i>
+                    </a>
+                    <a data-bs-toggle="modal" data-bs-target="#viewModal"><i data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="View" class="ri-eye-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>115/80</td>
+                  <td class="hide-mob">76 </td>
+                  <td class="hide-mob">report.pdf </td>
+                  <td>22/5/2024</td>
+                  <td>
+                    <a data-bs-toggle="modal" data-bs-target="#editModal"><i data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Edit" class="ri-pencil-fill"></i>
+                    </a>
+                    <a data-bs-toggle="modal" data-bs-target="#viewModal"><i data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="View" class="ri-eye-fill"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="modal fade" id="editModal" tabindex="-1">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Edit Health Tracker</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body ">
+                    <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="BP reading (mmHg)" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>BP reading (mmHg) :</span>
+                          </label>
+                          <input type="text" name="BP reading (mmHg)" placeholder="" required="required"
+                            autofocus="autofocus" class=" form-control" value="119/70">
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="water-intake" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Blood Sugar (mg/dL) :</span>
+                          </label>
+                          <input type="text" name="water-intake" placeholder="" required="required"
+                            autofocus="autofocus" class=" form-control" value="75">
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Date :</span>
+                          </label>
+                          <input type="text" name="Date" placeholder="" required="required" autofocus="autofocus"
+                            class=" form-control" value="20/5/2024">
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Status" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Status :</span>
+                          </label>
+                          <input type="text" name="Status" placeholder="" required="required" autofocus="autofocus"
+                            class=" form-control" value="Active">
+                        </div>
+                      </div>
+
+                    </form>
+                    <div class="row buttons mt-5">
+                      <center>
+
+                        <button type="submit" class="btn btn-theme">Submit</button>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="viewModal" tabindex="-1">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Health Tracker</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body ">
+                    <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="BP reading (mmHg)" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>BP reading (mmHg) :</span>
+                          </label>
+                          <input type="text" name="BP reading (mmHg)" placeholder="" required="required"
+                            autofocus="autofocus" class=" form-control" value="119/70" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="water-intake" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Blood Sugar (mg/dL) :</span>
+                          </label>
+                          <input type="text" name="water-intake" placeholder="" required="required"
+                            autofocus="autofocus" class=" form-control" value="75" disabled>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Date :</span>
+                          </label>
+                          <input type="text" name="Date" placeholder="" required="required" autofocus="autofocus"
+                            class=" form-control" value="20/5/2024" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Status" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Status :</span>
+                          </label>
+                          <input type="text" name="Status" placeholder="" required="required" autofocus="autofocus"
+                            class=" form-control" value="Active" disabled>
+                        </div>
+                      </div>
+
+                    </form>
+                    <!-- <div class="row buttons mt-5">
+                        <center>
+
+                          <button type="submit" class="btn btn-theme">Submit</button>
+                        </center>
+                      </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+{% include "user-footer.html" %}

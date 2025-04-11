@@ -1,0 +1,93 @@
+{% include "header.html" %}
+{%load static%}
+
+
+	<section class="hero-wrap js-fullheight bread-bg">
+
+		<div class="container">
+			<div class="row no-gutters slider-text  align-items-center justify-content-center"
+				style="padding-top: 130px;">
+				<div class="col-md-9 ftco-animate text-center">
+					<h1 class="mb-3 bread">Recipes Details</h1>
+				</div>
+			</div>
+			<div class="breadcrumb">
+				<a href="{% url "index" %}">Home</a> >
+				<a href="">Educate</a> >
+				<a href="{% url "recipes" %}">Recipes</a> >
+				<span>Recipe Details</span>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="ftco-section ftco-intro ">
+		<div class=" container">
+			<div class="row justify-content-center mb-5">
+				<div class="col-md-7 heading-section ftco-animate text-center">
+					<h2 class="mb-1">Spicy Salmon Burgers</h2>
+				</div>
+
+			</div>
+			<div class="row justify-content-end">
+				<div class="col-md-6">
+
+					<img src="{% static "images/recipe-1.jpg" %}" width="500px" style="border-radius: 10px;">
+				</div>
+				<div class="col-md-6">
+					<p class="ftco-animate">"This recipe was so delicious and so easy! I eased back on the red curry
+						paste – my spouse doesn’t like anything too spicy – but the flavor adds so much even if you put
+						in just a little. Put it on home-baked buns with tomato & cucumber and a little lettuce. I liked
+						mayo as a condiment. Will definitely add to my recipe box."
+					</p>
+					<h4>Long Live The Short Ingredient List</h4>
+					<ul class="do-list">
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>canned
+								salmon (or cook fresh salmon and flake it up!) </a></li>
+						<li class="ftco-animate"><a href="#"><span
+									class="ion-ios-checkmark-circle mr-3"></span>panko</a>
+						</li>
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>eggs
+							</a></li>
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>red
+								curry paste
+							</a></li>
+
+						<li class="ftco-animate"><a href="#"><span class="ion-ios-checkmark-circle mr-3"></span>soy
+								sauce
+							</a></li>
+
+						<li class="ftco-animate"><a href="#"><span
+									class="ion-ios-checkmark-circle mr-3"></span>lemongrass
+								paste – not essential but
+								very, very yummy
+							</a></li>
+
+
+					</ul>
+
+
+				</div>
+			</div>
+			<div class="mt-5">
+
+				<p class="ftco-animate">How secretly great are salmon burgers?
+
+					They are golden brown, crispy, spicy, barely sweet and savory little bundles of flavor. You can
+					serve them on a fluffy brioche bun with some spicy mayo and slaw, or just go bun-less and tuck
+					these crispy flavor bombs straight into a salad, which is how I like them – just nestled onto
+					some dressed spring greens, or a bagged salad mix, with a squiggle of spicy mayo on top.
+				</p>
+				<p class="ftco-animate">
+					These ones in particular have that umami-rich flavor and a little sweet-spicy zing to them from
+					the combo of red curry paste and brown sugar and lively lemongrass. They are so, so good. I love
+					them, Bjork loves them, toddler loves them. Five-star reviews all around in this house!
+				</p>
+
+			</div>
+		</div>
+	</section>
+
+
+
+{% include "footer.html" %}

@@ -1,0 +1,223 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Book Group Sessions</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-12 col-sm-12">
+
+          <div class="card">
+            <div class="card-body tabs-header">
+
+
+              <div class="tab-content pt-2">
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <center> <span class="month-year mt-3"></span></center>
+                    <div class="calendar-container">
+
+                      <div class="arrow left-arrow"><i class="ri-arrow-left-circle-fill"></i></div>
+
+                      <div class="calendar-wrapper">
+                        <div class="calendar">
+                          <div class="day" data-date="day1">
+                            <div class="day-name">FRI</div>
+                            <div class="date">26</div>
+                          </div>
+                          <div class="day" data-date="day2">
+                            <div class="day-name">SAT</div>
+                            <div class="date">27</div>
+                          </div>
+                          <div class="day" data-date="day3">
+                            <div class="day-name">SUN</div>
+                            <div class="date">28</div>
+                          </div>
+                          <div class="day" data-date="day4">
+                            <div class="day-name">MON</div>
+                            <div class="date">29</div>
+                          </div>
+                          <div class="day" data-date="day5">
+                            <div class="day-name">TUE</div>
+                            <div class="date">30</div>
+                          </div>
+                          <div class="day" data-date="day6">
+                            <div class="day-name">WED</div>
+                            <div class="date">31</div>
+                          </div>
+                          <div class="day" data-date="day7">
+                            <div class="day-name">THU</div>
+                            <div class="date">1</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="arrow right-arrow"><i class="ri-arrow-right-circle-fill"></i></div>
+                    </div>
+                    <div class="session-list">
+                      <div class="session" data-date="day2">
+                        <div class="d-flex justify-content-between">
+                          <div class="date-ist-container">
+                            <div class="date-ist">
+                              <div class="time">12:05 AM</div>
+                              <div class="ist">IST</div>
+                            </div>
+                            <div class="duration-hr">
+                              <div class="duration"><i class="ri-time-line"></i> <span>30</span> minutes</div>
+                            </div>
+                          </div>
+                          <div class="session-title-container">
+                            <div class="session-title">Yoga for Hips & Hamstrings</div>
+                            <div class="instructor"><i class="ri-user-3-fill"></i> by <span
+                                class="instructor-name">Vivek</span> <span class="instructor-rating">4.7 </span><i
+                                class="ri-star-fill instructor-star"></i> </div>
+                          </div>
+                        </div>
+                        <button class="btn btn-theme">Book</button>
+                      </div>
+                      <div class="session" data-date="day2">
+                        <div class="d-flex justify-content-between">
+                          <div class="date-ist-container">
+                            <div class="date-ist">
+                              <div class="time">01:05 PM</div>
+                              <div class="ist">IST</div>
+                            </div>
+                            <div class="duration-hr">
+                              <div class="duration"><i class="ri-time-line"></i> <span>60</span> minutes</div>
+                            </div>
+                          </div>
+                          <div class="session-title-container">
+                            <div class="session-title">All Levels - Improve Core Strength</div>
+                            <div class="instructor"><i class="ri-user-3-fill"></i> by <span
+                                class="instructor-name">Vivek</span> <span class="instructor-rating">4.7 </span><i
+                                class="ri-star-fill instructor-star"></i> </div>
+                          </div>
+                        </div>
+                        <button class="btn btn-theme">Book</button>
+                      </div>
+                      <div class="session" data-date="day3">
+                        <div class="d-flex justify-content-between">
+                          <div class="date-ist-container">
+                            <div class="date-ist">
+                              <div class="time">01:05 PM</div>
+                              <div class="ist">IST</div>
+                            </div>
+                            <div class="duration-hr">
+                              <div class="duration"><i class="ri-time-line"></i> <span>60</span> minutes</div>
+                            </div>
+                          </div>
+                          <div class="session-title-container">
+                            <div class="session-title">All Levels - Improve Core Strength</div>
+                            <div class="instructor"><i class="ri-user-3-fill"></i> by <span
+                                class="instructor-name">Vivek</span> <span class="instructor-rating">4.7 </span><i
+                                class="ri-star-fill instructor-star"></i> </div>
+                          </div>
+                        </div>
+                        <button class="btn btn-theme">Book</button>
+                      </div>
+                      <!-- Add more sessions as needed -->
+                    </div>
+
+
+
+                  </div>
+                </div>
+
+
+
+              </div><!-- End Bordered Tabs -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "user-footer.html" %}
+
+    <script>
+    $(document).ready(function () {
+      let today = new Date();
+      let currentDateIndex = 1;
+
+      let calendarWrapperWidth = $('.calendar-wrapper').width();
+      let dayWidth = $('.day').outerWidth(true);
+      let visibleDays = Math.floor(calendarWrapperWidth / dayWidth);
+      let currentOffset = 0;
+
+      let month = today.getMonth(); // Months are zero-based
+      let year = today.getFullYear();
+
+      // Array of month names
+      const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+
+      // Display the current month and year
+      $('.month-year').text(`${monthNames[month]} ${year}`);
+
+      $('.day').each(function (index) {
+        if (index < currentDateIndex) {
+          $(this).addClass('past');
+        } else if (index === currentDateIndex) {
+          $(this).addClass('active');
+        }
+      });
+
+      $('.day').on('click', function () {
+        if (!$(this).hasClass('past')) {
+          $('.day').removeClass('active');
+          $(this).addClass('active');
+          let selectedDate = $(this).data('date');
+          updateSessions(selectedDate);
+        }
+      });
+
+      function updateSessions(date) {
+        $('.session').hide();
+        $(`.session[data-date="${date}"]`).show();
+
+        if ($(`.session[data-date="${date}"]`).length === 0) {
+          if ($('.no-session').length === 0) {
+            $('.session-list').append('<div class="no-session">No Session available on this day</div>');
+          }
+        } else {
+          $('.no-session').remove();
+        }
+      }
+
+      function moveCalendar(offset) {
+        currentOffset += offset;
+        if (currentOffset < 0) {
+          currentOffset = 0;
+        }
+        let maxOffset = $('.day').length - visibleDays;
+        if (currentOffset > maxOffset) {
+          currentOffset = maxOffset;
+        }
+        let newTransformValue = -currentOffset * dayWidth;
+        $('.calendar').css('transform', `translateX(${newTransformValue}px)`);
+      }
+
+      $('.left-arrow').on('click', function () {
+        moveCalendar(-1);
+      });
+
+      $('.right-arrow').on('click', function () {
+        moveCalendar(1);
+      });
+
+      updateSessions('day2');
+    });
+
+  </script>

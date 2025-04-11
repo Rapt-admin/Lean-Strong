@@ -1,0 +1,264 @@
+{% load static %}
+
+{% include "dietitian_header.html" %}
+{% include "dietitian_sidebarmenu.html" %}
+
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Dashboard</h1>
+
+  </div><!-- End Page Title -->
+
+  <section class="section dashboard">
+    <div class="row">
+
+      <!-- Left side columns -->
+      <div class="col-lg-12">
+        <div class="row text-c">
+          <div class="col-xxl-4 col-md-4">
+            <div class="card info-card dietician-card ">
+
+              <div class="card-body ">
+                <div class="d-flex align-items-center pt-4 pb-3 justify-content-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+
+                    <i class="ri-shake-hands-fill"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>43</h6>
+                    <span class="text-muted pt-2 ps-1 bold">Total Consultation</span>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-xxl-4 col-md-4">
+            <div class="card info-card dietician-card">
+
+              <div class="card-body">
+
+                <div class="d-flex align-items-center pt-4 pb-3 justify-content-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="ri-star-fill"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>4</h6>
+
+                    <div class="rating diet-rating">
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star filled"></span>
+                    </div>
+                    <p class="text-muted bold">Ratings</p>
+                  </div>
+
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-xxl-4 col-md-4">
+            <div class="card info-card dietician-card">
+
+              <div class="card-body">
+
+                <div class="d-flex align-items-center pt-4 pb-3 justify-content-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="ri-group-fill"></i>
+                  </div>
+                  <div class="ps-3">
+                    <h6>25</h6>
+                    <span class="text-muted pt-2 ps-1 bold">Active Students</span>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div><!-- End Left side columns -->
+
+      <div class="col-lg-12">
+        <div class="row">
+
+          <!-- Sales Card -->
+          <div class="col-xxl-12 col-md-12">
+            <div class="card info-card sales-card">
+
+              <div class="card-body">
+                <div class="ongoing-top">
+                  <div>
+                    <h4>Your Ongoing Class</h4>
+                    <p>22 June 2024 | <span> 11: 00 IST</span></p>
+                  </div>
+                  <div>
+                    <button class="btn btn-theme">Join Now</button>
+                  </div>
+                </div>
+                <div class="ongoing-bottom">
+                  <div>
+                    <p>Name</p>
+                    <h6>Gustavo Xavier</h6>
+                  </div>
+                  <div>
+                    <p>Height(in cm)</p>
+                    <h6>179</h6>
+                  </div>
+                  <div>
+                    <p>Current Body Weight</p>
+                    <h6>75 kg</h6>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div><!-- End Sales Card -->
+
+          <div class="col-xxl-12 col-md-12">
+            <div class="card">
+              <div class="card-body m-3">
+                <div class="consulation border-bottom">
+                  <h5 class="card-title remove-b">Consultation</h5>
+                  <ul class="nav nav-tabs nav-tabs-bordered remove-b" id="borderedTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#bordered-home"
+                        type="button" role="tab" aria-controls="home" aria-selected="true">Due</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bordered-profile"
+                        type="button" role="tab" aria-controls="profile" aria-selected="false">Upcoming</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#bordered-contact"
+                        type="button" role="tab" aria-controls="contact" aria-selected="false">Past</button>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Bordered Tabs -->
+
+
+
+                <div class="tab-content pt-2" id="borderedTabContent">
+                  <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
+                    <table class="display pt-3 text-c" id="dtdash-consultation-due">
+                      <thead>
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Time & Date</th>
+                          <th scope="col">Credit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Gustavo Xavier </td>
+                          <td>11 June, <span>05:00 IST</span></td>
+                          <td>2/5</td>
+                        </tr>
+                        <tr>
+                          <td>Gustavo Xavier </td>
+                          <td>11 June, <span>05:00 IST</span></td>
+                          <td>2/5</td>
+                        </tr>
+                        <tr>
+                          <td>Gustavo Xavier </td>
+                          <td>11 June, <span>05:00 IST</span></td>
+                          <td>2/5</td>
+                        </tr>
+                        <tr>
+                          <td>Gustavo Xavier </td>
+                          <td>11 June, <span>05:00 IST</span></td>
+                          <td>2/5</td>
+                        </tr>
+                        <tr>
+                          <td>Gustavo Xavier </td>
+                          <td>11 June, <span>05:00 IST</span></td>
+                          <td>2/5</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <table class="display pt-3 text-c" id="dtdash-consultation-upcoming">
+                      <thead>
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Time & Date</th>
+                          <th scope="col">Credit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Gustavo Xavier </td>
+                          <td>11 June, <span>05:00 IST</span></td>
+                          <td>2/5</td>
+                        </tr>
+                        <tr>
+                          <td>Gustavo Xavier </td>
+                          <td>11 June, <span>05:00 IST</span></td>
+                          <td>2/5</td>
+                        </tr>
+                        <tr>
+                          <td>Gustavo Xavier </td>
+                          <td>11 June, <span>05:00 IST</span></td>
+                          <td>2/5</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="tab-pane fade" id="bordered-contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <table class="display pt-3 text-c" id="dtdash-consultation-past">
+                      <thead>
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Time & Date</th>
+                          <th scope="col">Credit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Gustavo Xavier </td>
+                          <td>11 June, <span>05:00 IST</span></td>
+                          <td>2/5</td>
+                        </tr>
+                        <tr>
+                          <td>Gustavo Xavier </td>
+                          <td>11 June, <span>05:00 IST</span></td>
+                          <td>2/5</td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div><!-- End Bordered Tabs -->
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+{% include "dietitian_footer.html" %}

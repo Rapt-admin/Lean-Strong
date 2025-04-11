@@ -1,0 +1,154 @@
+{% load static %}
+
+
+<footer class="ftco-footer ftco-section img ">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-lg-3 col-md-6 mb-5 mb-md-5 ftco-animate">
+				<div class="ftco-footer-widget mb-4">
+					<img src="{%static 'images/logo-white.png' %}" class="footer-logo">
+					<div class="footer-add">
+						<i class="ri-home-4-fill"></i>
+						<h2 class="location"> 203 MG St. Mountain View, Pune, Maharashtra
+							- 400018</h2>
+					</div>
+					<div class="footer-add">
+						<i class="ri-phone-fill"></i>
+						<h2 class="location"> +91 888 888 8888</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 mb-5 mb-md-5 ftco-animate">
+				<div class="ftco-footer-widget mb-4">
+					<h3>Quick Links</h3>
+					<ul>
+						<li class=""><a href="{% url "index" %}">Home</a></li>
+						<li class=""><a href="{% url "about" %}">About</a></li>
+						<li class=""><a href="{% url "contact" %}">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="col-lg-3 col-md-6 mb-5 mb-md-5 ftco-animate">
+				<div class="ftco-footer-widget mb-4">
+					<h3>Help</h3>
+					<ul>
+						<li class=""><a href="{% url "faq" %}">FAQ</a></li>
+						<li class=""><a href="{% url "terms" %}">Terms</a></li>
+						<li class=""><a href="{% url "privacy" %}">Privacy Policy</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 mb-5 mb-md-5 ftco-animate">
+				<div class="ftco-footer-widget mb-4">
+					<h3>Follow Us</h3>
+					<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
+						<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<p class="copyright">
+		Copyright &copy;
+		<script>document.write(new Date().getFullYear());</script> All rights reserved
+	</p>
+	<button onclick="scrollToTop()" id="scrollBtn">
+		<i class="ri-arrow-up-line"></i>
+	</button>
+</footer>
+
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+		<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+		<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+			stroke="#F96D00" />
+	</svg></div>
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+<script src="{% static 'js/scrollax.min.js' %}"></script>
+<script src="{% static 'js/custom/home.js' %}"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{% static 'js/google-map.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script>
+	$(document).ready(function () {
+		var currentPage = window.location.pathname;
+		$('.navbar .nav-item').removeClass('active');
+		$('.nav-item .nav-link').each(function () {
+			var linkUrl = $(this).attr('href');
+			console.log('outer link ' + linkUrl)
+			if (currentPage === linkUrl) {
+				$(this).closest('.nav-item').addClass('active');
+			}
+		});
+
+		$('.dropdown-item').each(function () {
+			var linkUrl = $(this).attr('href');
+			if (currentPage === linkUrl) {
+				$(this).closest('.nav-item').addClass('active');
+
+			}
+		});
+
+
+		var currentUrl = $('.form-detail').attr('action');
+		if (currentPage === currentUrl) {
+			$('.navbar').addClass('bg-white');
+		}
+
+
+
+	});
+
+
+
+
+
+
+	document.querySelector('.dropbtn').addEventListener('click', function () {
+		document.querySelector('.dropdown-content').classList.toggle('show');
+	});
+
+	window.onclick = function (event) {
+		if (!event.target.matches('.dropbtn')) {
+			var dropdowns = document.getElementsByClassName("dropdown-content");
+			for (var i = 0; i < dropdowns.length; i++) {
+				var openDropdown = dropdowns[i];
+				if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+				}
+			}
+		}
+	}
+
+</script>
+
+</body>
+
+</html>

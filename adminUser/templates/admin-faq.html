@@ -1,0 +1,228 @@
+{% load static %}
+
+	{% include "admin_header.html" %}
+	{% include "admin_sidebarmenu.html" %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>FAQ</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-12">
+
+          <div class="card">
+            <div class="card-body tabs-header">
+
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title sp-card-title mb-0"></h5>
+                <div>
+                  <button class="btn btn-theme mt-3" id="tabs-sp-btn"><i class="ri-add-circle-line"></i> Add New
+                    FAQ</button>
+                </div>
+              </div>
+
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" id="first-tab" data-bs-toggle="tab"
+                    data-bs-target="#view-measurements">Edit FAQ</button>
+                </li>
+
+                <li class="nav-item update-link" id="update-link">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#update-measurements">Add New FAQ
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content pt-2">
+
+                <div class="tab-pane fade show active profile-overview" id="view-measurements">
+
+                  <div class="card-body">
+                    <div class="row mt-4">
+
+                      <table class="display pt-3" id="admin-faq">
+                        <thead>
+                          <tr>
+                            <th>
+                              <b>FAQ Title</b>
+                            </th>
+                            <th>FAQ Description</th>
+                            <th>Action </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>How can I lose weight effectively and safely?</td>
+                            <td>Losing weight effectively and safely will provide tips and guidance on healthy and
+                              sustainable weight loss strategies, including balanced nutrition, regular exercise, and
+                              lifestyle changes. </td>
+                            <td>
+                              <a data-bs-toggle="modal" data-bs-target="#editModal"><i data-bs-toggle="tooltip"
+                                  data-bs-placement="top" title="Edit" class="ri-pencil-fill"></i>
+                              </a>
+                              <a class="style-btn"><i class="ri-delete-bin-4-fill"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>What are the best foods for boosting metabolism?</td>
+                            <td>Boosting metabolism will discuss foods that can help increase metabolism naturally, such
+                              as lean proteins, whole grains, fruits, and vegetables, to support weight management
+                              goals.</td>
+                            <td>
+                              <a data-bs-toggle="modal" data-bs-target="#editModal"><i data-bs-toggle="tooltip"
+                                  data-bs-placement="top" title="Edit" class="ri-pencil-fill"></i>
+                              </a>
+                              <a class="style-btn"><i class="ri-delete-bin-4-fill"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="editModal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Edit FAQ</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+
+                      <form method="POST" novalidate="novalidate" class="contact-form mb-5">
+
+
+
+                        <div class="row mt-4">
+
+
+                          <div class="col-lg-12 col-12 px-14 ">
+                            <div class="form-group mb-lg-20">
+                              <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                <span>FAQ Title :</span>
+                              </label>
+
+                              <input type="text" name="date" placeholder="FAQ Title" required="required"
+                                autofocus="autofocus" class=" form-control"
+                                value="How can I lose weight effectively and safely?">
+                            </div>
+
+                          </div>
+
+                          <div class="col-lg-12 col-12 px-14 mt-2">
+                            <div class="form-group mb-lg-20">
+                              <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                                <span>FAQ Description :</span>
+                              </label>
+                              <textarea class="form-control"
+                                placeholder="FAQ description">Losing weight effectively and safely will provide tips and guidance on healthy and sustainable weight loss strategies, including balanced nutrition, regular exercise, and lifestyle changes.</textarea>
+
+
+                            </div>
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="row buttons mt-5">
+                          <center><button type="submit" class="btn btn-theme">Save Changes</button></center>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="tab-pane fade profile-edit pt-3 container" id="update-measurements">
+                <div class="card-body mt-4">
+                  <form method="POST" novalidate="novalidate" class="contact-form mb-5">
+
+
+
+                    <div class="row mt-4">
+
+
+                      <div class="col-lg-12 col-12 px-14 ">
+                        <div class="form-group mb-lg-20">
+                          <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>FAQ Title :</span>
+                          </label>
+
+                          <input type="text" name="date" placeholder="Date" required="required" autofocus="autofocus"
+                            class=" form-control" value="">
+                        </div>
+
+                      </div>
+
+                      <div class="col-lg-12 col-12 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>FAQ Description :</span>
+                          </label>
+                          <input type="text" name="Description" placeholder="FAQ Description" required="required"
+                            autofocus="autofocus" class=" form-control" value="">
+                        </div>
+
+                      </div>
+
+
+                    </div>
+
+
+                    <div class="row buttons mt-5">
+                      <center><button type="submit" class="btn btn-theme">Save Changes</button></center>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div><!-- End Bordered Tabs -->
+
+        </div>
+      </div>
+
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "admin_footer.html" %}
+
+  <script>
+
+
+    $(document).ready(function () {
+      $('#admin-faq').DataTable();
+      $("#tabs-sp-btn").click(function () {
+        $("#update-link").toggle();
+        $("#update-link .nav-link").trigger("click");
+      });
+      $("#first-tab").click(function () {
+        $("#update-link").hide();
+
+      });
+
+
+
+    });
+
+
+  </script>

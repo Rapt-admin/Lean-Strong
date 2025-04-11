@@ -1,0 +1,206 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+<main id="main" class="main">
+  {%csrf_token%}
+  <div class="pagetitle">
+    <h1>Diet Plan</h1>
+
+  </div><!-- End Page Title -->
+
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h5 class="card-title sp-card-title">Plan Details</h5>
+              </div>
+              <div>
+                <!-- <button class="btn btn-primary" id="download_pdf">Download PDF</button> -->
+
+              </div>
+
+              <div id="reportrange" class="date-range-style">
+                <i class="ri-calendar-2-line"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+
+            </div>
+            <div id="pdf-container" style="display: none;">
+              <div id="pdf-content" class="pdf-content"> </div>
+            </div>
+
+
+            <!-- Table with stripped rows -->
+            <div id="content">
+
+              <table class="display pt-3 data-table" style="background-color: transparent;">
+                <thead>
+                  <tr>
+                    <th>Diet Name</th>
+                    <th class="hide-mob">Diet Suggested By</th>
+                    <th class="hide-mob">Start Date</th>
+                    <th class="hide-mob">End Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for plan in diet_plans %}
+                  <tr>
+                    <td>{{ plan.Diet_name }}</td>
+                    <td class="hide-mob">{{ plan.Diet_suggested_by }}</td>
+                    <td class="hide-mob">{{ plan.Diet_start_date }}</td>
+                    <td class="hide-mob">{{ plan.Diet_end_date }}</td>
+                    <td>{{ plan.status }}</td>
+                    <td>
+                      <a data-bs-toggle="modal" data-bs-target="#viewModal"><i data-bs-toggle="tooltip"
+                          data-bs-placement="top" title="View" class="ri-eye-fill"></i></a>
+                      <a href="#" id="downloadUserDietPlan"><i data-bs-toggle="tooltip" data-bs-placement="top"
+                          title="Download PDF" class="ri-file-pdf-2-fill"></i></a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <!-- End Table with stripped rows -->
+            <div class="modal fade" id="viewModal" tabindex="-1">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Diet Plan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body ">
+                    <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Diet Name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Diet Name :</span>
+                          </label>
+                          <input type="text" name="Diet Name" placeholder="" required="required" autofocus="autofocus"
+                            class=" form-control" value="Adaptation Diet" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Subscription Type" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Subscription Type :</span>
+                          </label>
+                          <input type="text" name="Subscription Type" placeholder="" required="required"
+                            autofocus="autofocus" class=" form-control" value="Quarterly" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Nutritionist Name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Nutritionist Name :</span>
+                          </label>
+                          <input type="text" name="Nutritionist Name" placeholder="" required="required"
+                            autofocus="autofocus" class=" form-control" value="Akshada" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="Created on" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Created on :</span>
+                          </label>
+                          <input type="text" name="Created on" placeholder="" required="required" autofocus="autofocus"
+                            class=" form-control" value="20/6/2024" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="valid" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                            <span>Valid Till Date :</span>
+                          </label>
+                          <input type="text" name="valid" placeholder="" required="required" autofocus="autofocus"
+                            class=" form-control" value="19/7/2024" disabled>
+                        </div>
+                      </div>
+
+                    </form>
+                    <!-- <div class="row buttons mt-5">
+                        <center>
+
+                          <button type="submit" class="btn btn-theme">Submit</button>
+                        </center>
+                      </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+
+{% include "user-footer.html" %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+
+  $("#downloadUserDietPlan").click(function () {
+    $.ajax({
+      type: 'POST',
+      url: '{% url "downLoadDietPlan" 4 %}',
+      data: {
+        csrfmiddlewaretoken: '{{ csrf_token }}'
+      },
+      success: function (data) {
+        $("#pdf-content").html(data);
+        downloadPDF();
+      },
+      error: function (xhr, errmsg, err) {
+        console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+      }
+    });
+
+    // Generate PDF
+    async function downloadPDF() {
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const content = document.getElementById('pdf-content');
+      const container = document.getElementById('pdf-container');
+
+      container.style.display = 'block';
+      content.style.opacity = '1';
+
+      await new Promise(resolve => setTimeout(resolve, 0));
+      const canvas = await html2canvas(content, { scale: 1.5 });
+      const imgData = canvas.toDataURL('image/jpeg', 0.75);
+
+      const pdfWidth = doc.internal.pageSize.getWidth();
+      const pdfHeight = doc.internal.pageSize.getHeight();
+      const imgHeight = pdfHeight;
+      const imgWidth = canvas.width * pdfHeight / canvas.height;
+      const xOffset = (pdfWidth - imgWidth) / 2;
+      doc.addImage(imgData, 'JPEG', xOffset, 0, imgWidth, imgHeight);
+
+      // Save the PDF
+      doc.save('dietplan.pdf');
+      container.style.display = 'none';
+    }
+  });
+
+
+
+
+</script>

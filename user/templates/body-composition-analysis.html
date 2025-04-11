@@ -1,0 +1,382 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+
+<main id="main" class="main">
+
+  <div class="pagetitle">
+    <h1>Body Composition Analysis</h1>
+  </div><!-- End Page Title -->
+
+  <section class="section profile">
+    <div class="row">
+      <div class="col-xl-12 col-sm-12">
+
+        <div class="card">
+          <div class="card-body tabs-header">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h5 class="card-title sp-card-title mb-0"></h5>
+              </div>
+
+
+              <div class="d-flex ">
+                <div id="reportrange" class="date-range-style">
+                  <i class="ri-calendar-2-line"></i>&nbsp;
+                  <span></span> <i class="fa fa-caret-down"></i>
+                </div>
+              </div>
+
+            </div>
+            <!-- Bordered Tabs -->
+            <ul class="nav nav-tabs nav-tabs-bordered">
+
+              <li class="nav-item">
+                <button class="nav-link active" id="first-tab" data-bs-toggle="tab"
+                  data-bs-target="#view-measurements">Current
+                  BCA</button>
+              </li>
+
+              <li class="nav-item hidden-tab" id="update-link">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#update-measurements">Add
+                  BCA
+                </button>
+              </li>
+              <li class="nav-item hidden-tab" id="edit-link">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#edit-measurements">Edit
+                  BCA
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content pt-2">
+
+              <div class="tab-pane fade show active profile-overview" id="view-measurements">
+                <button class="btn btn-theme tabs-sp-btn" id="add-measurements-btn">Add BCA</button>
+                <div class="row">
+                  <div class="col-lg-12">
+
+
+
+                    <table class="display pt-3 data-table">
+                      <thead>
+                        <tr>
+
+                          <th>
+                            Weight
+                          </th>
+                          <th>Body Fat Percentage</th>
+                          <th class="hide-mob">BMR</th>
+                          <th class="hide-mob">WHR</th>
+                          <th class="hide-mob">Physical Mass</th>
+                          <th class="hide-mob">Metabolic Age</th>
+                          <th>Date</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>75</td>
+                          <td>17%</td>
+                          <td class="hide-mob">7,100</td>
+                          <td class="hide-mob">0.96</td>
+                          <td class="hide-mob">75</td>
+                          <td class="hide-mob">35</td>
+                          <td>10-06-2024</td>
+                          <td><a id="edit-measurement-btn"><i data-bs-toggle="tooltip" data-bs-placement="top"
+                                title="Edit" class="ri-pencil-fill"></i>
+                            </a>
+                            <a data-bs-toggle="modal" data-bs-target="#viewModal"><i data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="View" class="ri-eye-fill"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div class="modal fade" id="viewModal" tabindex="-1">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Body Composition Analysis</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body ">
+                            <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+
+                              <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="Weight" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>Weight :</span>
+                                  </label>
+                                  <input type="text" name="Weight" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="75" disabled>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="Body Fat Percentage" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>Body Fat Percentage :</span>
+                                  </label>
+                                  <input type="text" name="Body Fat Percentage" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="17%" disabled>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="Hip measurement" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>Hip measurement :</span>
+                                  </label>
+                                  <input type="text" name="Hip measurement" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="35 cm" disabled>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="BMR" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>BMR:</span>
+                                  </label>
+                                  <input type="text" name="BMR" placeholder="" required="required" autofocus="autofocus"
+                                    class=" form-control" value="7,100" disabled>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="WHR" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>WHR :</span>
+                                  </label>
+                                  <input type="text" name="WHR" placeholder="" required="required" autofocus="autofocus"
+                                    class=" form-control" value="0.96" disabled>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="Physical Mass" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>Physical Mass :</span>
+                                  </label>
+                                  <input type="text" name="Date" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="75" disabled>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="Metabolic Age" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>Metabolic Age :</span>
+                                  </label>
+                                  <input type="text" name="Metabolic Age" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="35" disabled>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="Date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>Date :</span>
+                                  </label>
+                                  <input type="text" name="Date" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="10-06-2024" disabled>
+                                </div>
+                              </div>
+                            </form>
+                            <!-- <div class="row buttons mt-5">
+                                <center>
+
+                                  <button type="submit" class="btn btn-theme">Submit</button>
+                                </center>
+                              </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade profile-edit pt-3 container" id="edit-measurements">
+                <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+
+                  <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                    <div class="form-group mb-lg-20">
+                      <label for="Weight" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                        <span>Weight :</span>
+                      </label>
+                      <input type="text" name="Weight" placeholder="" required="required" autofocus="autofocus"
+                        class=" form-control" value="75">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                    <div class="form-group mb-lg-20">
+                      <label for="Body Fat Percentage" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                        <span>Body Fat Percentage :</span>
+                      </label>
+                      <input type="text" name="Body Fat Percentage" placeholder="" required="required"
+                        autofocus="autofocus" class=" form-control" value="17%">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                    <div class="form-group mb-lg-20">
+                      <label for="Hip measurement" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                        <span>Hip measurement :</span>
+                      </label>
+                      <input type="text" name="Hip measurement" placeholder="" required="required" autofocus="autofocus"
+                        class=" form-control" value="35 cm">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                    <div class="form-group mb-lg-20">
+                      <label for="BMR" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                        <span>BMR:</span>
+                      </label>
+                      <input type="text" name="BMR" placeholder="" required="required" autofocus="autofocus"
+                        class=" form-control" value="7,100">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                    <div class="form-group mb-lg-20">
+                      <label for="WHR" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                        <span>WHR :</span>
+                      </label>
+                      <input type="text" name="WHR" placeholder="" required="required" autofocus="autofocus"
+                        class=" form-control" value="0.96">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                    <div class="form-group mb-lg-20">
+                      <label for="Physical Mass" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                        <span>Physical Mass :</span>
+                      </label>
+                      <input type="text" name="Date" placeholder="" required="required" autofocus="autofocus"
+                        class=" form-control" value="75">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                    <div class="form-group mb-lg-20">
+                      <label for="Metabolic Age" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                        <span>Metabolic Age :</span>
+                      </label>
+                      <input type="text" name="Metabolic Age" placeholder="" required="required" autofocus="autofocus"
+                        class=" form-control" value="35">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                    <div class="form-group mb-lg-20">
+                      <label for="Date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                        <span>Date :</span>
+                      </label>
+                      <input type="text" name="Date" placeholder="" required="required" autofocus="autofocus"
+                        class=" form-control" value="10-06-2024">
+                    </div>
+                  </div>
+                </form>
+                <div class="row buttons mt-5">
+                  <center>
+
+                    <button type="submit" class="btn btn-theme">Submit</button>
+                  </center>
+                </div>
+              </div>
+
+              <div class="tab-pane fade profile-edit pt-3 container" id="update-measurements">
+                <h5 class="card-title mb-3">Enter your body composition analysis</h5>
+                <form method="POST" id="whrForm" novalidate="novalidate" class="contact-form mb-5">
+                  <input type="hidden" name="_token" value=""> <input type="hidden" name="is_calculate" value="true">
+                  <input type="hidden" name="last_insert_id" id="lastInsertId">
+
+
+                  <div class="row radio-checks">
+
+                    <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                          <span>Weight(kg):</span>
+                        </label>
+                        <input type="number" name="weight" id="weight" placeholder="kg" required="required"
+                          autofocus="autofocus" class=" form-control" min="0" value="">
+                      </div>
+
+                    </div>
+                    <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                          <span>Body Fat Percentage:</span>
+                        </label>
+                        <input type="number" name="cm" id="cm" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" min="0" value="">
+                      </div>
+
+                    </div>
+
+                    <div class="row radio-checks">
+
+
+
+                      <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>BMR:</span>
+                          </label>
+                          <input type="number" name="feet" id="feet" placeholder="Enter your BMR score"
+                            required="required" autofocus="autofocus" class=" form-control" max="8" min="1" value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>WHR:</span>
+                          </label>
+                          <input type="number" name="feet" id="feet" placeholder="Enter your WHR score"
+                            required="required" autofocus="autofocus" class=" form-control" max="8" min="1" value="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                          <span>Physical Mass:</span>
+                        </label>
+                        <input type="number" name="feet" id="kg" placeholder="" required="required"
+                          autofocus="autofocus" class=" form-control" max="8" min="1" value="">
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                          <span>Metabolic Age:</span>
+                        </label>
+                        <input type="number" name="feet" id="feet" placeholder="" required="required"
+                          autofocus="autofocus" class=" form-control" max="8" min="1" value="">
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row buttons mt-5">
+                    <center><button type="submit" class="btn btn-theme">Submit</button></center>
+
+                  </div>
+                </form>
+              </div>
+
+
+
+            </div><!-- End Bordered Tabs -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+{% include "user-footer.html" %}
+<script>
+
+
+</script>

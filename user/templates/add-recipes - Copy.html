@@ -1,0 +1,360 @@
+{% load static %}
+
+{% include "user-dashboard-header.html" %}
+{% include "sidebar-menu.html" %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Add/Edit Recipes</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-12">
+
+          <div class="card">
+            <div class="card-body tabs-header">
+
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title sp-card-title mb-0"></h5>
+                <div>
+                  <button class="btn btn-theme mt-3" id="tabs-sp-btn"><i class="ri-add-circle-line"></i> Add New
+                    Recipe</button>
+                </div>
+              </div>
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+                <li class="nav-item">
+                  <button class="nav-link active" id="first-tab" data-bs-toggle="tab" data-bs-target="#my-recipes">My
+                    Recipes</button>
+                </li>
+                <li class="nav-item edit-recipe-tab" id="edit-link">
+                  <button class="nav-link" id="edit-tab" data-bs-toggle="tab" data-bs-target="#edit-recipes">Edit
+                    Recipes</button>
+                </li>
+
+                <li class="nav-item hidden-tab" id="update-link">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#add-recipes">Add New Recipe
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content pt-2">
+                <div class="tab-pane fade show active profile-overview" id="my-recipes">
+                  <div class="card-body row">
+                    <div class="col-lg-3 ftco-animate position-relative">
+                      <div class="recipes-card">
+                        <img src="{% static 'users/img/recipe-1.jpg' %}">
+                        <div class="recipe-buttons">
+                          <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#viewModal">View</button>
+                          <button class="btn btn-theme tabs-edit-btn">Edit</button>
+                        </div>
+                        <p>Spicy Salmon Burgers</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 ftco-animate position-relative">
+                      <div class="recipes-card">
+
+                        <img src="{% static 'users/img/recipe-2.jpg' %}">
+                        <div class="recipe-buttons">
+                          <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#viewModal">View</button>
+                          <button class="btn btn-theme tabs-edit-btn">Edit</button>
+                        </div>
+                        <p>Shortcut Sesame Butter Noodles</p>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 ftco-animate position-relative">
+
+                      <div class="recipes-card">
+                        <img src="{% static 'users/img/recipe-3.jpg' %}">
+                        <div class="recipe-buttons">
+                          <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#viewModal">View</button>
+                          <button class="btn btn-theme tabs-edit-btn">Edit</button>
+                        </div>
+                        <p>5 Ingredient Tomato Soup</p>
+                      </div>
+
+                    </div>
+                    <div class="col-lg-3 ftco-animate position-relative">
+                      <div class="recipes-card">
+                        <img src="{% static 'users/img/recipe-4.jpg' %}">
+                        <div class="recipe-buttons">
+                          <button class="btn btn-theme" data-bs-toggle="modal" data-bs-target="#viewModal">View</button>
+                          <button class="btn btn-theme tabs-edit-btn">Edit</button>
+                        </div>
+                        <p>Salmon Tacos with Mango Corn Salsa</p>
+                      </div>
+
+                    </div>
+                    <div class="modal fade" id="viewModal" tabindex="-1">
+
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content w-100">
+                          <div class="modal-header">
+                            <h5 class="modal-title">View Recipe</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body ">
+                            <section class="ftco-section ftco-intro ">
+                              <div class=" container">
+                                <div class="row justify-content-center mb-5">
+                                  <div class="col-md-7 heading-section ftco-animate text-center">
+                                    <h2 class="mb-1">Spicy Salmon Burgers</h2>
+                                  </div>
+
+                                </div>
+                                <div class="row justify-content-end">
+                                  <div class="col-md-6">
+
+                                    <img src="{% static 'users/img/recipe-1.jpg' %}" class="recipe-modalimg">
+                                  </div>
+                                  <div class="col-md-6">
+                                    <p class="ftco-animate">"This recipe was so delicious and so easy! I eased back on
+                                      the red curry
+                                      paste – my spouse doesn’t like anything too spicy – but the flavor adds so much
+                                      even if you put
+                                      in just a little. Put it on home-baked buns with tomato & cucumber and a little
+                                      lettuce. I liked
+                                      mayo as a condiment. Will definitely add to my recipe box."
+                                    </p>
+                                  </div>
+                                </div>
+                                <div class="mt-5">
+                                  <h4>Long Live The Short Ingredient List</h4>
+                                  <ul class="do-list">
+                                    <li class="ftco-animate"><a href="#"><span
+                                          class="ion-ios-checkmark-circle mr-3"></span>canned
+                                        salmon (or cook fresh salmon and flake it up!) </a></li>
+                                    <li class="ftco-animate"><a href="#"><span
+                                          class="ion-ios-checkmark-circle mr-3"></span>panko</a>
+                                    </li>
+                                    <li class="ftco-animate"><a href="#"><span
+                                          class="ion-ios-checkmark-circle mr-3"></span>eggs
+                                      </a></li>
+                                    <li class="ftco-animate"><a href="#"><span
+                                          class="ion-ios-checkmark-circle mr-3"></span>red
+                                        curry paste
+                                      </a></li>
+
+                                    <li class="ftco-animate"><a href="#"><span
+                                          class="ion-ios-checkmark-circle mr-3"></span>soy
+                                        sauce
+                                      </a></li>
+
+                                    <li class="ftco-animate"><a href="#"><span
+                                          class="ion-ios-checkmark-circle mr-3"></span>lemongrass
+                                        paste – not essential but
+                                        very, very yummy
+                                      </a></li>
+
+
+                                  </ul>
+                                  <p class="ftco-animate">How secretly great are salmon burgers?
+
+                                    They are golden brown, crispy, spicy, barely sweet and savory little bundles of
+                                    flavor. You can
+                                    serve them on a fluffy brioche bun with some spicy mayo and slaw, or just go
+                                    bun-less and tuck
+                                    these crispy flavor bombs straight into a salad, which is how I like them – just
+                                    nestled onto
+                                    some dressed spring greens, or a bagged salad mix, with a squiggle of spicy mayo on
+                                    top.
+                                  </p>
+                                  <p class="ftco-animate">
+                                    These ones in particular have that umami-rich flavor and a little sweet-spicy zing
+                                    to them from
+                                    the combo of red curry paste and brown sugar and lively lemongrass. They are so, so
+                                    good. I love
+                                    them, Bjork loves them, toddler loves them. Five-star reviews all around in this
+                                    house!
+                                  </p>
+
+                                </div>
+                              </div>
+                            </section>
+
+
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade profile-overview" id="edit-recipes">
+                  <div class="card-body">
+                    <form method="POST" novalidate="novalidate" class="contact-form mb-5">
+                      <div class="row mt-4">
+                        <div class="col-lg-6 col-6 px-14 ">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                              <span>Upload Image for your Recipe :</span>
+                            </label>
+                            <input type="file" class="file-upload">
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-6 px-14 ">
+                          <div class="form-group mb-lg-20">
+                            <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                              <span>Recipe Title :</span>
+                            </label>
+                            <input type="text" name="title" placeholder="Recipe Title" required="required"
+                              autofocus="autofocus" class="form-control" value="Spicy Salmon Burgers">
+                          </div>
+                        </div>
+
+
+
+
+                        <div class="col-lg-12 col-12 px-14 mt-4">
+                          <div class="form-group mb-lg-20">
+                            <label for="recipe" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                              <span>Add Ingredients:</span>
+                            </label>
+                            <input type="text" id="recipe" name="recipe" placeholder="Enter Recipe" class="form-control"
+                              value="Eggs,Red Curry Paste, Soya sauce">
+                            <button onclick="addRecipe()" class="btn btn-theme mt-3"><i class="ri-add-fill"></i>
+                              Add
+                              Recipe</button>
+                            <button onclick="clearEntries()" class="btn btn-theme mt-3">Clear Entries</button>
+
+                          </div>
+                          <ul id="recipeList" class="mt-2"></ul>
+                        </div>
+
+
+
+
+
+
+                        <div class="col-lg-12 col-12 px-14 mt-4">
+                          <div class="form-group mb-lg-20">
+                            <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                              <span>Enter Recipe Description :</span>
+                            </label>
+                            <textarea class="form-control" id="recipe_description" placeholder="Blogs description"
+                              value="">"This recipe was so delicious and so easy! I eased back on the red curry paste – my spouse doesn’t like anything too spicy – but the flavor adds so much even if you put in just a little. Put it on home-baked buns with tomato & cucumber and a little lettuce. I liked mayo as a condiment. Will definitely add to my recipe box."</textarea>
+                          </div>
+                        </div>
+
+
+
+                        <div class="col-lg-12 col-12 px-14 mt-4">
+                          <div class="form-group mb-lg-20">
+                            <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                              <span>Procedure :</span>
+                            </label>
+                            <textarea class="form-control" placeholder="Blogs description"
+                              value="">Discover the top superfoods that can boost your energy levels, improve your overall health, and support your fitness goals.</textarea>
+                          </div>
+                        </div>
+
+                      </div>
+
+
+                      <div class="row buttons mt-5">
+                        <center><button type="submit" class="btn btn-theme">Submit</button></center>
+                      </div>
+                    </form>
+
+
+
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade profile-edit pt-3 container" id="add-recipes">
+                <div class="card-body mt-4">
+                  <form method="POST" novalidate="novalidate" class="contact-form mb-5">
+
+
+
+                    <div class="row mt-4">
+                      <div class="col-lg-6 col-6 px-14 ">
+                        <div class="form-group mb-lg-20">
+                          <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Upload Image for your Recipe :</span>
+                          </label>
+                          <input type="file" class="file-upload">
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-6 px-14 ">
+                        <div class="form-group mb-lg-20">
+                          <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Recipe Title :</span>
+                          </label>
+                          <input type="text" name="title" placeholder="Recipe Title" required="required"
+                            autofocus="autofocus" class="form-control" value="">
+                        </div>
+                      </div>
+
+
+
+
+                      <div class="col-lg-12 col-12 px-14 mt-4">
+                        <div class="form-group mb-lg-20">
+                          <label for="recipe" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Add Ingredients:</span>
+                          </label>
+                          <input type="text" id="recipe" name="recipe" placeholder="Enter Recipe" class="form-control">
+                          <button onclick="addRecipe()" class="btn btn-theme mt-3"><i class="ri-add-fill"></i> Add
+                            Recipe</button>
+                          <button onclick="clearEntries()" class="btn btn-theme mt-3">Clear Entries</button>
+
+                        </div>
+                        <ul id="recipeList" class="mt-2"></ul>
+                      </div>
+
+
+
+
+
+
+                      <div class="col-lg-12 col-12 px-14 mt-4">
+                        <div class="form-group mb-lg-20">
+                          <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Enter Recipe Description :</span>
+                          </label>
+                          <textarea class="form-control" id="recipe_description" placeholder="Blogs description"
+                            value=""></textarea>
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-lg-12 col-12 px-14 mt-4">
+                        <div class="form-group mb-lg-20">
+                          <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Procedure :</span>
+                          </label>
+                          <textarea class="form-control" placeholder="Blogs description" value=""></textarea>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                    <div class="row buttons mt-5">
+                      <center><button type="submit" class="btn btn-theme">Submit</button></center>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div><!-- End Bordered Tabs -->
+
+        </div>
+      </div>
+
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  {% include "user-footer.html" %}

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Lean&Strong Dietician</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex flex-row-reverse align-items-center justify-content-between">
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/logo.png" alt="">
+      </a>
+
+    </div>
+
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="../assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="../assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="../assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span></span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../index.html">
+                <i class="bi bi-person"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href=".././faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href=".././signin.html">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapse" data-bs-target="#sessions" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-calendar-event"></i><span>Sessions</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="sessions" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+          <li>
+            <a href="todays-sessions.html">
+              <i class="bi bi-circle"></i><span>Today's sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="upcoming-sessions.html">
+              <i class="bi bi-circle"></i><span>Upcoming sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="completed-sessions.html">
+              <i class="bi bi-circle"></i><span>Completed sessions</span>
+            </a>
+          </li>
+          <li>
+            <a href="missed-sessions.html">
+              <i class="bi bi-circle"></i><span>Missed sessions</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link active collapse" data-bs-target="#clients" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people-fill"></i><span>Clients</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="clients" class="nav-content collapsed" data-bs-parent="#sidebar-nav">
+
+          <li>
+            <a href="all-clients.html">
+              <i class="bi bi-circle"></i><span>All Clients</span>
+            </a>
+          </li>
+          <li>
+            <a href="active-clients.html" class="active">
+              <i class="bi bi-circle"></i><span>Active Clients</span>
+            </a>
+          </li>
+
+
+
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#leads" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-search"></i><span>Leads</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="leads" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+
+          <li>
+            <a href="all-leads.html">
+              <i class="bi bi-circle"></i><span>All Leads</span>
+            </a>
+          </li>
+          <li>
+            <a href="converted-leads.html">
+              <i class="bi bi-circle"></i><span>Converted Leads</span>
+            </a>
+          </li>
+
+
+        </ul>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="renewal-clients.html">
+          <i class="bi bi-person"></i>
+          <span>Renewal Clients</span>
+        </a>
+      </li>
+
+
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link " href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li>
+
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+  <div class="nav-bar">
+    <a href="index.html" class="nav-item">
+      <i class="ri-home-4-line"></i>
+      <p>Home</p>
+    </a>
+    <a href="todays-sessions.html" class="nav-item">
+      <i class="bi bi-gem"></i>
+      <p>Sessions</p>
+    </a>
+    <a href="health-tracker.html" class="nav-item">
+      <i class="bi bi-gem"></i>
+      <p>Tracker</p>
+    </a>
+    <a href="users-profile.html" class="nav-item">
+      <i class="ri-user-line"></i>
+      <p>Profile</p>
+    </a>
+  </div>
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>All Clients</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-12 col-sm-12">
+
+          <div class="card">
+            <div class="card-body tabs-header">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h5 class="card-title sp-card-title mb-0"></h5>
+                </div>
+
+
+                <div class="d-flex ">
+                  <div id="reportrange" class="date-range-style">
+                    <i class="ri-calendar-2-line"></i>&nbsp;
+                    <span></span> <i class="fa fa-caret-down"></i>
+                  </div>
+                </div>
+
+              </div>
+              <!-- Bordered Tabs -->
+
+              <div class="tab-content pt-2">
+
+                <div class="row">
+                  <div class="col-lg-12 mb-4">
+
+
+
+                    <table class="display pt-3" id="dt-active-clients">
+                      <thead>
+                        <tr>
+                          <th>
+                            <b>User Name</b>
+                          </th>
+                          <th>Name</th>
+                          <th>Mobile</th>
+                          <th>Email</th>
+                          <th>Subscription</th>
+                          <th>Action </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="sp-link">
+                            <a href="user-overview.html">
+                              John123
+                            </a>
+                          </td>
+                          <td>John Doe</td>
+                          <td>8888888888</td>
+                          <td>johndoe@gmail.com</td>
+
+                          <td>L&S Ultimate</td>
+                          <td>
+                            <a data-bs-toggle="modal" data-bs-target="#viewModal"><i data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="View" class="ri-eye-fill"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div class="modal fade" id="viewModal" tabindex="-1">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">All Clients</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body ">
+                            <form method="POST" novalidate="novalidate" class="contact-form mb-5 row">
+                              <div class="col-lg-6 col-6 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="User Name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>User Name :</span>
+                                  </label>
+                                  <input type="text" name="User Name" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="John123" disabled>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-6 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="Name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>Name :</span>
+                                  </label>
+                                  <input type="text" name="Name" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="John Doe" disabled>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-6 col-6 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="Mobile" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>Mobile :</span>
+                                  </label>
+                                  <input type="text" name="Mobile" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="8888888888" disabled>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-6 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="Email" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>Email :</span>
+                                  </label>
+                                  <input type="text" name="Email" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="johndoe@gmail.com" disabled>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-6 px-14 mt-2">
+                                <div class="form-group mb-lg-20">
+                                  <label for="Subscription" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                                    <span>Subscription :</span>
+                                  </label>
+                                  <input type="text" name="Subscription" placeholder="" required="required"
+                                    autofocus="autofocus" class=" form-control" value="L&S Ultimate" disabled>
+                                </div>
+                              </div>
+                            </form>
+                            <!-- <div class="row buttons mt-5">
+                              <center>
+
+                                <button type="submit" class="btn btn-theme">Submit</button>
+                              </center>
+                            </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+                </div>
+
+
+
+              </div><!-- End Bordered Tabs -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Lean & Strong</span></strong>. All Rights Reserved
+    </div>
+
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="../assets/vendor/echarts/echarts.min.js"></script>
+  <script src="../assets/vendor/quill/quill.js"></script>
+  <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/js/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <script src="https://code.iconify.design/1/1.0.4/iconify.min.js">   </script>
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+  <script>
+
+
+    $(document).ready(function () {
+   $('#dt-active-clients').DataTable();
+
+      $(".tabs-sp-btn").click(function () {
+        $("#update-link").toggle();
+        $("#update-link .nav-link").trigger("click");
+      });
+      $("#first-tab").click(function () {
+        $("#update-link").hide();
+
+      });
+
+      $(".viewmodal-btn").click(function () {
+        $("#view-modal").show();
+      });
+      $(".modal-close-btn").click(function () {
+        $("#view-modal").hide();
+      });
+
+
+    });
+  </script>
+</body>
+
+</html>

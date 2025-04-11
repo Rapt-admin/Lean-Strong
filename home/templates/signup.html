@@ -1,0 +1,82 @@
+{% include "header.html" %}
+
+
+	<section class="ftco-section contact-section bg-pink">
+		<div class="container">
+			<div class="form-v7-content">
+				<div class="form-left">
+
+				</div>
+
+			<form class="form-detail contact-form" action="{% url 'signup' %}" method="post" onsubmit="return validateForm()">
+                {% csrf_token %}
+                <h1 class="login-header mb-5">Sign Up</h1>
+                <div class="row">
+                    {% if messages %}
+                        <div class="messages text-center" id="messageDiv">
+                            {% for message in messages %}
+                                <p{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color:green"><b>{{ message }}
+                                    Please <a href="{% url "signin" %}" class="nav-link">Click here</a> to login.
+                                </b></p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    <div class="form-row col-md-6 col-lg-6">
+                        <input type="text" name="firstname" id="firstname" class="input-text" placeholder="First Name"  value="{{ signupForm.firstname.value|default:'' }}">
+                        {% if signupForm.firstname.errors %}
+                        <span style="color:red">{{ signupForm.firstname.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-row col-md-6 col-lg-6">
+                        <input type="text" name="lastname" id="lastname" class="input-text" placeholder="Last Name" value="{{ signupForm.lastname.value|default:'' }}">
+                        {% if signupForm.lastname.errors %}
+                        <span style="color:red">{{ signupForm.lastname.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-row col-md-6 col-lg-6">
+                        <input type="text" name="email" id="email" class="input-text" placeholder="Enter Your Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" value="{{ signupForm.email.value|default:'' }}">
+                        {% if signupForm.email.errors %}
+                        <span style="color:red">{{ signupForm.email.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-row col-md-6 col-lg-6">
+                        <input type="text" name="mobile_number" id="mobile_number" class="input-text" placeholder="Mobile Number" value="{{ signupForm.mobile_number.value|default:'' }}" >
+                        {% if signupForm.mobile_number.errors %}
+                        <span style="color:red">{{ signupForm.mobile_number.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-row col-md-6 col-lg-6">
+                        <input type="password" name="password" id="password" class="input-text" placeholder="Password" required>
+                    </div>
+                    <div class="form-row col-md-6">
+                        <input type="password" name="confirm_password" id="confirm_password" class="input-text" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="form-row col-md-6">
+                        <input type="hidden" name="user_type" value="3">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="d-flex">
+                            <input type="checkbox" id="agreement" name="agreement" class="custom-checkbox">
+                            <label for="agreement" class="agreement"> By creating an account, you agree to the <a href="terms.html">Terms & Conditions</a> and <a href="privacy.html">Privacy Policy</a> </label>
+                        </div>
+                        {% if signupForm.agreement.errors %}
+                        <span style="color:red">{{ signupForm.agreement.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-row-last">
+                    <button type="submit" name="submit" id="submit" class="btn btn-primary btn-lg btn-block w-100">Sign Up</button>
+                    <p>Already have an account?<span><a href="signin.html">Sign in</a></span></p>
+                </div>
+            </form>
+
+
+			</div>
+		</div>
+	</section>
+
+
+
+{% include "footer.html" %}

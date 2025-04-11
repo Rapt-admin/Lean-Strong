@@ -1,0 +1,214 @@
+{% include "header.html" %}
+{% load static %}
+
+  <section class="hero-wrap js-fullheight bread-bg">
+
+    <div class="container">
+
+
+      <div class="row no-gutters slider-text  align-items-center justify-content-center" style="padding-top: 130px;">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-3 bread">Blogs</h1>
+        </div>
+      </div>
+      <div class="breadcrumb">
+        <a href="{% url "index" %}">Home</a> >
+        <a href=""></a> 
+        <span>Blogs</span>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="ftco-section bg-light">
+    <div class="container">
+
+
+
+
+      <div class="filter-categories">
+        <p>Filter: </p>
+        <select id="category-select" class="form-group">
+          <option value="all">All</option>
+          <option value="category1">Meal Prepping</option>
+          <option value="category2">Healthy Diet and Fitness</option>
+          <option value="category1">Optimal Nutrition</option>
+          <option value="category2">Balancing Macros</option>
+          <option value="category2">Mindful Eating</option>
+        </select>
+
+      </div>
+
+      <div class="row blogs-container blog-posts">
+        <div class=" col-4 blog-entry category1 ">
+          <a href="{% url "blog-single" %}" class="block-20" style="background-image: url('{% static "images/image_1.jpg" %}');">
+          </a>
+          <div class="text p-4 float-right d-block">
+            <div class="d-flex align-items-center pt-2 mb-4">
+              <div class="one">
+                <span class="day">31</span>
+              </div>
+              <div class="two">
+                <span class="yr">2024</span>
+                <span class="mos">December</span>
+              </div>
+            </div>
+            <h3 class="heading mt-2"><a href="#">The Power of Meal Prepping</a></h3>
+            <p> Learn how meal prepping can help you stay consistent with your nutrition goals and make healthy eating
+              easier and more convenient</p>
+          </div>
+        </div>
+        <div class=" col-4 blog-entry  category2 ">
+          <a href="{% url "blog-single" %}" class="block-20" style="background-image: url('{% static "images/image_2.jpg" %}');">
+          </a>
+          <div class="text p-4 float-right d-block">
+            <div class="d-flex align-items-center pt-2 mb-4">
+              <div class="one">
+                <span class="day">27</span>
+              </div>
+              <div class="two">
+                <span class="yr">2024</span>
+                <span class="mos">December</span>
+              </div>
+            </div>
+            <h3 class="heading mt-2"><a href="#">Healthy Diet and Fitness Routine</a></h3>
+            <p>Discover the top superfoods that can boost your energy levels, improve your overall health, and support
+              your fitness goals. </p>
+          </div>
+        </div>
+        <div class=" col-4 blog-entry  category1 ">
+          <a href="{% url "blog-single" %}" class="block-20" style="background-image: url('{% static "images/image_3.jpg" %}');">
+          </a>
+          <div class="text p-4 float-right d-block">
+            <div class="d-flex align-items-center pt-2 mb-4">
+              <div class="one">
+                <span class="day">25</span>
+              </div>
+              <div class="two">
+                <span class="yr">2024</span>
+                <span class="mos">December</span>
+              </div>
+            </div>
+            <h3 class="heading mt-2"><a href="#">Optimal Nutrition</a></h3>
+            <p>Get insights into the world of supplements, including which ones are beneficial for your diet and
+              fitness journey and how to choose the right ones for your needs. </p>
+          </div>
+        </div>
+        <div class=" col-4 blog-entry category2 ">
+          <a href="{% url "blog-single" %}" class="block-20" style="background-image: url('{% static "images/image_4.jpg" %}');">
+          </a>
+          <div class="text p-4 float-right d-block">
+            <div class="d-flex align-items-center pt-2 mb-4">
+              <div class="one">
+                <span class="day">31</span>
+              </div>
+              <div class="two">
+                <span class="yr">2024</span>
+                <span class="mos">December</span>
+              </div>
+            </div>
+            <h3 class="heading mt-2"><a href="#">Balancing Macros</a></h3>
+            <p> Understand the importance of balancing macronutrients in your diet to fuel your workouts, support
+              muscle growth, and enhance recovery. </p>
+          </div>
+        </div>
+        <div class=" col-4 blog-entry category2">
+          <a href="{% url "blog-single" %}" class="block-20" style="background-image: url('{% static "images/image_5.jpg" %}');">
+          </a>
+          <div class="text p-4 float-right d-block">
+            <div class="d-flex align-items-center pt-2 mb-4">
+              <div class="one">
+                <span class="day">27</span>
+              </div>
+              <div class="two">
+                <span class="yr">2024</span>
+                <span class="mos">December</span>
+              </div>
+            </div>
+            <h3 class="heading mt-2"><a href="#">Mindful Eating</a></h3>
+            <p>Explore the concept of mindful eating and learn how to develop a healthier relationship with food to
+              support your overall well-being and fitness goals.</p>
+          </div>
+        </div>
+        <div class=" col-4 blog-entry category2">
+          <a href="{% url "blog-single" %}" class="block-20" style="background-image: url('{% static "images/image_6.jpg" %}');">
+          </a>
+          <div class="text p-4 float-right d-block">
+            <div class="d-flex align-items-center pt-2 mb-4">
+              <div class="one">
+                <span class="day">25</span>
+              </div>
+              <div class="two">
+                <span class="yr">2024</span>
+                <span class="mos">December</span>
+              </div>
+            </div>
+            <h3 class="heading mt-2"><a href="#">Nutrition Myths Debunked</a></h3>
+            <p> Bust common nutrition myths and misconceptions to make informed choices about your diet and fitness
+              routine, leading to better results and improved health.</p>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <div class="row blogs-container">
+
+
+
+
+
+
+      </div>
+      <div class="row mt-5">
+        <div class="col text-center">
+          <div class="block-27">
+            <ul>
+              <li><a href="#">&lt;</a></li>
+              <li class="active"><span>1</span></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&gt;</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% include "footer.html" %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const categorySelect = document.getElementById('category-select');
+      categorySelect.addEventListener('change', function () {
+        const category = this.value;
+        filterBlogs(category);
+      });
+
+      function filterBlogs(category) {
+        const allPosts = document.querySelectorAll('.blog-entry');
+        allPosts.forEach(post => {
+          if (category === 'all' || post.classList.contains(category)) {
+            post.style.display = 'block';  // Show matching posts
+          } else {
+            post.style.display = 'none';   // Hide non-matching posts
+          }
+        });
+      }
+    });
+  </script>

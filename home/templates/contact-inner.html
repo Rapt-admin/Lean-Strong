@@ -1,0 +1,70 @@
+
+          <form method="POST" id="contactForm"  class="contact-form">
+            {%csrf_token%}
+            
+
+            {% if messages %}
+              <div class="messages text-center" id="messageDiv">
+                  {% for message in messages %}
+                      <p{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color:green"><b>{{ message }}</b></p>
+                  {% endfor %}
+              </div>
+            {% endif %} 
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="name" placeholder="Your Name">
+                  <span style="color:red">{{ contactUsForm.name.errors.0 }}</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="surname" placeholder="Surname">
+                  <span style="color:red">{{ contactUsForm.surname.errors.0 }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="email" placeholder="Email">
+                  <span style="color:red">{{ contactUsForm.email.errors.0 }}</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="mobile_number" placeholder="Mobile Number">
+                  <span style="color:red">{{ contactUsForm.mobile_number.errors.0 }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group" style="border: 1px solid #e8eaed;border-radius: 15px;">
+              <textarea cols="30" rows="7" class="form-control" name="enquired_about" placeholder="Message"></textarea>
+              <span style="color:red">{{ contactUsForm.enquired_about.errors.0 }}</span>
+            </div>
+            <div class="form-group" >
+              <input type="submit" value="Send Message" class="btn btn-primary py-2 px-4">
+            </div>
+          </form>
+
+
+          
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+
+    $('#contactForm').on('submit', function(event){
+      event.preventDefault();  // Prevents the default browser behavior for a form submission.
+      $.ajax({
+          type:'POST',
+          url:'{% url "contact" %}',
+          data:$('#contactForm').serialize(),
+          success:function(data){
+            $("#formDiv").html(data);
+          },
+          error : function(xhr,errmsg,err) {
+          console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+      }
+      });
+  });
+
+  </script>

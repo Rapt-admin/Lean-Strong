@@ -1,0 +1,70 @@
+{% include "header.html" %}
+{%load static%}
+
+	<section class="hero-wrap js-fullheight bread-bg">
+
+		<div class="container">
+			<div class="row no-gutters slider-text  align-items-center justify-content-center"
+				style="padding-top: 130px;">
+				<div class="col-md-9 ftco-animate text-center">
+					<h1 class="mb-3 bread">Recipes</h1>
+				</div>
+			</div>
+			<div class="breadcrumb">
+				<a href="{% url "index" %}">Home</a> >
+				<a href="">Educate</a> >
+				<span>Recipes</span>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+	<section class=" ftco-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section ftco-animate text-center">
+					<h3 class="subheading">Recipes</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 ftco-animate">
+					<a href="{% url "recipe-1" %}" class="gallery  img d-flex align-items-center"
+						style="background-image: url({% static "images/recipe-1.jpg" %});">
+					</a>
+					<div class="recipe-title">
+						<p>Spicy Salmon Burgers</p>
+					</div>
+				</div>
+				<div class="col-md-3 ftco-animate">
+					<a href="{% url "recipe-2" %}" class="gallery  img d-flex align-items-center"
+						style="background-image: url({% static "images/recipe-2.jpg" %});">
+					</a>
+					<div class="recipe-title">
+						<p>Shortcut Sesame Butter Noodles</p>
+					</div>
+				</div>
+				<div class="col-md-3 ftco-animate">
+					<a href="{% url "recipe-3" %}" class="gallery img d-flex align-items-center"
+						style="background-image: url({% static "images/recipe-3.jpg" %});">
+					</a>
+					<div class="recipe-title">
+						<p>5 Ingredient Tomato Soup</p>
+					</div>
+				</div>
+				<div class="col-md-3 ftco-animate">
+					<a href="{% static "recipe-4" %}" class="gallery img d-flex align-items-center"
+						style="background-image: url({% static "images/recipe-4.jpg" %});">
+					</a>
+					<div class="recipe-title">
+						<p>Salmon Tacos with Mango Corn Salsa</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% include "footer.html" %}

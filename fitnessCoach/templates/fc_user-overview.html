@@ -1,0 +1,356 @@
+{% load static %}
+
+	{% include "fc_header.html" %}
+	{% include "fc_sidebarmenu.html" %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>User Overview</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+      <div class="row">
+
+
+        <div class="col-xl-12">
+
+          <div class="card">
+            <div class="card-body pt-3">
+
+
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Personal
+                    Information</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Lifestyle</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Measurements</button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#previous-discussions">Previous
+                    Discussions</button>
+                </li>
+
+              </ul>
+              <div class="tab-content pt-2 container">
+
+                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                  <!-- Profile Edit Form -->
+                  <form class="contact-form container row ">
+
+                    <div class="d-flex align-items-center profile-card gap-3 p-3">
+                      <div>
+                        <img src="{% static 'users/img/profile-img.jpg' %}" width="90px" alt="Profile" class="rounded-circle">
+                      </div>
+                      <div class="mt-3">
+                        <h4 class="social-email">john.doe@gmail.com</h4>
+                        <div class="social-links mt-2 mb-3">
+                          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-3  px-14 mt-2">
+                      <div class="form-group mb-lg-20 ">
+                        <label for="owner" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Account Owner :</span>
+                        </label>
+                        <input type="text" name="owner" placeholder="" required="required" autofocus="autofocus"
+                          class="form-control" value="John Doe" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="phone" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Phone :</span>
+                        </label>
+                        <input type="text" name="phone" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="+91 8888888888" disabled>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="contact-name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Contact Name :</span>
+                        </label>
+                        <input type="text" name="Date" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="John" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="payment-date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>First Payment Date :</span>
+                        </label>
+                        <input type="text" name="payment-date" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="16-06-2024" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="renewal-date" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>First Payment Date :</span>
+                        </label>
+                        <input type="text" name="payment-date" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="in 11 days" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="current-subscription" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Current Subscription :</span>
+                        </label>
+                        <input type="text" name="current-subscription" placeholder="" required="required"
+                          autofocus="autofocus" class=" form-control" value="L&S Essential" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="subscription-status" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Subscription Status :</span>
+                        </label>
+                        <input type="text" name="subscription-status" placeholder="" required="required"
+                          autofocus="autofocus" class=" form-control" value="Active" disabled>
+                      </div>
+                    </div>
+
+                    <div class="overview-subhead">
+                      <h4>Medical Condition</h4>
+                      <hr>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="medicalcondition-name" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Medical Condition Name :</span>
+                        </label>
+                        <input type="text" name="medicalcondition-name" placeholder="" required="required"
+                          autofocus="autofocus" class=" form-control" value="Diabetes" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="Diagnosed" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Diagnosed :</span>
+                        </label>
+                        <input type="text" name="Diagnosed" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="16-01-2024" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="Severity" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Severity :</span>
+                        </label>
+                        <input type="text" name="Severity" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="Mild" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="test-report" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Test Report :</span>
+                        </label>
+                        <input type="text" name="test-report" placeholder="" required="required" autofocus="autofocus"
+                          class="form-control" value="report.pdf" disabled>
+                      </div>
+                    </div>
+
+
+
+                    <div class="overview-subhead">
+                      <h4>Medication</h4>
+                      <hr>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="medication-1" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Metformin :</span>
+                        </label>
+                        <input type="text" name="medication-1" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="Morning Afternoon Night" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="medication-2" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Gliclazide :</span>
+                        </label>
+                        <input type="text" name="medication-2" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="Morning Afternoon Night" disabled>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                      <div class="form-group mb-lg-20">
+                        <label for="medication-3" class="gray-600 f-lg-18 f-16 font-weight-normal ">
+                          <span>Extentadite :</span>
+                        </label>
+                        <input type="text" name="medication-3" placeholder="" required="required" autofocus="autofocus"
+                          class=" form-control" value="Morning Afternoon Night" disabled>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                  </form><!-- End Profile Edit Form -->
+
+
+
+
+                </div>
+
+                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                  <p class="small fst-italic"> Their daily routine typically involves early mornings,
+                    long commutes, and late nights, leaving little time for self-care and relaxation.
+                    Despite their hectic schedule, the patient tries to prioritize healthy habits such
+                    as regular exercise, balanced meals, and adequate sleep. However, stress and time
+                    constraints often lead to occasional indulgence in fast food and sugary snacks. The
+                    patient recognizes the importance of maintaining a healthy lifestyle but struggles
+                    to consistently make healthy choices amidst the demands of their daily life. Regular
+                    check-ups with healthcare providers help the patient stay informed about their
+                    health and make necessary adjustments to their lifestyle habits.</p>
+
+
+
+                </div>
+
+                <div class="tab-pane fade pt-3 pb-4" id="profile-settings">
+
+                  <form method="POST" id="tdeeForm" novalidate="novalidate" class="contact-form ">
+
+
+                    <div class="row radio-checks">
+                      <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="age" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Height (in cm)</span>
+                          </label>
+                          <input type="number" name="age" id="age" placeholder="Years" required="required"
+                            autofocus="autofocus" class="form-control" max="100" min="1" value="182" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="weight" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Current Body Weight (in kg)</span>
+                          </label>
+                          <input type="number" name="weight" id="weight" placeholder="Kg" required="required"
+                            autofocus="autofocus" class="form-control" min="3" max="150" value="65" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Medical Condition</span>
+                          </label>
+                          <input type="text" name="feet" id="feet" placeholder="Feet" required="required"
+                            autofocus="autofocus" class="form-control" value="Diabetes" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Diagnosed</span>
+                          </label>
+                          <input type="text" name="inch" id="inch" placeholder="Inch" required="required"
+                            autofocus="autofocus" class="form-control mt-0" value="24/12/2023" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Severity</span>
+                          </label>
+                          <input type="text" name="feet" id="feet" placeholder="Feet" required="required"
+                            autofocus="autofocus" class="form-control" value="Mild" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Test Report</span>
+                          </label>
+                          <input type="text" name="inch" id="inch" placeholder="Inch" required="required"
+                            autofocus="autofocus" class="form-control mt-0" value="diabetes.pdf" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Medication</span>
+                          </label>
+                          <input type="text" name="inch" id="inch" placeholder="Inch" required="required"
+                            autofocus="autofocus" class="form-control mt-0" value="Metformin" disabled>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-3 px-14 mt-2">
+                        <div class="form-group mb-lg-20">
+                          <label for="feet" class="gray-600 f-lg-18 f-16 font-weight-normal mb-2">
+                            <span>Medication Time</span>
+                          </label>
+                          <input type="text" name="inch" id="inch" placeholder="Inch" required="required"
+                            autofocus="autofocus" class="form-control mt-0" value="Morning & Night" disabled>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </form>
+
+                </div>
+                <div class="tab-pane fade pt-3" id="previous-discussions">
+                  <!-- Change Password Form -->
+
+                  <h5 class="card-title">Report</h5>
+                  <p class="small fst-italic">During the dietician consultation session with the
+                    diabetic customer, it was noted that the customer has been struggling to maintain
+                    stable blood sugar levels due to inconsistent meal planning and portion control. The
+                    dietician emphasized the importance of a balanced diet rich in whole grains, lean
+                    proteins, fruits, and vegetables while limiting intake of refined sugars and
+                    processed foods. The customer was provided with a personalized meal plan and
+                    educated on the importance of regular monitoring of blood sugar levels to track
+                    progress. Additionally, the dietician recommended incorporating regular physical
+                    activity into the customer's routine to further support blood sugar management and
+                    overall health. Follow-up appointments were scheduled to monitor progress and make
+                    any necessary adjustments to the meal plan.</p>
+                  </form><!-- End Change Password Form -->
+
+                </div>
+
+              </div>
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+{% include "fc_footer.html" %}
